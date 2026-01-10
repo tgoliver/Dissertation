@@ -1,0 +1,168 @@
+\chapter{Introduction}
+\label{Introduction}
+\section{Earth's Core and other Planetary Interiors}
+\label{s:pi}
+\subsection*{The core}
+\label{s:thecore}
+The core of the Earth is comprised of two, distinct layers. 
+The inner core is solid and has a radius near $1230$ km \citep{eE74}.
+The liquid outer core extends from the inner-core boundary to the rocky mantle, located about $2900$ km beneath the Earth's surface. 
+Combined, the two layers make up $32\%$ of the mass of the Earth, but only $16\%$ of the volume. 
+This discrepancy is because the core is predominantly composed of heavy iron (Fe) and, to a lesser extent, nickel (Ni) \citep{hK13}.
+A host of lighter elements--sulfur (S), carbon (C), silicon (Si), oxygen (O), and hydrogen (H)--likely make up the remaining $\sim 10\%$ by mass \citep{fB52,jP94}. 
+
+The inner core is solid due to the tremendous pressures at the deepest layers of the planet. Little is known about the inner-core's structure, however estimates suggest that it first nucleated somewhere between 0.5 and 1.5 billion years ago \citep{sL15,cD15,aB15}.
+
+The outer core is liquid. At depths shallower than the inner core boundary (ICB) pressures are sufficiently decreased such that iron exists in the liquid phase. 
+Experiments on the melting point of iron at relevant pressures suggest that the temperature of the ICB is around $5400$ K, although significant uncertainty exists\citep{rB93,aL00,jN04,dA09}.
+As the planet cools, the inner core freezes, releasing heat and light elements into the outer core. 
+This mechanism drives turbulent convection in the liquid layer, and powers the geodynamo.
+In this work, the coupling between inner and outer core will always be relegated to boundary conditions on the outer core fluid. 
+This approach significantly simplifies calculations and captures the key physical process, that is the transport of thermal and chemical buoyancy into the fluid region.
+
+The core mantle boundary (CMB) is the exterior terminus of the core. 
+Located at a depth of around 2900 km, the CMB is the interface between the silicate mantle and the core and is significantly colder than the ICB, around $4200$ K\citep{lS09,gF10}.
+
+The composition and structure of the CMB has attracted significant attention, largely because the CMB drives convection in the mantle, which is ultimately responsible for plate tectonics\citep{gS01}.
+However these considerations also bear significance on the core side. 
+A convectively stable layer at the CMB, for example, may help to stabilize the geomagnetic field \citep{bS08}. 
+Chapters \ref{Oliver_2025} and \ref{Oliver_2026} of this dissertation are primarily concerned with the effects of topography at the CMB as it relates to core fluid motions.
+As is the case with the ICB, all of the work presented here will relegate CMB interactions to the role of boundary conditions on the fluid.
+
+Along with the solid Earth, the core rotates on a 24-hour period. 
+It is largely accepted that the inner core co-rotates as well, which is facilitated via ICB coupling. Some studies (eg. \citep{jV25}) suggest differential rotation, although the effect is a few degrees per year-- significant, but far less than the daily rotation.
+Core rotation plays a major role in determining the dynamics of the core.
+Due to the large length scales and small fluid viscosities relevant to geophysical bodies, conservation of angular momentum constrains fluid motions to be largely aligned with the rotation axis of the planet \citep{sC61}.
+The usual mathematical prescription is to work in a frame of reference co-rotating with the planet. 
+This approach yields a host of so-called ``fictitious forces,'' such as centrifugal, Coriolis, and Eulerian forces, which arise in the treatment of any rotating coordinate system. 
+The Coriolis effect certainly plays the largest role of the three and is responsible for the axial constraints on the flow.
+All studies presented here consider a rapidly rotating fluid such that the Coriolis acceleration is large and primarily balanced by pressure. 
+This condition is referred to as geostrophy and is relevant to the core (eg. \citep{kZ07}) and many other planetary applications including terrestrial oceans and atmospheres \citep{gV06}.
+
+The primarily metallic core is also electrically conductive.
+It therefore hosts electric currents which generate large magnetic fields \citep{aC98, sC61}. 
+This process is responsible for the geodynamo, a largely dipolar magnetic field roughly aligned with the Earth's rotation axis (the rotation axis and dipole axis differ by about $11^{\circ}$). 
+Geophysical systems are dissipative, which means that they slowly lose electrical and mechanical energy to heat. 
+It is believed that the Earth has had an active dynamo for at least 2.8 billion years \citep{jA07},
+however electrical (Ohmic) dissipation is though to be strong enough to stifle an un-powered dynamo within 10 million years \citep{aC98}. 
+Mechanical forcing (convection in the case of the Earth) is necessary to provide the power source that sustains the magnetic field.
+The dynamo's behavior is therefore tied to the turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
+Excursions (in which the field loses dipolar power only to regain it) and reversals (in which the field's orientation flips) are well documented in the geologic record. An average rate of reversals is estimated to be around three each million years \citep{jJ94c1}, although the behaviour is seemingly stochastic, making prediction of future reversals difficult. 
+
+The studies presented in this dissertation are hydrodynamic only, and therefore do not include magnetic effects.  
+Nevertheless, the results can still be applied to the dynamo problem, as the magnetic and hydrodynamic problems share many similarities.  
+
+\subsection*{Beyond the core}
+Although special to us, there does not seem to be anything particularly unique about the Earth's liquid core. 
+Liquid and fluid layers are ubiquitous within and beyond the solar system.
+Convection plays a critical role in the formation and evolution of stars. In the Sun, the convection zone, which begins at a depth of around $200,000$ km and extends to the surface, powers the solar dynamo and transports heat and light to the exterior.
+The Solar cycle, a near 11 year oscillation in the number of sunspots, is controlled by the convection zone (eg. \citep{eP55,mO03}).
+ 
+The gas giants convect, and many of the Jovian and Saturnian moons are expected to host dynamic, subsurface oceans. 
+Jupiter in particular provides a tremendous laboratory for rotating convection, as the fluid is visible at the surface.
+Data from the Voyager missions determined that Jupiter's bands are counter-rotating jets powered by the interior (eg.\citep{pG86,sL86}). 
+Recent results from the Juno mission have identified that these jets are aligned with the rotation axis, similar to predictions for the Earth's core, and tabletop weather experiments\citep{eG21}.
+Europa, Enceladus, Ganymede, and other icy moons likely contain salty oceans which has implications for the possibility of extra-terrestrial life \citep{fN16}.
+
+\section{Modeling geophysical fluid systems}
+\label{s:gafd}
+\textit{``...whatever we do affects everything and everyone else, if even in the tiniest way. Why, when a housefly flaps his wings, a breeze goes round the world..."}\\
+--The Princess of Pure Reason
+\footnote{From The Phantom Tollbooth, published 1961, coincidentally the same year Ed Lorenz mistakenly demonstrated chaos on a Royal McBee LGP-30} 
+
+As is the standard procedure in fluid mechanics, our approach begins with the governing equations for the quantities of interest--in this case mass, energy, and momentum. A complete description of the formulation of the equations of fluid mechanics can be found in most introductory texts on fluid dynamics (eg. \citep{dT01,gV06}), although some comments on the momentum equation should be made before progressing to a more specific discussion on convection.
+In a frame undergoing constant rotation about the origin, the momentum equation is
+\begin{equation}
+	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\frac{1}{\rho}\nabla p- 2 \mathbf{\Omega}\times\mathbf{u} -\mathbf{\Omega}\times\mathbf{\Omega}\times\mathbf{r} + \nu\nabla^{2}\mathbf{u}+ \frac{1}{\rho}\mathbf{g},
+	\label{e:ns}
+\end{equation}
+which is a particular expression of the Navier-Stokes equation.
+The fluid velocity is the vector $\mathbf{u}$, t the time,  $\rho$ the fluid density, $p$ the pressure, $\mathbf\Omega$ the rotation vector,  $\mathbf{r}$ the position vector from the origin, $\nu$ the fluid kinematic viscosity, and $\mathbf{g}$ the gravitational acceleration vector (which may be a function of $\mathbf{r}$). 
+$\nabla$ and $\nabla^{2}$ are the gradient and laplacian operators respectively. The left-hand side (LHS) of eqn. (\ref{e:ns}) is often abbreviated
+$\frac{D\mathbf{u}}{Dt},$ 
+where the operator  $\frac{D}{Dt} = \frac{\partial }{\partial t} + \mathbf{u} \cdot \nabla$ is known as the material derivative.
+Throughout this dissertation I will use the common notation $\mathbf{u} = \ls u,v,w\rs$ to refer to the $\hat{\mathbf{x}},$ $\hat{\mathbf{y}},\text{ and }\hat{\mathbf{z}}$ components of the flow. Note that the oceanography and atmospheric communities often use $w$ to refer to the planet surface-normal velocity. When considering spherical geometries I will use $u_{r}$ to refer to this flow.
+
+The second term on the LHS is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns}). 
+Briefly put, the non-linear term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
+In the context of planetary interiors, this would mean resolving scales that span the planet all the way down to molecular scales where viscous effects arrest the flows. 
+It is the basis of the ``Butterfly effect,'' which suggests that the flap of a butterfly's wings may determine the path of a hurricane weeks later.
+
+Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. Indeed the entire scope of this dissertation can be summarized as developing strategies to overcome just this obstacle. 
+The primary approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
+
+I have expressed that the inner-core deposits heat into the liquid core, driving convection. This phenomena is the basis for the models studied in this dissertation.
+\subsection*{The Rayleigh-B\`enard problem}
+Consider a rotating fluid bounded between two infinite plates whose temperature's are fixed such that they have a temperature difference $\Delta T$. 
+The plates are separated by a distance $H.$ 
+Gravity and rotation are anti-parallel and oriented such that gravity points from cold to warm plate. The coordinate system is chosen such that $z = 0$ corresponds to the bottom plate and $\hat{\mathbf{z}}$ is parallel to $\mathbf{\Omega}.$ 
+The Boussinesq approximation (eg. \citep{sC61}) is used, which prescribes a fluid density that is constant except with respect to the buoyant force. Simply put, a Boussinesq fluid is a fluid of constant density which nevertheless experiences a buoyant force proportional to it's temperature.
+The governing equations for momentum, mass, and energy are
+\begin{subequations}
+	\begin{equation}
+		\frac{D}{Dt}\mathbf{u} = -\frac{1}{\rho}\nabla P-2\Omega\times \mathbf{u} + \nu\nabla^{2}\mathbf{u} + g \alpha T\mathbf{\hat{z}}\\
+		\label{e:rbc_eqn_a}
+\end{equation}
+\begin{equation}	
+		\nabla\cdot \mathbf{u} = 0\\
+		\label{e:rbc_eqn_b}
+\end{equation}
+\begin{equation}	
+		\frac{D}{Dt}T = \kappa \nabla^{2}T.
+		\label{e:rbc_eqn_c}
+\end{equation}
+	\label{e:rbc_eqn}
+\end{subequations}
+The reduced pressure $P$ includes the hydrostatic contribution from gravity as well as the centrifugal term, which can be written as a gradient and is assumed to be much smaller than gravity. $\alpha$ is the coefficient of thermal expansion and $\kappa$ is the thermal diffusivity. $T$ is the temperature, scaled such that the upper plate is set to $0^{\circ}.$
+
+In this form, all of the variables are ``dimensional,'' meaning they have a unit (kilograms, meters, etc.) associated with them. 
+Reynolds demonstrated that fluid behaviors are self-similar when the ``non-dimensional'' forms of the governing equations are identical, so it is useful to re-scale the equations by relevant lengths, times, and temperatures \citep{dT01}.
+For the following analysis I will non-dimensionalize the system by the plate separation $H$, viscous time scale $H^{2}/\nu$, and temperature $\Delta T.$ 
+
+As a result, a number of parameters emerge. 
+They too are dimensionless, and are respectively known as the Ekman, Rayleigh, and Prandtl numbers.
+\[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}\]
+The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
+The Rayleigh number indicates the strength of thermal forcing, and is usually quite large, often exceeding $10^{20}$ in planetary cores (eg. \citep{dL23}). The Prandtl number is a fluid property and is the ratio of momenta and thermal diffusivities. 
+The Prandtl number of water is around $7,$ whereas values for the core are estimated to be around $10^{-1}-10^{-2}$ \citep{gW98}.
+Written in non-dimensional form, eqns. (\ref{e:rbc_eqn}) are
+\begin{subequations}
+	\begin{equation}
+		\frac{D}{Dt}\mathbf{u} = -\nabla P-\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} + \nabla^{2}\mathbf{u} + \frac{Ra}{Pr}T\mathbf{\hat{z}},\\
+	\label{e:rbc_1}
+\end{equation}
+\begin{equation}	
+		\nabla\cdot \mathbf{u} = 0,\\
+	\label{e:rbc_2}
+\end{equation}
+\begin{equation}	
+	\frac{D}{Dt}T = \frac{1}{Pr} \nabla^{2}T.
+	\label{e:rbc_3}
+\end{equation}
+	\label{e:rbc_eqn_nd}
+\end{subequations}
+Above and for the remained of this dissertation, all variables are assumed dimensionless unless otherwise noted.
+Eqns. (\ref{e:rbc_eqn_nd}) are under-determined without boundary conditions. We have already addressed the temperature, which is fixed at the two plates.
+\begin{equation}
+	\begin{aligned}
+		T = 1 \text{ at }z=0\\
+	T = 0 \text{ at } z =1
+	\end{aligned}
+	\label{e:t_bc}
+\end{equation}
+
+The velocity field $\mathbf{u}$ has so-far not been discussed.
+The fluid cannot penetrate the plates, so the component of $\mathbf{u}$ normal to the boundaries is 0. 
+The tangential components are not so easily handled, and there are at least two cases to consider.
+The first is the ``no-slip'' condition, which prescribes zero flow at the boundaries. 
+The idea being that a rigid boundary will arrest the flow near the boundary through friction effects
+The second is the ``stress-free'' condition, which prescribes zero stress at the boundary.
+\begin{center}
+	\textit{no-slip boundary conditions}	
+\end{center}
+\begin{equation}
+	\mathbf{u}\cdot \hat{\mathbf{z}} = w = 0\qquad z = 0,1
+	\label{e:}
+\end{equation}
+
+

@@ -1,0 +1,240 @@
+
+%%%%%% DEFINITIONS AND MACROS %%%%%%%
+
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\begineqn{\begin{equation*}}
+\def\endeqn{\end{equation*}}
+
+\def\beginar{\begin{eqnarray}}
+\def\endar{\end{eqnarray}}
+\def\beginarn{\begin{eqnarray*}}
+\def\endarn{\end{eqnarray*}}
+
+\def\lb{\left ( }
+\def\rb{\right ) }
+\def\ls{\left[ \vphantom] }
+\def\rs{\right] }
+\def\lc{ \left< }
+\def\rc{ \right> }
+\def\lbr{\left \langle }
+\def\rbr{\right \rangle }
+\def\efma{\frac{1}{\epsilon}}
+\def\efmb{\frac{\epsilon^2}}
+\def\efmc{\frac{\epsilon^3}}
+\def\efmd{\frac{\epsilon^4}}
+\def\ema{\epsilon^{-1}}
+\def\emb{\epsilon^{-2}}
+\def\emc{\epsilon^{-3}}
+\def\emd{\epsilon^{-4}}
+\def\eme{\epsilon^{-\frac{1}{2}}}
+\def\ep{\epsilon}
+\def\epb{\epsilon^{2}}
+\def\epc{\epsilon^{3}}
+\def\eph{\epsilon^{\frac{1}{2}}}
+\def\emh{\epsilon^{-\frac{1}{2}}}
+\def\lba{\left|}
+\def\rba{\right|}
+\def\Rat{\widetilde{Ra}}
+\def\Ret{\widetilde{Re}}
+\def\Re{Re}
+\def\Ra{Ra}
+\def\Nt{\widetilde{N}}
+\def\Qt{\widetilde{Q}}
+\def\Rmt{\widetilde{Rm}}
+\def\Pmt{\widetilde{Pm}}
+\def\Pr{Pr}
+\def\Ek{Ek}
+\def\Ro{Ro}
+\def\Ltc{\widetilde{L}_c}
+\def\kt{\widetilde{k}}
+\def\omt{\widetilde{\omega}}
+\def\Nu{Nu}
+
+\def\Num{Nu}
+\def\Retm{\Ret}
+\def\Kbtm{\Kbt}
+\def\Kbcm{\Kbc}
+\def\Km{K}
+\def\Kzm{K_z}
+
+
+\def\Kbt{K_{bt}}
+\def\Kbc{K_{bc}}
+\def\K{K}
+
+\def\srhor{{\overline\rho}(r)}
+\def\srhorn{{\overline\rho}(1+ A \eta)}
+\def\srhon{{\overline\rho}(\eta)}
+\def\srhoz{{\overline\rho}(z)}
+\def\rhoz{{\overline\rho}(Z)}
+\def\drhoz{\partial_Z{\overline\rho}(Z)}
+\def\sdrhoz{\partial_z{\overline\rho}(z)}
+\def\sdrhozd{\partial_{z^*}{\overline\rho^*}(z^*)}
+\def\src{{\cal S}}
+\def\ist{\ell_{I}^{\vartheta}}
+%
+%
+%
+\def\ub{\mathbf{u}}
+\def\He{\overline{\mathcal{H}}}
+\def\Bb{\mathbf{B}}
+\def\ubp{\mathbf{u}}
+\def\bbp{\mathbf{b}}
+\def\kbf{\mathbf{k}}
+\def\nbf{\mathbf{n}}
+\def\thp{\theta^{\prime}}
+\def\oub{\boldsymbol{\omega}}
+\def\rot{\mathbf{\Omega}}
+\def\moub{\boldsymbol{\overline{\omega}}}
+\def\mub{\overline{\bf u}}
+\def\mBb{\overline{\bf B}}
+\def\mJb{\overline{\bf J}}
+\def\mB{\overline{B}}
+\def\mP{\overline{p}}
+\def\mPsi{\overline{\Psi}}
+\def\mth{\overline{\Theta}}
+\def\pth{\vartheta}
+\def\pP{p^{\prime}}
+\def\mvb{\overline{\bf v}}
+%\def\mBx{\overline{B}^{(x)}}
+%\def\mBy{\overline{B}^{(y)}}
+%\def\mBz{\overline{B}^{(z)}}
+\def\mBx{\overline{B}_x}
+\def\mBy{\overline{B}_y}
+\def\mBz{\overline{B}_z}
+\def\Bx{B^{(x)}}
+\def\By{B^{(y)}}
+\def\Bz{B^{(z)}}
+\def\mfu{\overline{u}}
+\def\mfv{\overline{v}}
+\def\mfw{\overline{w}}
+\def\pfu{u^{\prime}}
+\def\pfv{v^{\prime}}
+\def\pfw{w^{\prime}}
+\def\pb{b^{\prime}}
+\def\pbx{b^{\prime}_x}
+\def\pby{b^{\prime}_y}
+\def\pbz{b_z}
+\def\bb{\bf b}
+\def\bx{b_x}
+\def\by{b_y}
+\def\bz{b_z}
+\def\pjb{\mathbf{j}^{\prime}}
+\def\pjx{j^{\prime}_x}
+\def\pjy{j^{\prime}_y}
+\def\pjz{j_z}
+\def\pft{\theta^{\prime}}
+\def\vb{{\bf v}}
+\def\vkb{{\bf \widehat v}}
+\def\dt{{\partial_{T}}}
+\def\dtau{{\partial_{\tau}}}
+\def\dta{{\partial_\tau}}
+\def\dx{{\partial_X}}
+\def\dy{{\partial_Y}}
+\def\dyy{{\partial_{YY}}}
+\def\dsx{{\partial_x}}
+\def\dsy{{\partial_y}}
+\def\dstx{{\partial_{\widetilde x}}}
+\def\dsty{{\partial_{\widetilde y}}}
+\def\dstz{{\partial_{\widetilde z}}}
+\def\dsyy{{\partial_{yy}}}
+\def\dsxx{{\partial_{xx}}}
+\def\dsxy{{\partial_{xy}}}
+\def\dst{{\partial_t}}
+\def\dsr{{\partial_r}}
+\def\dr{{\partial_R}}
+\def\dsp{{\partial_\phi}}
+\def\dbp{{\partial_\Phi}}
+\def\dsv{{\partial_\vartheta}}
+\def\dbv{{\partial_\Theta}}
+\def\dbp{{\partial_\Phi}}
+\def\dsn{{\partial_\eta}}
+\def\dsz{{\partial_z}}
+\def\dss{{\partial_s}}
+\def\ds{{\partial_S}}
+\def\dszz{{\partial_{zz}}}
+\def\dszt{{\partial_{z}^2}}
+%
+\def\dszzz{{\partial_{zzz}}}
+\def\dz{{\partial_Z}}
+\def\dzt{{\partial^2_Z}}
+\def\dzz{{\partial_{ZZ}}}
+\def\dzzz{{\partial_{ZZZ}}}
+\def\hz{{\bf\widehat z}}
+%\def\hr{{\bf{\widehat e}_r}}
+\def\hr{{\bf\widehat s}}
+\def\lbhr{{\bf R}}
+\def\bhr{{\bf r}}
+\def\hv{{\bf\widehat\vartheta}}
+\def\hn{{\bf{{\widehat e}_\vartheta}}}
+\def\hp{{\bf{\widehat e}_\phi}}
+\def\ux{{\bf i}}
+\def\uy{{\bf j}}
+\def\uz{{\bf k}}
+\def\ur{{\bf r}}
+\def\hy{{\bf\widehat y}}
+\def\hx{{\bf\widehat x}}
+\def\tz{{\widetilde z}}
+\def\litx{{\bf x}}
+\def\bigx{{\bf X}}
+\def\oAX{\frac{1}{A_X}}
+\def\oAZ{\frac{1}{A_Z}}
+\def\oAXt{\frac{1}{A^2_X}}
+\def\oAZt{\frac{1}{A^2_Z}}
+\def\oAT{\frac{1}{A_T}}
+\def\oAt{\frac{1}{A_\tau}}
+\def\d{\frac{1}{A_\tau}}
+\def\deta{{\partial_\eta}}
+
+\def\emf{\overline{\boldsymbol{\mathcal{E}}}}
+\def\emfx{\mathcal{E}_x}
+\def\emfy{\mathcal{E}_y}
+\def\emfz{\mathcal{E}_z}
+
+\def\Dt{{\mathcal{D}}}
+\def\ty{{\widetilde y}}
+\def\tx{{\widetilde x}}
+\def\hty{\bf{ \widehat{{\widetilde y}}}}
+\def\htz{\bf{ \widehat{{\widetilde z}}}}
+\def\ldb{{\langle\hspace{-0.5em}\langle}}
+\def\rdb{{\rangle\hspace{-0.5em}\rangle}}
+\def\om{\mbox{\boldmath $\widehat\eta$}}
+\def\dom{{\partial_{\cal X}}}
+\def\dsom{{\partial_{\cal x}}}
+\def\dnom{{\nabla_{\cal X}}}
+\def\nabx{{\nabla_{X}}}
+\def\nabl{\overline{\nabla}}
+\def\nabxt{{\nabla^2_{X}}}
+\def\cnabx{\cdot{\nabla_{X}}}
+\def\dsnom{{\nabla_{\cal x}}}
+\def\omp{{\cal x}}
+\def\omr{{\cal X}}
+\def\omc{\mbox{\boldmath $\widehat\xi$}}
+\def\zt{\mbox{\boldmath $\widehat\zeta$}}
+\def\omb{\mbox{\boldmath $\omega$}}
+\def\tnb{\widetilde\nabla}
+\def\hnb{\widehat\nabla}
+\def\tdt{{\widetilde\nabla}^2}
+\def\md{D^\perp_t}
+\def\div{{\nabla \cdot}}
+\def\divp{{\nabla_\perp \cdot}}
+\def\divl{{\overline{\nabla} \cdot}}
+\def\divx{{\nabla_X \cdot}}
+\def\lp{{\nabla_\perp^2}}
+\def\lpi{{\nabla_\perp^{-2}}}
+\def\lap{{\nabla^2}}
+
+\def\wG{\widetilde{\Gamma}}
+\def\Ret{\widetilde{Re}}
+\def\tt{\widetilde{t}}
+\def\ot{\widetilde{\omega}}
+\def\Gt{{\mathbf{\Gamma}^{T}}}
+\def\Gtz{{ {\Gamma_z} }}
+\def\Gstd{{ {\Gamma}^{\prime}_z }}
+\def\Gavg{{ \overline{\Gamma}_z }}
+\def\ricb{{ {r_{icb}}}}
+\def\rcmb{{ {r_{cmb}}}}
+\def\ticb{{ {T_{icb}}}}
+\def\tcmb{{ {T_{cmb}}}}
