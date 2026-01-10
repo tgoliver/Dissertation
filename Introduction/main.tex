@@ -81,7 +81,7 @@ The fluid velocity is the vector $\mathbf{u}$, t the time,  $\rho$ the fluid den
 $\nabla$ and $\nabla^{2}$ are the gradient and laplacian operators respectively. The left-hand side (LHS) of eqn. (\ref{e:ns}) is often abbreviated
 $\frac{D\mathbf{u}}{Dt},$ 
 where the operator  $\frac{D}{Dt} = \frac{\partial }{\partial t} + \mathbf{u} \cdot \nabla$ is known as the material derivative.
-Throughout this dissertation I will use the common notation $\mathbf{u} = \ls u,v,w\rs$ to refer to the $\hat{\mathbf{x}},$ $\hat{\mathbf{y}},\text{ and }\hat{\mathbf{z}}$ components of the flow. Note that the oceanography and atmospheric communities often use $w$ to refer to the planet surface-normal velocity. When considering spherical geometries I will use $u_{r}$ to refer to this flow.
+Throughout this dissertation we will use the common notation $\mathbf{u} = \ls u,v,w\rs$ to refer to the $\hat{\mathbf{x}},$ $\hat{\mathbf{y}},\text{ and }\hat{\mathbf{z}}$ components of the flow. Note that the oceanography and atmospheric communities often use $w$ to refer to the planet surface-normal velocity. When considering spherical geometries we will use $u_{r}$ to refer to this flow.
 
 The second term on the LHS is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns}). 
 Briefly put, the non-linear term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
@@ -91,41 +91,13 @@ It is the basis of the ``Butterfly effect,'' which suggests that the flap of a b
 Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. Indeed the entire scope of this dissertation can be summarized as developing strategies to overcome just this obstacle. 
 The primary approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
 
-I have expressed that the inner-core deposits heat into the liquid core, driving convection. This phenomena is the basis for the models studied in this dissertation.
+We have expressed that the inner-core deposits heat into the liquid core, driving convection. This phenomena is the basis for the models studied in this dissertation.
 \subsection*{The Rayleigh-B\`enard problem}
 Consider a rotating fluid bounded between two infinite plates whose temperature's are fixed such that they have a temperature difference $\Delta T$. 
 The plates are separated by a distance $H.$ 
 Gravity and rotation are anti-parallel and oriented such that gravity points from cold to warm plate. The coordinate system is chosen such that $z = 0$ corresponds to the bottom plate and $\hat{\mathbf{z}}$ is parallel to $\mathbf{\Omega}.$ 
-The Boussinesq approximation (eg. \citep{sC61}) is used, which prescribes a fluid density that is constant except with respect to the buoyant force. Simply put, a Boussinesq fluid is a fluid of constant density which nevertheless experiences a buoyant force proportional to it's temperature.
-The governing equations for momentum, mass, and energy are
-\begin{subequations}
-	\begin{equation}
-		\frac{D}{Dt}\mathbf{u} = -\frac{1}{\rho}\nabla P-2\Omega\times \mathbf{u} + \nu\nabla^{2}\mathbf{u} + g \alpha T\mathbf{\hat{z}}\\
-		\label{e:rbc_eqn_a}
-\end{equation}
-\begin{equation}	
-		\nabla\cdot \mathbf{u} = 0\\
-		\label{e:rbc_eqn_b}
-\end{equation}
-\begin{equation}	
-		\frac{D}{Dt}T = \kappa \nabla^{2}T.
-		\label{e:rbc_eqn_c}
-\end{equation}
-	\label{e:rbc_eqn}
-\end{subequations}
-The reduced pressure $P$ includes the hydrostatic contribution from gravity as well as the centrifugal term, which can be written as a gradient and is assumed to be much smaller than gravity. $\alpha$ is the coefficient of thermal expansion and $\kappa$ is the thermal diffusivity. $T$ is the temperature, scaled such that the upper plate is set to $0^{\circ}.$
-
-In this form, all of the variables are ``dimensional,'' meaning they have a unit (kilograms, meters, etc.) associated with them. 
-Reynolds demonstrated that fluid behaviors are self-similar when the ``non-dimensional'' forms of the governing equations are identical, so it is useful to re-scale the equations by relevant lengths, times, and temperatures \citep{dT01}.
-For the following analysis I will non-dimensionalize the system by the plate separation $H$, viscous time scale $H^{2}/\nu$, and temperature $\Delta T.$ 
-
-As a result, a number of parameters emerge. 
-They too are dimensionless, and are respectively known as the Ekman, Rayleigh, and Prandtl numbers.
-\[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}\]
-The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
-The Rayleigh number indicates the strength of thermal forcing, and is usually quite large, often exceeding $10^{20}$ in planetary cores (eg. \citep{dL23}). The Prandtl number is a fluid property and is the ratio of momenta and thermal diffusivities. 
-The Prandtl number of water is around $7,$ whereas values for the core are estimated to be around $10^{-1}-10^{-2}$ \citep{gW98}.
-Written in non-dimensional form, eqns. (\ref{e:rbc_eqn}) are
+It is useful to non-dimensionalize the system\citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we chose a viscous time-scale $H^{2}/nu$ and a velocity scale of $\nu/H.$
+Under the Boussinesq approximation (eg. \citep{sC61}) the non-dimensional equations are
 \begin{subequations}
 	\begin{equation}
 		\frac{D}{Dt}\mathbf{u} = -\nabla P-\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} + \nabla^{2}\mathbf{u} + \frac{Ra}{Pr}T\mathbf{\hat{z}},\\
@@ -141,28 +113,60 @@ Written in non-dimensional form, eqns. (\ref{e:rbc_eqn}) are
 \end{equation}
 	\label{e:rbc_eqn_nd}
 \end{subequations}
-Above and for the remained of this dissertation, all variables are assumed dimensionless unless otherwise noted.
-Eqns. (\ref{e:rbc_eqn_nd}) are under-determined without boundary conditions. We have already addressed the temperature, which is fixed at the two plates.
-\begin{equation}
-	\begin{aligned}
-		T = 1 \text{ at }z=0\\
-	T = 0 \text{ at } z =1
-	\end{aligned}
-	\label{e:t_bc}
-\end{equation}
+The pressure $P$ has been re-defined to include the hydrostatic and centrifugal terms, the latter of which is assumed much smaller than the former \citep{sC61}.
+The Ekman, Rayleigh, and Prandtl numbers are dimensionless parameters defined as
+%The Boussinesq approximation (eg. \citep{sC61}) is used, which prescribes a fluid density that is constant except with respect to the buoyant force. Simply put, a Boussinesq fluid is a fluid of constant density which nevertheless experiences a buoyant force proportional to it's temperature.
+%The governing equations for momentum, mass, and energy are
+%\begin{subequations}
+%	\begin{equation}
+%		\frac{D}{Dt}\mathbf{u} = -\frac{1}{\rho}\nabla P-2\Omega\times \mathbf{u} + \nu\nabla^{2}\mathbf{u} + g \alpha T\mathbf{\hat{z}}\\
+%		\label{e:rbc_eqn_a}
+%\end{equation}
+%\begin{equation}	
+%		\nabla\cdot \mathbf{u} = 0\\
+%		\label{e:rbc_eqn_b}
+%\end{equation}
+%\begin{equation}	
+%		\frac{D}{Dt}T = \kappa \nabla^{2}T.
+%		\label{e:rbc_eqn_c}
+%\end{equation}
+%	\label{e:rbc_eqn}
+%\end{subequations}
+%The reduced pressure $P$ includes the hydrostatic contribution from gravity as well as the centrifugal term, which can be written as a gradient and is assumed to be much smaller than gravity. $\alpha$ is the coefficient of thermal expansion and $\kappa$ is the thermal diffusivity. $T$ is the temperature, scaled such that the upper plate is set to $0^{\circ}.$
+%
+%In this form, all of the variables are ``dimensional,'' meaning they have a unit (kilograms, meters, etc.) associated with them. 
+%Reynolds demonstrated that fluid behaviors are self-similar when the ``non-dimensional'' forms of the governing equations are identical, so it is useful to re-scale the equations by relevant lengths, times, and temperatures \citep{dT01}.
+%For the following analysis I will non-dimensionalize the system by the plate separation $H$, viscous time scale $H^{2}/\nu$, and temperature $\Delta T.$ 
+%
+%As a result, a number of parameters emerge. 
+%They too are dimensionless, and are respectively known as the Ekman, Rayleigh, and Prandtl numbers.
+\[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}.\]
+The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
+The Rayleigh number indicates the strength of thermal forcing, and is usually quite large, often exceeding $10^{20}$ in planetary cores (eg. \citep{dL23}). The Prandtl number is a fluid property and is the ratio of momenta and thermal diffusivities. 
+The Prandtl number of water is around $7,$ whereas values for the core are estimated to be between $10^{-1}-10^{-2}$ \citep{gW98}.
 
-The velocity field $\mathbf{u}$ has so-far not been discussed.
-The fluid cannot penetrate the plates, so the component of $\mathbf{u}$ normal to the boundaries is 0. 
-The tangential components are not so easily handled, and there are at least two cases to consider.
-The first is the ``no-slip'' condition, which prescribes zero flow at the boundaries. 
-The idea being that a rigid boundary will arrest the flow near the boundary through friction effects
-The second is the ``stress-free'' condition, which prescribes zero stress at the boundary.
-\begin{center}
-	\textit{no-slip boundary conditions}	
-\end{center}
+Eqns. (\ref{e:rbc_eqn_nd}) are accompanied by boundary conditions on the temperature and velocity. 
+To avoid the complication of Ekman layers (see \citep{hG68})  
+we will consider the ``stress-free'' condition on the velocity field for the present discussion, although Chapters \ref{Oliver_2025} and \ref{Oliver_2026} deal exclusively with ``no-slip'' boundaries. 
+The boundary conditions are 
+\begin{subequations}
 \begin{equation}
-	\mathbf{u}\cdot \hat{\mathbf{z}} = w = 0\qquad z = 0,1
-	\label{e:}
+T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
+	\label{e:bc_t}
 \end{equation}
+\begin{equation}
+	w = \frac{\partial u}{\partial z} = \frac{\partial v}{\partial z}=0 \quad\text{ at }\quad z = 0,1.
+	\label{e:bc_vsf}
+\end{equation}
+\label{e:bc}	
+\end{subequations}
+When flow velocities are small, the horizontal directions components of eqn. (\ref{e:rbc_1}) satisfy
+\begin{equation}
+	\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} \approx -\nabla P.
+	\label{e:geos}
+\end{equation}
+The implication is that the streamlines of the horizontal flow are nearly coincident with the isobars. 
+For sufficiently small $Ek,$ fluctuating flows, even those that are turbulent, obey eqn. (\ref{e:geos}) at leading order. 
+As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophic'' or, for large $\mathbf{u}$, ``geostrophic turbulence.''
 
 
