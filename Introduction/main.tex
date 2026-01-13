@@ -46,7 +46,7 @@ Geophysical systems are dissipative, which means that they slowly lose electrica
 It is believed that the Earth has had an active dynamo for at least 2.8 billion years \citep{jA07},
 however electrical (Ohmic) dissipation is though to be strong enough to stifle an un-powered dynamo within 10 million years \citep{aC98}. 
 Mechanical forcing (convection in the case of the Earth) is necessary to provide the power source that sustains the magnetic field.
-The dynamo's behavior is therefore tied to the turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
+The dynamo's behavior is therefore tied to turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
 Excursions (in which the field loses dipolar power only to regain it) and reversals (in which the field's orientation flips) are well documented in the geologic record. An average rate of reversals is estimated to be around three each million years \citep{jJ94c1}, although the behaviour is seemingly stochastic, making prediction of future reversals difficult. 
 
 The studies presented in this dissertation are hydrodynamic only, and therefore do not include magnetic effects.  
@@ -66,38 +66,71 @@ Europa, Enceladus, Ganymede, and other icy moons likely contain salty oceans whi
 
 \section{Modeling geophysical fluid systems}
 \label{s:gafd}
+\begin{center}
 \textit{``...whatever we do affects everything and everyone else, if even in the tiniest way. Why, when a housefly flaps his wings, a breeze goes round the world..."}\\
---The Princess of Pure Reason
-\footnote{From The Phantom Tollbooth, published 1961, coincidentally the same year Ed Lorenz mistakenly demonstrated chaos on a Royal McBee LGP-30} 
+\end{center}
+--The Princess of Pure Reason, The Phantom Tollbooth
+\footnote{Published 1961, coincidentally the same year Ed Lorenz mistakenly demonstrated chaos on a Royal McBee LGP-30} 
 
-As is the standard procedure in fluid mechanics, our approach begins with the governing equations for the quantities of interest--in this case mass, energy, and momentum. A complete description of the formulation of the equations of fluid mechanics can be found in most introductory texts on fluid dynamics (eg. \citep{dT01,gV06}), although some comments on the momentum equation should be made before progressing to a more specific discussion on convection.
+As is the standard procedure in fluid mechanics, our approach begins with the governing equations for the quantities of interest--in this case mass, energy, and momentum. A complete description of the formulation of the equations of fluid mechanics can be found in most introductory texts (eg. \citep{dT01,gV06}), although some comments on the momentum equation should be made before progressing to a more specific discussion on convection.
 In a frame undergoing constant rotation about the origin, the momentum equation is
 \begin{equation}
-	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\frac{1}{\rho}\nabla p- 2 \mathbf{\Omega}\times\mathbf{u} -\mathbf{\Omega}\times\mathbf{\Omega}\times\mathbf{r} + \nu\nabla^{2}\mathbf{u}+ \frac{1}{\rho}\mathbf{g},
-	\label{e:ns}
+	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\frac{1}{\rho}\nabla p^{*}- 2 \mathbf{\Omega}\times\mathbf{u} + \nu\nabla^{2}\mathbf{u}+ \frac{\rho^{*}}{\rho}\mathbf{g},
+	\label{e:ns_f}
 \end{equation}
 which is a particular expression of the Navier-Stokes equation.
-The fluid velocity is the vector $\mathbf{u}$, t the time,  $\rho$ the fluid density, $p$ the pressure, $\mathbf\Omega$ the rotation vector,  $\mathbf{r}$ the position vector from the origin, $\nu$ the fluid kinematic viscosity, and $\mathbf{g}$ the gravitational acceleration vector (which may be a function of $\mathbf{r}$). 
-$\nabla$ and $\nabla^{2}$ are the gradient and laplacian operators respectively. The left-hand side (LHS) of eqn. (\ref{e:ns}) is often abbreviated
+The fluid velocity is the vector $\mathbf{u}$, t the time,  $\rho$ the fluid density, $p^{*}$ the pressure, $\mathbf\Omega$ the rotation vector,  $\mathbf{r}$ the position vector from the origin, $\nu$ the fluid kinematic viscosity, and $\mathbf{g}$ the gravitational acceleration vector (which may be a function of $\mathbf{r}$). 
+$\nabla$ and $\nabla^{2}$ are the gradient and laplacian operators respectively. The left-hand side (LHS) of eqn. (\ref{e:ns_f}) is often abbreviated
 $\frac{D\mathbf{u}}{Dt},$ 
 where the operator  $\frac{D}{Dt} = \frac{\partial }{\partial t} + \mathbf{u} \cdot \nabla$ is known as the material derivative.
 Throughout this dissertation we will use the common notation $\mathbf{u} = \ls u,v,w\rs$ to refer to the $\hat{\mathbf{x}},$ $\hat{\mathbf{y}},\text{ and }\hat{\mathbf{z}}$ components of the flow. Note that the oceanography and atmospheric communities often use $w$ to refer to the planet surface-normal velocity. When considering spherical geometries we will use $u_{r}$ to refer to this flow.
 
-The second term on the LHS is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns}). 
+The second term on the LHS is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns_f}). 
 Briefly put, the non-linear term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
-In the context of planetary interiors, this would mean resolving scales that span the planet all the way down to molecular scales where viscous effects arrest the flows. 
+In the context of planetary interiors, this would mean resolving scales that span the planet all the way down to molecular distances where viscous effects arrest the flow. 
 It is the basis of the ``Butterfly effect,'' which suggests that the flap of a butterfly's wings may determine the path of a hurricane weeks later.
 
-Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. Indeed the entire scope of this dissertation can be summarized as developing strategies to overcome just this obstacle. 
-The primary approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
+Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. 
+Indeed the entire scope of this dissertation can be summarized as developing strategies to overcome just this obstacle. 
 
-We have expressed that the inner-core deposits heat into the liquid core, driving convection. This phenomena is the basis for the models studied in this dissertation.
-\subsection*{The Rayleigh-B\`enard problem}
+To start, we employ the Boussinesq approximation, which prescribes a constant density to all terms except gravity\citep{sC61}. Furthermore, we ignore centrifugal effects, which tend to be small in geophysical applications. 
+This permits a simplified version of eqn. \eqref{e:ns_f}.
+\begin{equation}
+	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\nabla p- 2 \mathbf{\Omega}\times\mathbf{u} + \nu\nabla^{2}\mathbf{u}+ \rho^{*}\mathbf{g}
+	\label{e:ns}
+\end{equation}
+$\rho^{*}$ is the density fluctuation normalized by the reference density. It has no units. We have absorbed $\rho$ into the pressure gradient so that $p$ is not technically a pressure. Nevertheless, we will refer to $p$ as the pressure since it is the dynamically relevant quantity for incompressible flows (note that it also accounts for the hydrostatic weight of the fluid)\citep{sC61}.
+Solving eqn. \eqref{e:ns} for planetary parameters is still infeasible however.
+Our approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
+
+\subsection*{Geostrophy and Rotation} 
+Planets, including Earth, tend to rotate very quickly such that viscous and buoyant effects cannot balance the Coriolis acceleration.
+In this limit, eqn. \eqref{e:ns} satisfies
+\begin{equation}
+	2\mathbf{\Omega}\times \mathbf{u} \approx -\nabla p.
+	\label{e:geos}
+\end{equation}
+The implication is that the streamlines of the horizontal flow are nearly coincident with the isobars. 
+For sufficiently large $\mathbf{\Omega},$ fluctuating flows, even those that are turbulent, obey eqn. (\ref{e:geos}) at leading order. 
+As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophy'' or, for large $\mathbf{u}$, ``geostrophic turbulence.''
+
+Curling  eqn. \eqref{e:geos} and leveraging incompressibility yields the Taylor-Proudman constraint
+\[2\lb\mathbf{\Omega}\cdot\nabla\rb \mathbf{u} \approx 0, \]
+which states that geostrophic flows are invariant along the direction of rotation. 
+For turbulent flows, Taylor-Proudman is a constraint, not a law, and flows are allowed to deviate. 
+Nevertheless, geostrophic turbulence is always characterised by flows that are highly anisotropic. 
+They can vary rapidly in directions perpendicular to rotation, but vary slowly in the rotation direction, and boundary effects are translated axially through the domain so that very few effects are truly localized.
+
+An important consequence is that convection, which generally requires velocities along the rotation axis, is inhibited by rotation. 
+To what extent remains an outstanding question, although much progress has been made particularly through analysis of the rotating Rayleigh-B\`enard system.
+
+
+\subsection*{The rotating Rayleigh-B\`enard problem}
 Consider a rotating fluid bounded between two infinite plates whose temperature's are fixed such that they have a temperature difference $\Delta T$. 
 The plates are separated by a distance $H.$ 
 Gravity and rotation are anti-parallel and oriented such that gravity points from cold to warm plate. The coordinate system is chosen such that $z = 0$ corresponds to the bottom plate and $\hat{\mathbf{z}}$ is parallel to $\mathbf{\Omega}.$ 
-It is useful to non-dimensionalize the system\citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we chose a viscous time-scale $H^{2}/nu$ and a velocity scale of $\nu/H.$
-Under the Boussinesq approximation (eg. \citep{sC61}) the non-dimensional equations are
+It is useful to non-dimensionalize the system\citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we chose a viscous time-scale $H^{2}/\nu$ and a velocity scale of $\nu/H.$
+The non-dimensional equations are
 \begin{subequations}
 	\begin{equation}
 		\frac{D}{Dt}\mathbf{u} = -\nabla P-\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} + \nabla^{2}\mathbf{u} + \frac{Ra}{Pr}T\mathbf{\hat{z}},\\
@@ -115,31 +148,6 @@ Under the Boussinesq approximation (eg. \citep{sC61}) the non-dimensional equati
 \end{subequations}
 The pressure $P$ has been re-defined to include the hydrostatic and centrifugal terms, the latter of which is assumed much smaller than the former \citep{sC61}.
 The Ekman, Rayleigh, and Prandtl numbers are dimensionless parameters defined as
-%The Boussinesq approximation (eg. \citep{sC61}) is used, which prescribes a fluid density that is constant except with respect to the buoyant force. Simply put, a Boussinesq fluid is a fluid of constant density which nevertheless experiences a buoyant force proportional to it's temperature.
-%The governing equations for momentum, mass, and energy are
-%\begin{subequations}
-%	\begin{equation}
-%		\frac{D}{Dt}\mathbf{u} = -\frac{1}{\rho}\nabla P-2\Omega\times \mathbf{u} + \nu\nabla^{2}\mathbf{u} + g \alpha T\mathbf{\hat{z}}\\
-%		\label{e:rbc_eqn_a}
-%\end{equation}
-%\begin{equation}	
-%		\nabla\cdot \mathbf{u} = 0\\
-%		\label{e:rbc_eqn_b}
-%\end{equation}
-%\begin{equation}	
-%		\frac{D}{Dt}T = \kappa \nabla^{2}T.
-%		\label{e:rbc_eqn_c}
-%\end{equation}
-%	\label{e:rbc_eqn}
-%\end{subequations}
-%The reduced pressure $P$ includes the hydrostatic contribution from gravity as well as the centrifugal term, which can be written as a gradient and is assumed to be much smaller than gravity. $\alpha$ is the coefficient of thermal expansion and $\kappa$ is the thermal diffusivity. $T$ is the temperature, scaled such that the upper plate is set to $0^{\circ}.$
-%
-%In this form, all of the variables are ``dimensional,'' meaning they have a unit (kilograms, meters, etc.) associated with them. 
-%Reynolds demonstrated that fluid behaviors are self-similar when the ``non-dimensional'' forms of the governing equations are identical, so it is useful to re-scale the equations by relevant lengths, times, and temperatures \citep{dT01}.
-%For the following analysis I will non-dimensionalize the system by the plate separation $H$, viscous time scale $H^{2}/\nu$, and temperature $\Delta T.$ 
-%
-%As a result, a number of parameters emerge. 
-%They too are dimensionless, and are respectively known as the Ekman, Rayleigh, and Prandtl numbers.
 \[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}.\]
 The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
 The Rayleigh number indicates the strength of thermal forcing, and is usually quite large, often exceeding $10^{20}$ in planetary cores (eg. \citep{dL23}). The Prandtl number is a fluid property and is the ratio of momenta and thermal diffusivities. 
@@ -160,13 +168,11 @@ T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
 \end{equation}
 \label{e:bc}	
 \end{subequations}
-When flow velocities are small, the horizontal directions components of eqn. (\ref{e:rbc_1}) satisfy
-\begin{equation}
-	\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} \approx -\nabla P.
-	\label{e:geos}
-\end{equation}
-The implication is that the streamlines of the horizontal flow are nearly coincident with the isobars. 
-For sufficiently small $Ek,$ fluctuating flows, even those that are turbulent, obey eqn. (\ref{e:geos}) at leading order. 
-As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophic'' or, for large $\mathbf{u}$, ``geostrophic turbulence.''
+
+It is also useful to define some \textit{a posteriori} quantities to diagnose flow speeds. They are the Reynolds number $Re$ and Rossby number $Ro.$ They quantify the magnitude of the velocity field to viscous and Coriolis effects respectively. Their definitions are
+ \[Re = \frac{U H}{\nu}\qquad Ro=EkRe =\frac{U}{H\Omega},\] 
+ where $U$ is a characteristic velocity.
+ In the present non-dimensionalization, $Re = \left|\mathbf{u}\right|,$ where $\left|\cdot\right|$ is some kind of norm, most often an rms.
+
 
 
