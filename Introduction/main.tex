@@ -75,7 +75,7 @@ Europa, Enceladus, Ganymede, and other icy moons likely contain salty oceans whi
 As is the standard procedure in fluid mechanics, our approach begins with the governing equations for the quantities of interest--in this case mass, energy, and momentum. A complete description of the formulation of the equations of fluid mechanics can be found in most introductory texts (eg. \citep{dT01,gV06}), although some comments on the momentum equation should be made before progressing to a more specific discussion on convection.
 In a frame undergoing constant rotation about the origin, the momentum equation is
 \begin{equation}
-	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\frac{1}{\rho}\nabla p^{*}- 2 \mathbf{\Omega}\times\mathbf{u} + \nu\nabla^{2}\mathbf{u}+ \frac{\rho^{*}}{\rho}\mathbf{g},
+	\frac{\partial \mathbf{u}}{\partial t} + \mathbf{u}\cdot \nabla \mathbf{u} = -\frac{1}{\rho}\nabla p^{*}- 2 \mathbf{\Omega}\times\mathbf{u}+ \mathbf{\Omega}\times\mathbf{\Omega}\times \mathbf{r} + \nu\nabla^{2}\mathbf{u}+ \frac{\rho^{*}}{\rho}\mathbf{g},
 	\label{e:ns_f}
 \end{equation}
 which is a particular expression of the Navier-Stokes equation.
@@ -85,9 +85,9 @@ $\frac{D\mathbf{u}}{Dt},$
 where the operator  $\frac{D}{Dt} = \frac{\partial }{\partial t} + \mathbf{u} \cdot \nabla$ is known as the material derivative.
 Throughout this dissertation we will use the common notation $\mathbf{u} = \ls u,v,w\rs$ to refer to the $\hat{\mathbf{x}},$ $\hat{\mathbf{y}},\text{ and }\hat{\mathbf{z}}$ components of the flow. Note that the oceanography and atmospheric communities often use $w$ to refer to the planet surface-normal velocity. When considering spherical geometries we will use $u_{r}$ to refer to this flow.
 
-The second term on the LHS is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns_f}). 
-Briefly put, the non-linear term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
-In the context of planetary interiors, this would mean resolving scales that span the planet all the way down to molecular distances where viscous effects arrest the flow. 
+The second term on the LHS, known as the advective term, is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns_f}). 
+Briefly put, the advection term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
+In the context of planetary interiors, this would mean resolving scales that span the planet, all the way down to molecular distances where viscous effects arrest the flow. 
 It is the basis of the ``Butterfly effect,'' which suggests that the flap of a butterfly's wings may determine the path of a hurricane weeks later.
 
 Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. 
@@ -100,7 +100,7 @@ This permits a simplified version of eqn. \eqref{e:ns_f}.
 	\label{e:ns}
 \end{equation}
 $\rho^{*}$ is the density fluctuation normalized by the reference density. It has no units. We have absorbed $\rho$ into the pressure gradient so that $p$ is not technically a pressure. Nevertheless, we will refer to $p$ as the pressure since it is the dynamically relevant quantity for incompressible flows (note that it also accounts for the hydrostatic weight of the fluid)\citep{sC61}.
-Solving eqn. \eqref{e:ns} for planetary parameters is still infeasible however.
+Solving eqn. \eqref{e:ns} for planetary parameters is still infeasible.
 Our approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
 
 \subsection*{Geostrophy and Rotation} 
@@ -113,6 +113,11 @@ In this limit, eqn. \eqref{e:ns} satisfies
 The implication is that the streamlines of the horizontal flow are nearly coincident with the isobars. 
 For sufficiently large $\mathbf{\Omega},$ fluctuating flows, even those that are turbulent, obey eqn. (\ref{e:geos}) at leading order. 
 As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophy'' or, for large $\mathbf{u}$, ``geostrophic turbulence.''
+We distinguish between regimes by calcuating two \textit{a posteriori} quantities to diagnose flow speeds. They are the Reynolds number $Re$ and Rossby number $Ro.$ 
+They quantify the magnitude of inertia $\lb \mathbf{u}\cdot\nabla\mathbf{u}\rb $ to viscous and Coriolis accelerations respectively. Their definitions are
+ \[Re = \frac{U H}{\nu}\qquad Ro =\frac{U}{H\Omega},\] 
+ where $U$ is a characteristic velocity, most commonly an rms, and $H$ a characteristic length scale.
+ The geostrophic regime is characterised by $Ro\ll1.$ In addition to small $Ro,$ \textit{geostrophic turbulence} requires $Re\gg1$.
 
 Curling  eqn. \eqref{e:geos} and leveraging incompressibility yields the Taylor-Proudman constraint
 \[2\lb\mathbf{\Omega}\cdot\nabla\rb \mathbf{u} \approx 0, \]
@@ -129,11 +134,11 @@ To what extent remains an outstanding question, although much progress has been 
 Consider a rotating fluid bounded between two infinite plates whose temperature's are fixed such that they have a temperature difference $\Delta T$. 
 The plates are separated by a distance $H.$ 
 Gravity and rotation are anti-parallel and oriented such that gravity points from cold to warm plate. The coordinate system is chosen such that $z = 0$ corresponds to the bottom plate and $\hat{\mathbf{z}}$ is parallel to $\mathbf{\Omega}.$ 
-It is useful to non-dimensionalize the system\citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we chose a viscous time-scale $H^{2}/\nu$ and a velocity scale of $\nu/H.$
+It is useful to non-dimensionalize the system\citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we choose a viscous time-scale $H^{2}/\nu$ and a velocity scale of $\nu/H.$
 The non-dimensional equations are
 \begin{subequations}
 	\begin{equation}
-		\frac{D}{Dt}\mathbf{u} = -\nabla P-\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} + \nabla^{2}\mathbf{u} + \frac{Ra}{Pr}T\mathbf{\hat{z}},\\
+		\frac{D}{Dt}\mathbf{u} = -\nabla p-\frac{2}{Ek}\hat{\mathbf{z}}\times \mathbf{u} + \nabla^{2}\mathbf{u} + \frac{Ra}{Pr}T\mathbf{\hat{z}},\\
 	\label{e:rbc_1}
 \end{equation}
 \begin{equation}	
@@ -146,17 +151,18 @@ The non-dimensional equations are
 \end{equation}
 	\label{e:rbc_eqn_nd}
 \end{subequations}
-The pressure $P$ has been re-defined to include the hydrostatic and centrifugal terms, the latter of which is assumed much smaller than the former \citep{sC61}.
-The Ekman, Rayleigh, and Prandtl numbers are dimensionless parameters defined as
+All variables are dimensionless. This will be the convention for the remainder of this thesis unless otherwise noted. 
+The Ekman ($Ek$), Rayleigh $\lb Ra\rb $, and Prandtl $\lb Pr\rb $ numbers are dimensionless parameters defined as
 \[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}.\]
 The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
 The Rayleigh number indicates the strength of thermal forcing, and is usually quite large, often exceeding $10^{20}$ in planetary cores (eg. \citep{dL23}). The Prandtl number is a fluid property and is the ratio of momenta and thermal diffusivities. 
 The Prandtl number of water is around $7,$ whereas values for the core are estimated to be between $10^{-1}-10^{-2}$ \citep{gW98}.
+In the present non-dimensionalization, $Re \sim \left|\mathbf{u}\right|$. The definition of $Ek$ allows us to calculate the Rossby number as $Ro = EkRe.$ 
 
 Eqns. (\ref{e:rbc_eqn_nd}) are accompanied by boundary conditions on the temperature and velocity. 
 To avoid the complication of Ekman layers (see \citep{hG68})  
 we will consider the ``stress-free'' condition on the velocity field for the present discussion, although Chapters \ref{Oliver_2025} and \ref{Oliver_2026} deal exclusively with ``no-slip'' boundaries. 
-The boundary conditions are 
+The stress-free boundary conditions are 
 \begin{subequations}
 \begin{equation}
 T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
@@ -168,11 +174,12 @@ T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
 \end{equation}
 \label{e:bc}	
 \end{subequations}
+A well known result is that eqns. \eqref{e:rbc_nd} are stable for sufficienly small $Ra.$ 
+In particular, there exists a critical value $Ra_{c}$ which disitinguishes stable and unstable flows. 
+If $Ra<Ra_c,$ a conductive, static solution will exist. 
+Conversely, convection occurs if $Ra>Ra_c$. $Ra_c$ is dependent on boundary conditions, problem geometry, and, crucially, $Ek$ and $Pr.$ 
+For small $Ek$, the rotational constraint inhibits convection, and larger and larger values of $Ra$ are needed. 
+The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling law $Ra_c\sim Ek^{-4/3}$ \citep{sC61}.
 
-It is also useful to define some \textit{a posteriori} quantities to diagnose flow speeds. They are the Reynolds number $Re$ and Rossby number $Ro.$ They quantify the magnitude of the velocity field to viscous and Coriolis effects respectively. Their definitions are
- \[Re = \frac{U H}{\nu}\qquad Ro=EkRe =\frac{U}{H\Omega},\] 
- where $U$ is a characteristic velocity.
- In the present non-dimensionalization, $Re = \left|\mathbf{u}\right|,$ where $\left|\cdot\right|$ is some kind of norm, most often an rms.
-
-
-
+At onset, when $Ra = Ra_c$, the flow will form a laminar, highly structured cellular pattern characterised by a single wavenumber $k_{c}$. 
+In the limit of small $Ek,$ $k_c$ increases as $k_c\sim Ek^{-1/3}.$ The critcial wavelength $\lambda_{c} = 2\pi/k_c$ decreases as $Ek^{1/3}$.

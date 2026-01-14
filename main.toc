@@ -6,5 +6,4 @@
 \contentsline {chapter}{\numberline {\th@ChapterStyle 3}\normalsize \normalfont Oliver et. al. 2023}{11}{chapter.3}%
 \contentsline {chapter}{\numberline {\th@ChapterStyle 4}\normalsize \normalfont Oliver et. al. 2025}{12}{chapter.4}%
 \contentsline {chapter}{\numberline {\th@ChapterStyle 5}\normalsize \normalfont Oliver et. al. 2026}{13}{chapter.5}%
-\contentsline {part}{ \normalsize \normalfont \bfseries Bibliography\normalfont }{14}{chapter*.10}%
 \contentsline {part} {\appendixnameToC }{\relax }{}
