@@ -11,10 +11,10 @@ Combined, the two layers make up $32\%$ of the mass of the Earth, but only $16\%
 This discrepancy is because the core is predominantly composed of heavy iron (Fe) and, to a lesser extent, nickel (Ni) \citep{hK13}.
 A host of lighter elements--sulfur (S), carbon (C), silicon (Si), oxygen (O), and hydrogen (H)--likely make up the remaining $\sim 10\%$ by mass \citep{fB52,jP94}. 
 
-The inner core is solid due to the tremendous pressures at the deepest layers of the planet. Little is known about the inner-core's structure, however estimates suggest that it first nucleated somewhere between 0.5 and 1.5 billion years ago \citep{sL15,cD15,aB15}.
+The inner core is solid due to the tremendous pressures at the deepest layers of the planet. Little is known about the inner-core's structure, however estimates suggest that it first nucleated somewhere between 0.5 and 1.5 billion years ago \citep{aB15,cD15,sL15}.
 
 The outer core is liquid. At depths shallower than the inner core boundary (ICB) pressures are sufficiently decreased such that iron exists in the liquid phase. 
-Experiments on the melting point of iron at relevant pressures suggest that the temperature of the ICB is around $5400$ K, although significant uncertainty exists\citep{rB93,aL00,jN04,dA09}.
+Experiments on the melting point of iron at relevant pressures suggest that the temperature of the ICB is around $5400$ K, although significant uncertainty exists\citep{dA09,rB93,aL00,jN04}.
 As the planet cools, the inner core freezes, releasing heat and light elements into the outer core. 
 This mechanism drives turbulent convection in the liquid layer, and powers the geodynamo.
 In this work, the coupling between inner and outer core will always be relegated to boundary conditions on the outer core fluid. 
@@ -46,7 +46,7 @@ Geophysical systems are dissipative, which means that they slowly lose electrica
 It is believed that the Earth has had an active dynamo for at least 2.8 billion years \citep{jA07},
 however electrical (Ohmic) dissipation is though to be strong enough to stifle an un-powered dynamo within 10 million years \citep{aC98}. 
 Mechanical forcing (convection in the case of the Earth) is necessary to provide the power source that sustains the magnetic field.
-The dynamo's behavior is therefore tied to turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
+The dynamo's behaviour is therefore tied to turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
 Excursions (in which the field loses dipolar power only to regain it) and reversals (in which the field's orientation flips) are well documented in the geologic record. An average rate of reversals is estimated to be around three each million years \citep{jJ94c1}, although the behaviour is seemingly stochastic, making prediction of future reversals difficult. 
 
 The studies presented in this dissertation are hydrodynamic only, and therefore do not include magnetic effects.  
@@ -112,7 +112,7 @@ In this limit, eqn. \eqref{e:ns} satisfies
 \end{equation}
 The implication is that the streamlines of the horizontal flow are nearly coincident with the isobars. 
 For sufficiently large $\mathbf{\Omega},$ fluctuating flows, even those that are turbulent, obey eqn. (\ref{e:geos}) at leading order. 
-As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophy'' or, for large $\mathbf{u}$, ``geostrophic turbulence.''
+As long as eqn. (\ref{e:geos}) is satisfied, we refer to the flow as ``quasi-gesotrophy'' or, for large $\mathbf{u}$, ``geostrophic turbulence'' \citep{jC71}.
 We distinguish between regimes by calcuating two \textit{a posteriori} quantities to diagnose flow speeds. They are the Reynolds number $Re$ and Rossby number $Ro.$ 
 They quantify the magnitude of inertia $\lb \mathbf{u}\cdot\nabla\mathbf{u}\rb $ to viscous and Coriolis accelerations respectively. Their definitions are
  \[Re = \frac{U H}{\nu}\qquad Ro =\frac{U}{H\Omega},\] 
@@ -159,6 +159,9 @@ The Rayleigh number indicates the strength of thermal forcing, and is usually qu
 The Prandtl number of water is around $7,$ whereas values for the core are estimated to be between $10^{-1}-10^{-2}$ \citep{gW98}.
 In the present non-dimensionalization, $Re \sim \left|\mathbf{u}\right|$. The definition of $Ek$ allows us to calculate the Rossby number as $Ro = EkRe.$ 
 
+Table \ref{t:nondim_geo} provides estimate values for the Earth, as well as a few modern studies considered state of the art. The primary limitations in numerical studies for reaching Earth-like parameters are resolution constraints. Experiments tend to be limited by the size of the apparatus and the volume of working fluid. Neither are capable of reaching the $Ek$ and $Ra$ regimes of the core.
+
+
 Eqns. (\ref{e:rbc_eqn_nd}) are accompanied by boundary conditions on the temperature and velocity. 
 To avoid the complication of Ekman layers (see \citep{hG68})  
 we will consider the ``stress-free'' condition on the velocity field for the present discussion, although Chapters \ref{Oliver_2025} and \ref{Oliver_2026} deal exclusively with ``no-slip'' boundaries. 
@@ -174,12 +177,107 @@ T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
 \end{equation}
 \label{e:bc}	
 \end{subequations}
-A well known result is that eqns. \eqref{e:rbc_nd} are stable for sufficienly small $Ra.$ 
-In particular, there exists a critical value $Ra_{c}$ which disitinguishes stable and unstable flows. 
+A well known result is that eqns. \eqref{e:rbc_eqn_nd} and \eqref{e:bc} are stable for sufficiently small $Ra.$ 
+In particular, there exists a critical value $Ra_{c}$ which distinguishes stable and unstable flows. 
 If $Ra<Ra_c,$ a conductive, static solution will exist. 
 Conversely, convection occurs if $Ra>Ra_c$. $Ra_c$ is dependent on boundary conditions, problem geometry, and, crucially, $Ek$ and $Pr.$ 
 For small $Ek$, the rotational constraint inhibits convection, and larger and larger values of $Ra$ are needed. 
-The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling law $Ra_c\sim Ek^{-4/3}$ \citep{sC61}.
+The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling law $Ra_c\sim Ek^{-4/3}$.
+	\begin{table}
+		\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Body&$Ra$ &$Ek$ &$Pr$ &$Re$ &$Ro$\\
+			\hline
+			Earth's Core & $10^{25}$ &$10^{-15}$ & $0.1-0.01$ &  $10^{8}$ &$10^{-7}$\\
+			\hline
+			Full Sphere (Numerical) & $2.5\times10^{10}$ &$10^{-8}$ & $10^{-2}$&$5\times 10^{4}$ &$5\times10^{-4}$ \\
+			\hline
+			Plane Layer (Numerical) &$3\times 10^{13}$ &$5\times10^{-9}$&$1$&$6\times 10^{4}$ &$3\times10^{-4}$ \\
+			\hline
+			Cylinder (Water)&$4\times 10^{12}$ & $5\times 10^{-8}$ & $5.2$&$10^{4}$ &$5\times 10^{-4}$\\
+			\hline
 
+\end{tabular}
+		\end{center}
+		\caption[Example values for non-dimensional parameters]{Example values for the non-dimensional parameters. Values for Earth's core are estimates (eg. \citep{pO13,gW98}). Values for example studies in different geometries: a full sphere (numerical)\citep{cG19}, plane layer (numerical)\citep{jS24}, and cylinder (experiment)\citep{mM23}. 
+		All are considered state of the art. 
+		Due to the different geometries, the specific definitions of each parameter vary from study to study, although order of magnitude is unaffected.
+}
+\label{t:nondim_geo}
+	\end{table}
 At onset, when $Ra = Ra_c$, the flow will form a laminar, highly structured cellular pattern characterised by a single wavenumber $k_{c}$. 
-In the limit of small $Ek,$ $k_c$ increases as $k_c\sim Ek^{-1/3}.$ The critcial wavelength $\lambda_{c} = 2\pi/k_c$ decreases as $Ek^{1/3}$.
+In the limit of small $Ek,$ $k_c$ increases as $k_c\sim Ek^{-1/3}.$ The critical wavelength $\lambda_{c} = 2\pi/k_c$ decreases as $Ek^{1/3}$.
+In general, the unstable modes oscillate on a fast timescale $Ek^{2/3}.$ If the most unstable mode is oscillatory (generally true for $Pr<0.68$), the associated frequency is $\omega_{c}.$
+Table \ref{t:asymp} provides a summary of the behaviour of the critical parameters as $Ek\rightarrow 0$.
+
+ \begin{table}
+ \begin{center}
+ \begin{tabular}{|c|c|c|c|c|}
+ \hline
+ $Ek$ Limit& $Ra_c$ & $k_{c}$ &$\lambda_{c}$ & $\omega_{c}$\\
+ \hline
+ $Ek\rightarrow \infty$ & $657.5$ & $2.22$ & 2.82 & 0 \\
+ \hline
+ $Ek\rightarrow 0$ & $8.70\times Ek^{-4/3}$ & $1.30\times Ek^{-1/3}$ & $4.82\times Ek^{1/3}$ & $Ek^{-2/3}$ \\
+ \hline
+ \end{tabular}
+ \end{center}
+ \caption[Asymptotic scaling of critical parameters with $Ek$]{Asymptotic scalings for the critical parameters in rotating convection at $Pr=1$. Note that at $Pr=1,$ the onset of convection is stationary such that $\omega_{c}=0$, however all timescales evolve on the $Ek^{2/3}$ scale. Values from \citep{sC61}.} 
+ \label{t:asymp}
+ \end{table}
+
+
+In a numerical simulation, it is important to resolve $\lambda_{c},$ because it is the forcing scale.
+It has been suggested that, as turbulence becomes more vigorous this scale may increase \citep{cG19,cG25}, although our findings in Chapter \ref{Oliver_2023} question whether this allows a relaxation of the resolution requirements\citep{tO23}.
+As has been mentioned, geophysical parameters can be quite extreme. 
+
+A value of $Ek = 10^{-15}$ indicates that $\lambda_{c}\sim 10^{-5}.$ In dimensional terms, this suggests a critical wavelength around $10$ m, far too small to resolve in any global-scale simulation. There are a couple resolutions to this problem. Perhaps the most common, and the approach we employ in Chapter \ref{Oliver_2025}, is to perform sweeps of simulations at moderate $Ek$ (eg. $ 10^{-4}-10^{-6}$) and determine a scaling relationship with $Ek$. We can then extrapolate our results to $10^{-15}.$
+Another approach is to leverage the smallness of $Ek$ and determine a hierarchy of balances in eqns. \ref{e:rbc_eqn_nd} that are asymptotically distinct in the limit $Ek\rightarrow 0.$ 
+This approach has a successful history and was most notably used by Busse and collaborators in a series of papers \citep{fB70,fB86a,fB86c} in which they developed the annulus model for spherical convection. 
+
+For the plane layer problem at hand, a reduced set of equations (which we refer to as the ``reduced model'' or  ``reduced equations'') were derived by Julien et al. \citep{kJ98a}, with additional details in \citep{mS06} (see also \citep{kJ12b,sM21,aR14}).
+They are valid in the limit $Ek\rightarrow 0.$
+The full model is presented and used in Chapter \ref{Oliver_2023} without derivation, so we will make a few remarks about the underlying physics here.
+
+The asymptotic reduction is underpinned by a rescaling of length and timescales. The horizontal directions ($\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$) are rescaled to the length of the critical modes ($\lambda_{c}$),
+and the time $t$ is rescaled to accommodate the fast timescales.
+\begin{equation}
+x,y \rightarrow Ek^{-1/3}\; x^{*},y^{*}\qquad \qquad  z\rightarrow z^{*}\qquad\qquad t \rightarrow Ek^{-2/3} \;t^{*}.
+	\label{e:kj_rescale}
+\end{equation}
+The starred quantities are $O\lb 1\rb $ in the theory of Julien et al., and are the arguments of the dynamical fields. 
+The fields themselves are also rescaled according to
+\[\mathbf{u} \rightarrow E^{-1/3}\mathbf{u}^{*}\qquad\qquad \vartheta \rightarrow E^{-1/3}\vartheta^{*},\]
+where $\vartheta$ is a temperature fluctuation about the horizontal mean.
+The main point we would like to highlight is that the reduced equations are informed by the Taylor-Proudman (TP) constraint. $Ek^{1/3}$ and $Ek^{2/3}$ are the lengths and times over which TP can be relaxed. 
+The scalings in eqn. \eqref{e:kj_rescale} leverage this result to effectively shrink (spatially) and shorten (temporally) the solution domain.
+%The reduced set of equations are
+%\begin{subequations}
+%	\begin{equation}
+%	\partial_{t}\zeta + J\ls\psi,\zeta\rs = \partial_{z}w + \nabla^{2}_{\perp}\zeta\\
+%		\label{e:f3_1}
+%	\end{equation}
+%\begin{equation}
+%	\partial_{t}w	 + J\ls\psi,w\rs = -\partial_{z} \psi + \frac{\Rat}{Pr} \theta + \nabla^{2}_{\perp}w
+%	\label{e:f3_2}
+%\end{equation}
+%\begin{equation}
+%	\partial_{t}\theta + J\ls\psi,\theta\rs+w\partial_{z}\overline{\Theta} = \frac{1}{Pr}\nabla_{\perp}^{2}\theta
+%	\label{e:f3_3}
+%\end{equation}
+%\begin{equation}
+%	\partial_{z}^{2}\overline{\Theta} = Pr\;\partial_{z}\lb\overline{w\theta}\rb
+%	\label{e:f3_4}
+%\end{equation}
+%\begin{equation}
+%	\nabla_{\perp} \cdot\mathbf{u}_{\perp} = 0
+%	\label{e:f3_5}
+%\end{equation}
+%\begin{equation}
+%	\nabla_{\perp}^{2}\psi = \zeta
+%	\label{e:f3_6}
+%\end{equation}
+%	\label{e:f3}
+%\end{subequations}
+
