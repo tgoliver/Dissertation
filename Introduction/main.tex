@@ -89,9 +89,8 @@ The second term on the LHS, known as the advective term, is non-linear, which pr
 Briefly put, the advection term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
 In the context of planetary interiors, this would mean resolving scales that span the planet, all the way down to molecular distances where viscous effects arrest the flow. 
 It is the basis of the ``Butterfly effect,'' which suggests that the flap of a butterfly's wings may determine the path of a hurricane weeks later.
-
 Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. 
-Indeed the entire scope of this dissertation can be summarized as developing strategies to overcome just this obstacle. 
+%Indeed the entire scope of this dissertation can be summarized as developing strategies to get around this obstacle. 
 
 To start, we employ the Boussinesq approximation, which prescribes a constant density to all terms except gravity\citep{sC61}. Furthermore, we ignore centrifugal effects, which tend to be small in geophysical applications. 
 This permits a simplified version of eqn. \eqref{e:ns_f}.
@@ -100,7 +99,7 @@ This permits a simplified version of eqn. \eqref{e:ns_f}.
 	\label{e:ns}
 \end{equation}
 $\rho^{*}$ is the density fluctuation normalized by the reference density. It has no units. We have absorbed $\rho$ into the pressure gradient so that $p$ is not technically a pressure. Nevertheless, we will refer to $p$ as the pressure since it is the dynamically relevant quantity for incompressible flows (note that it also accounts for the hydrostatic weight of the fluid)\citep{sC61}.
-Solving eqn. \eqref{e:ns} for planetary parameters is still infeasible.
+The advective term, however, us unchanged, so solving eqn. \eqref{e:ns} for planetary parameters remains infeasible.
 Our approach will involve solving eqn. (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
 
 \subsection*{Geostrophy and Rotation} 
@@ -124,7 +123,8 @@ Curling  eqn. \eqref{e:geos} and leveraging incompressibility yields the Taylor-
 which states that geostrophic flows are invariant along the direction of rotation. 
 For turbulent flows, Taylor-Proudman is a constraint, not a law, and flows are allowed to deviate. 
 Nevertheless, geostrophic turbulence is always characterised by flows that are highly anisotropic. 
-They can vary rapidly in directions perpendicular to rotation, but vary slowly in the rotation direction, and boundary effects are translated axially through the domain so that very few effects are truly localized.
+They can vary rapidly in directions perpendicular to rotation, but vary slowly in the rotation direction.
+Boundary effects are translated axially through the domain so that very few effects are truly localized.
 
 An important consequence is that convection, which generally requires velocities along the rotation axis, is inhibited by rotation. 
 To what extent remains an outstanding question, although much progress has been made particularly through analysis of the rotating Rayleigh-B\`enard system.
@@ -164,7 +164,7 @@ Table \ref{t:nondim_geo} provides estimate values for the Earth, as well as a fe
 
 Eqns. (\ref{e:rbc_eqn_nd}) are accompanied by boundary conditions on the temperature and velocity. 
 To avoid the complication of Ekman layers (see \citep{hG68})  
-we will consider the ``stress-free'' condition on the velocity field for the present discussion, although Chapters \ref{Oliver_2025} and \ref{Oliver_2026} deal exclusively with ``no-slip'' boundaries. 
+we will consider the ``stress-free'' condition on the velocity field for the present discussion.
 The stress-free boundary conditions are 
 \begin{subequations}
 \begin{equation}
@@ -176,11 +176,17 @@ T =1\text{ at } z=0 \qquad T =0 \text{ at } z=1
 	\label{e:bc_vsf}
 \end{equation}
 \label{e:bc}	
-\end{subequations}
+\end{subequations} 
+Chapters \ref{Oliver_2025} and \ref{Oliver_2026} deal exclusively with ``no-slip'' boundaries. Although not relevant to this discussion, they are included below for completeness.
+\begin{equation}
+	w = u = v=0 \quad \text{ at }\quad z=0,1.	
+	\label{e:noslip}
+\end{equation}
+
 A well known result is that eqns. \eqref{e:rbc_eqn_nd} and \eqref{e:bc} are stable for sufficiently small $Ra.$ 
-In particular, there exists a critical value $Ra_{c}$ which distinguishes stable and unstable flows. 
-If $Ra<Ra_c,$ a conductive, static solution will exist. 
-Conversely, convection occurs if $Ra>Ra_c$. $Ra_c$ is dependent on boundary conditions, problem geometry, and, crucially, $Ek$ and $Pr.$ 
+In particular, there exists a critical value $Ra_{c}$ which distinguishes whether an infintessimal perturbation will grow (unstable) or decay (stable). 
+If $Ra<Ra_c,$ a conductive, static solution is stable. 
+Conversely, convection occurs for $Ra>Ra_c$. $Ra_c$ is dependent on boundary conditions, problem geometry, and, crucially, $Ek$ and $Pr.$ 
 For small $Ek$, the rotational constraint inhibits convection, and larger and larger values of $Ra$ are needed. 
 The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling law $Ra_c\sim Ek^{-4/3}$.
 	\begin{table}
@@ -230,9 +236,9 @@ Table \ref{t:asymp} provides a summary of the behaviour of the critical paramete
 
 In a numerical simulation, it is important to resolve $\lambda_{c},$ because it is the forcing scale.
 It has been suggested that, as turbulence becomes more vigorous this scale may increase \citep{cG19,cG25}, although our findings in Chapter \ref{Oliver_2023} question whether this allows a relaxation of the resolution requirements\citep{tO23}.
-As has been mentioned, geophysical parameters can be quite extreme. 
 
-A value of $Ek = 10^{-15}$ indicates that $\lambda_{c}\sim 10^{-5}.$ In dimensional terms, this suggests a critical wavelength around $10$ m, far too small to resolve in any global-scale simulation. There are a couple resolutions to this problem. Perhaps the most common, and the approach we employ in Chapter \ref{Oliver_2025}, is to perform sweeps of simulations at moderate $Ek$ (eg. $ 10^{-4}-10^{-6}$) and determine a scaling relationship with $Ek$. We can then extrapolate our results to $10^{-15}.$
+As has been mentioned, geophysical parameters can be quite extreme; 
+a value of $Ek = 10^{-15}$ indicates that $\lambda_{c}\sim 10^{-5}.$ In dimensional terms, this suggests a critical wavelength around $10$ m, far too small to resolve in any global-scale simulation. There are a couple resolutions to this problem. Perhaps the most common, and the approach we employ in Chapter \ref{Oliver_2025}, is to perform sweeps of simulations at moderate $Ek$ (eg. $ 10^{-4}-10^{-6}$) and determine a scaling relationship with $Ek$. We can then extrapolate our results to $10^{-15}.$
 Another approach is to leverage the smallness of $Ek$ and determine a hierarchy of balances in eqns. \ref{e:rbc_eqn_nd} that are asymptotically distinct in the limit $Ek\rightarrow 0.$ 
 This approach has a successful history and was most notably used by Busse and collaborators in a series of papers \citep{fB70,fB86a,fB86c} in which they developed the annulus model for spherical convection. 
 
@@ -246,9 +252,9 @@ and the time $t$ is rescaled to accommodate the fast timescales.
 x,y \rightarrow Ek^{-1/3}\; x^{*},y^{*}\qquad \qquad  z\rightarrow z^{*}\qquad\qquad t \rightarrow Ek^{-2/3} \;t^{*}.
 	\label{e:kj_rescale}
 \end{equation}
-The starred quantities are $O\lb 1\rb $ in the theory of Julien et al., and are the arguments of the dynamical fields. 
+The starred quantities are $O\lb 1\rb $ in the theory of Julien et al., and are the arguments for the dynamical fields. 
 The fields themselves are also rescaled according to
-\[\mathbf{u} \rightarrow E^{-1/3}\mathbf{u}^{*}\qquad\qquad \vartheta \rightarrow E^{-1/3}\vartheta^{*},\]
+\[\mathbf{u} \rightarrow Ek^{-1/3}\mathbf{u}^{*}\qquad\qquad \vartheta \rightarrow Ek^{-1/3}\vartheta^{*},\]
 where $\vartheta$ is a temperature fluctuation about the horizontal mean.
 The main point we would like to highlight is that the reduced equations are informed by the Taylor-Proudman (TP) constraint. $Ek^{1/3}$ and $Ek^{2/3}$ are the lengths and times over which TP can be relaxed. 
 The scalings in eqn. \eqref{e:kj_rescale} leverage this result to effectively shrink (spatially) and shorten (temporally) the solution domain.
@@ -281,3 +287,34 @@ The scalings in eqn. \eqref{e:kj_rescale} leverage this result to effectively sh
 %	\label{e:f3}
 %\end{subequations}
 
+\subsubsection*{A comment on spherical geometries}
+Plane layer geometries are exceedingly useful as \textit{local} models for geophysical systems. 
+The above system, for example, is a useful representation for the polar region of a planet, where rotation and gravity are (anti-) aligned. 
+However they can miss many important features such as boundary curvature or radial gravity.
+The solution approach in a spherical geometry, such as a thick spherical shell relevant to the outer core, is very similar to the procedure above. Eqn. \eqref{e:rbc_1} has to be modified to account for a radial gravity, and the boundary conditions need to accommodate shell surfaces rather than planar walls, but the main features of the dynamical system remain. 
+Crucially, the scaling laws for the critical parameters are unchanged.
+Rotation inhibits convection in the sphere just as it does in the plane layer. 
+Unfortunately there are no reduced equations for spherical geometries because the shell prescribes the horizontal dimensions. In Chapters \ref{Oliver_2025} and \ref{Oliver_2026} we solve the full equations (similar to eqns. \eqref{e:rbc_eqn_nd}) at finite values of $Ek$ and extrapolate to $Ek = 10^{-15}.$
+
+\subsection*{Topography at the core mantle boundary}
+There is good reason to expect that the core mantle boundary (CMB) is not a perfectly smooth surface. 
+Like the surface of the Earth, we believe the CMB to be bumpy.
+But CMB topography can be placed on firm geodynamical footing because a vast catalog of seismic evidence suggests the presence of multiple, large heterogeneities at the base of the mantle which may press and relieve the CMB.
+
+Regions deep in the mantle, beneath southern Africa and the southern Pacific, are associated with slow seismic velocities (eg. \citep{aM19,jR99,jR04}). They are dubbed the Large Low Shear Velocity Provinces (LLSVPs) and are 1000s of kilometers in lateral extent and 100s in depth.
+There is strong agreement within the community regarding the existence and locations of the LLSVP's (see. \citep{vL12}), but their explanation remains a mystery. 
+The main competing theories are that the LLSVPs are either compositionally (eg. \citep{yL14b,pT98}), or thermally (eg. \citep{dD12,gS04}) distinct from the surrounding mantle.
+Regardless, their presence suggests density heterogeneities in the mantle.
+Dynamical studies of mantle convection have demonstrated that the LLSVPs generate CMB topography \citep{tL07} with amplitudes ranging around $10$ km \citep{tL10}, although seismic evidence suggest smaller amplitudes of about $2$ km \citep{sT10}.
+
+Chapters \ref{Oliver_2025} and \ref{Oliver_2026} discuss the ``topographic torques," in which core flow interacts with topography to exert torques on the mantle \citep{rH69,pR12}. 
+Because CMB topography is not well constrained, we chose to study simplified topographies. Chapter \ref{Oliver_2025} considers a single bump, while Chapter \ref{Oliver_2026} considers single spherical harmonics. 
+However, we also study a model informed by the LLSVPs. 
+In this model, we place topography wherever LLSVPs are present (following \citep{vL12}). 
+This approach is ad-hoc, and likely does not represent real topography, however no modeling or seismic approach has definitively mapped CMB topography. 
+Therefore, we have simply chosen a model that is global, contains a broad spectrum, and is associated with the LLSVPs.
+
+Furthermore, we study topographies with dimensional amplitudes between $10$ and $500$ km, much larger than the geophysical predictions. 
+We do this because our simulations are much more viscous than the actual core, and we therefore must use topographies large enough such that they extend far beyond viscous boundary layers. 
+In particular the Ekman layer, which is estimated to be $<O(1$m$)$ in the core (eg. \citep{hG68}), is at least  $1000$ times larger in our simulations. 
+For this reason, we perform a suite of simulations at varied topographic amplitude and determine a scaling relationship which we extrapolate to the core.
