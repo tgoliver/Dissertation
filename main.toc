@@ -8,3 +8,4 @@
 \contentsline {chapter}{\numberline {\th@ChapterStyle 5}\normalsize \normalfont Oliver et. al. 2026}{17}{chapter.5}%
 \contentsline {part}{ \normalsize \normalfont \bfseries Bibliography\normalfont }{18}{chapter*.12}%
 \contentsline {part} {\appendixnameToC }{\relax }{}
+\contentsline {chapter}{\numberline {\th@ChapterStyle A}\normalsize \normalfont Glossary of non-dimensional parameters}{23}{appendix.A}%

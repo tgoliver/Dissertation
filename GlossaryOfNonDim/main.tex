@@ -1,0 +1,116 @@
+\chapter{Glossary of non-dimensional parameters}
+\label{a:gloss}
+\begin{table}
+\begin{center}
+	Core parameter values\\
+\hrulefill\\
+\textit{Dimensional Values}\\
+\vspace{1mm}
+\begin{tabular}{|p{0.1\linewidth}p{0.35\linewidth}p{0.35\linewidth}p{0.10\linewidth}|}
+\hline
+Symbol & Name&Value & unit (SI)\\
+\hline
+$g$&Gravitational acceleration & {10.73}& m/s$^{2}$\\
+$H$ & Core depth & $2.26\times 10^{6}$ & m \\
+$\nu$ & Kinematic viscosity & $10^{-6}$ & m$^{2}$/s\\
+$\kappa$ & Thermal diffusivity & $10^{-5}$ & m$^{2}$/s\\
+$\alpha$ & Thermal expansion coefficient & $10^{-5}$ & K$^{-1}$\\
+$\Delta T$ & Temperature difference ($T_{icb}$-$T_{cmb}$) & 1300 & K\\
+$\Omega$ &  Planetary rotation rate & $7.3\times 10^{5}$ & rad/s\\
+$U$ &  Characteristic flow velocity & $1-5\times 10^{-4}$ & m/s\\
+$D_{t}$ &  Topography height & $10^{3}-10^{4}$ & m\\
+\hline
+\end{tabular}
+\vspace{1mm}\\
+\textit{Dimensionless Numbers}\\
+\vspace{1mm}
+\begin{tabular}{|p{0.1\linewidth} p{0.35\linewidth} p{0.30\linewidth} p{0.15\linewidth}|}
+	
+\hline
+Symbol & Name&Definition & core\\
+\hline
+$Ra$&Rayleigh&$g\alpha\Delta TH^{3}/\nu\kappa$ & $10^{24}$\\
+$Ek$&Ekman&$\nu/\Omega H^{2}$ & $10^{-15}$\\
+$Re$&Reynolds&$UH/\nu$ & $10^{8}-10^{9}$\\
+$Ro$&Rossby&$U/\Omega H^{2}$ & $10^{-6}$\\
+$Pr$ & Prandtl&$\nu/\kappa$&$10^{-2}$-$10^{-1}$ \\
+$Nu$ & Nusselt& $ 1 +Q_{conv}/Q_{cond}$ &\\
+$\chi$ & Aspect ratio & $r_{icb}/r _{cmb}$ &$0.35$\\
+$\epsilon$ & Topographic height &$D_{t}/H$&$\sim10^{-3}$\\
+ \hline
+\end{tabular}
+\vspace{1mm}\\
+\textit{Rescaled Dimensionless Numbers}\\
+\vspace{1mm}
+\begin{tabular}{|p{0.1\linewidth} p{0.35\linewidth} p{0.30\linewidth} p{0.15\linewidth}|}
+	
+\hline
+Symbol & Name&Definition&core\\
+\hline
+$\Rat$&Reduced Rayleigh&$Ra Ek^{4/3}$ & $10^{4}$\\
+$\Ret $& Reduced Reynolds& $ReEk^{1/3}$ &$10^{3}-10^{4}$\\
+ \hline
+\end{tabular}
+\caption[Core parameters]{Physical properties of the core and associated non-dimensional values. Adapted from Roberts and King (2013)\citep{pR13}}
+\label{at:param}
+\end{center}
+\end{table}
+
+A description of each quantity and it's relevance to convection is given. Approximations of these values for the outer core are provided from \citep{pR13}. 
+Table \ref{at:param} provides a quick reference for dimensional and non-dimensional quantities.
+
+\noindent
+\subsection*{Length and Velocity Scales}
+In this section the length scale $H$ is used to present the non-dimensional parameters. In a spherical shell geometry, $H$ refers to the depth of the core. 
+In a plane layer $H$ refers to the depth (along the rotation axis) of the layer. 
+In neither case, however, is $H$ the only relevant scale. 
+For a shell, an inner (or equivalently outer) radius must be prescribed in addition to the shell depth. 
+ Non-dimensionalized by the core depth, $2260$ km, the inner and outer radii are approximately $r_i = 7/13$ and $r_{o}= 20/13.$ The aspect ratio is $r_{i}/r_{o} = 0.35.$ 
+ Since all quantities are $O\lb 1\rb,$ it is sufficient to use $H$ as the only geometric scale.
+ We note, however, that this is not always the case. 
+ Very thin fluid layers, such as the terrestrial oceans and atmosphere, have inner and outer radii that are much larger than the shell depth. In this instance, it is useful to distinguish between horizontal and vertical scales.
+
+  The plane layer study presented in Chapter \ref{Oliver_2023} can be thought of as the opposite to an atmosphere. Its vertical extent is much greater than its horizontal. The horizontal scale is re-normalized by the small length $Ek^{1/3}H$ such that it is $O\lb 1\rb $ in the governing equations. 
+  This scale is chosen based on the length of the unstable modes from linear theory.
+
+  In addition to geometric factors, it is sometimes useful to discuss dynamic scales, such as the integral scale, which roughly approximates the size of individual eddies in a turbulent flow.
+  This approach can be useful to determine the scales on which particular forcing terms balance, but it is difficult because dynamical scales are \textit{a posteriori} quantities.
+   For the sake of simplicity, unless otherwise noted, we always present our non-dimensional variables in terms of $H.$
+
+   The velocity scale ($U$) is determined \textit{a posteriori}, because natural convection does not prescribe a particular speed. Therefore the Reynolds and Rossby numbers are considered \textit{a posteriori} quantities. 
+   When presenting estimate core flow parameters, we use $U\approx  10^{-4}$m/s in the core.
+\subsection*{Rayleigh ($Ra$)}
+\[Ra = \frac{\alpha g\Delta T H^{3}}{\nu\kappa}\sim10^{24},\]
+ The Rayleigh number arises in the study of fluids in a gravitational field in which the bottom of the fluid is held at a temperature greater than the top. $Ra$ is interpreted as the ratio between buoyant and viscous forcing. In general, systems with small $Ra$ tend to be convectively stable (stationary) because the buoyant forces on a warm element of fluid are not sufficient to overcome the restoring force of viscosity. In rapidly rotating systems, however, rotation serves as the main inhibitor of convection, and viscosity's role is reversed; the presence of viscosity is a requirement for the onset of convection. For this reason, the reduced quantity $\Rat = Ra Ek ^{4/3},$ which increases with $\nu,$ is often considered in place of $Ra.$
+\subsection*{Reynolds ($Re$)}
+\[Re = \frac{UH}{\nu}\sim 10^{8}-10^{9},\]  
+The Reynolds number is interpreted as the ratio of inertia to viscous forcing, and is often used as a diagnostic parameter to determine the strength of turbulence in a flow. The larger $Re$, the more turbulent the fluid becomes, with $Re$ order unity often corresponding to viscously dominated laminar flow. 
+The approximate outer core value of $Re\sim 10^{8}$ implies that the outer core undergoes vigorous turbulence.
+The quantity $\Ret = Re Ek^{1/3},$ where $Ek$ is the Ekman number (defined below) is used throughout the paper in Chapter \ref{Oliver_2023} and is referred to as the \textit{rescaled} Reynolds number. It emerges as the quantity of interest after rescaling the horizontal scale
+\[\ell^{*} = Ek^{1/3}H\]
+\[\Ret = \frac{U\ell^{*}}{\nu}\mathcal  = Ek^{1/3}Re.\]
+\subsection*{Ekman ($Ek$) }
+\[Ek = \frac{\nu}{H^{2}\Omega} \sim 10^{-15},\]
+$Ek$ is interpreted as the ratio of viscous forcing (per unit mass) and Coriolis acceleration.
+A small $Ek$ indicates rapid rotation, although does not necessarily imply geostrophy, as inertial effects can be large for small $Ek$ flows. 
+The value of $Ek$ determines the critical Rayleigh number and the critical wavenumber. The Ekman boundary layer thickness $\delta_{E}$ is determined by the length scale at which viscous and Coriolis accelerations balance.
+\[\frac{\nu}{\delta_{E}^{2}\Omega}= O\lb 1\rb\implies \frac{\delta_{E}}{H} \sim Ek^{1/2}. \]
+\subsection*{Rossby ($Ro$)}
+\[Ro = \frac{U}{H\Omega}= Re \cdot Ek\sim 10^{-6},\]
+The Rossby number is interpreted as the ratio of inertia to the Coriolis acceleration. Because of the large length scales associated with the outer core, $Ek\text{ and } Ro \ll1$. This parameter regime is called rapid rotation or rotationally constrained because the Coriolis acceleration is believed to be the dominant effect on the dynamics.
+In the core
+\[Ek\ll Ro \ll 1,\]
+because the Reynolds number is large. This regime is known as geostrophic turbulence \citep{jC71}.
+In Chapter \ref{Oliver_2023}, the equations are perturbatively expanded in $Ro^{1/2}\sim Ek^{1/3}$ such that neither quantity explicitly appears in the results.
+\subsection*{Nusselt ($Nu$)}
+\[Nu = 1+\frac{Q_{conv}}{Q_{cond}}\]
+where $Q_{conv}$ and $Q_{cond}$ are the convective and conductive heat transport respectively.
+The particular definition for $Nu$ depends on the geometry and boundary conditions. For example, in a plane layer with fixed temperature boundary conditions, $Nu$ can be calculated as 
+ \[Nu_{\text{ plane layer}} = 1 + \frac{H}{\Delta T}\frac{\partial \theta}{\partial z}, \]
+ where $\theta$ is the temperature variable and $z$ is the coordinate along gravity.
+ Similar definitions for spheres or fixed flux boundary conditions exist, and we relegate specific definitions to the relevant Chapters.
+$Nu$ is often used as a diagnostic quantity to determine the amount of heat a system is able to transport from the warm boundary to the cool one.
+\subsection*{Prandtl ($Pr$)}
+\[Pr = \frac{\nu}{\kappa}\sim 0.01-0.1\]
+$Pr$ is the ratio of viscosity to thermal diffusivity, and can be thought of as the ratio of timescales over which a perturbation in momentum and temperature diffuse. In the context of constant $\nu,\kappa$,  $Pr$ is determined by the fluid alone. In this dissertation $Pr$ is held constant at $1,$ although other studies have looked at varied or low $Pr$ (eg. \citep{jA01,cG19,sM21}).
+
