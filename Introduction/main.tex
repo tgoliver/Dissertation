@@ -154,7 +154,11 @@ They quantify the magnitude of inertia $\lb \mathbf{u}\cdot\nabla\mathbf{u}\rb $
  The geostrophic regime is characterised by $Ro\ll1.$ In addition to small $Ro,$ \textit{geostrophic turbulence} requires $Re\gg1$.
 
 Curling  eqn. \eqref{e:geos} and leveraging incompressibility yields the Taylor-Proudman constraint
-\[2\lb\mathbf{\Omega}\cdot\nabla\rb \mathbf{u} \approx 0, \]
+\begin{equation}
+2\lb\mathbf{\Omega}\cdot\nabla\rb \mathbf{u} \approx 0
+\label{e:tp}
+\end{equation}
+
 which states that geostrophic flows are invariant along the direction of rotation. 
 For turbulent flows, Taylor-Proudman is a constraint, not a law, and flows are allowed to deviate. 
 Nevertheless, geostrophic turbulence is always characterised by flows that are highly anisotropic. 
@@ -373,3 +377,17 @@ Unfortunately the asymptotic reduction approach of Julien et al. does not work f
 \section{Consequences of Rotation and Geostrophy}
 The previous section introduced geostrophy and the Taylor-Proudman constraint, and we discussed some of the dynamical consequences related to convection. 
 In this section, we will discuss a few phenomenon particular to rotating flows which play important roles in the projects discussed in this dissertation.
+
+\subsection*{Geostrophic Contours}
+ \begin{figure}
+	\begin{center}
+		%\includegraphics[width=\textwidth]{}
+	\end{center}
+	\caption{The Busse model for spherical convection. The sloped caps at the top and bottom approximate curvature on the spherical surface.}
+	\label{f:b_an}
+\end{figure}
+Consider the geometry shown in Figure \ref{f:b_an}, which was first studied by Busse \citep{fB70}. 
+The original motivation was to use a geometry that approximated a thin strip of fluid extending between antipodal points on the CMB, and usually gravity is assigned to point along the $\hat{x}$-axis, to approximate radial gravity. 
+For the present discussion, however, we are mainly concerned with the sloped end caps, wich model the curvature of a spherical system.
+
+The geostrophic and Taylor-Proudman constraints are eqns. \eqref{e:geos} and \eqref{e:tp} respectively.
