@@ -44,9 +44,11 @@ This process is responsible for the geodynamo, a largely dipolar magnetic field 
 Geophysical systems are dissipative, which means that they slowly lose electrical and mechanical energy to heat. 
 It is believed that the Earth has had an active dynamo for at least 2.8 billion years \citep{jA07},
 however electric (Ohmic) dissipation is though to be strong enough to stifle an un-powered dynamo within 10 million years \citep{aC98}. 
-Mechanical forcing is necessary to provide the power source that sustains the magnetic field. Thermal or compositional convection are the most likely candidates \citep{sB95,dG77}, although tidal \citep{rK18} and precessional \citep{dC19} forcing have been investigated and likely contribute to the dynamics.
+Mechanical forcing is necessary to provide the power source that sustains the magnetic field. 
+Thermal or compositional convection are the most likely candidates \citep{sB95,dG77}, although tidal \citep{rK18} and precessional \citep{dC19} forcing have been investigated and likely contribute to the dynamics.
 Regardless, the dynamo's behaviour is tied to turbulent fluid processes. Indeed it exhibits significant and unpredictable dynamics. 
-Excursions (in which the field loses dipolar power only to regain it) and reversals (in which the field's orientation flips) are well documented in the geologic record \textcolor{red}{cit.}. An average rate of reversals is estimated to be around three each million years \citep{jJ94c1}, although the behaviour is seemingly stochastic, making prediction of future reversals difficult. 
+Excursions (in which the field loses dipolar power only to regain it) and reversals (in which the field's orientation flips) are well documented in the geologic record \citep{mA19,cC00,cC16,cC24,cJ97}. 
+An average rate of reversals is estimated to be around three each million years \citep{jJ94c1}, although the behaviour is seemingly stochastic, making prediction of future reversals difficult. 
 
 The studies presented in this dissertation are hydrodynamic only, and therefore do not include magnetic effects.  
 Nevertheless, the results can still be applied to the dynamo problem, as the magnetic and hydrodynamic problems share many similarities.  
@@ -97,11 +99,6 @@ Europa, Enceladus, Ganymede, and other icy moons likely contain salty oceans whi
 
 \section{Modeling geophysical fluid systems}
 \label{s:gafd}
-\begin{center}
-\textit{``...whatever we do affects everything and everyone else, if even in the tiniest way. Why, when a housefly flaps his wings, a breeze goes round the world..."}\\
-\end{center}
---The Princess of Pure Reason, The Phantom Tollbooth
-\footnote{Published 1961, coincidentally the same year Ed Lorenz mistakenly demonstrated chaos on a Royal McBee LGP-30} 
 
 As is the standard procedure in fluid mechanics, our approach begins with the governing equations for the quantities of interest--in this case mass, energy, and momentum. A complete description of the formulation of the equations of fluid mechanics can be found in most introductory texts (eg. \citep{dT01,gV06}), although some comments on the momentum equation should be made before progressing to a more specific discussion on convection.
 In a frame undergoing constant rotation about the origin, the momentum equation is
@@ -122,7 +119,11 @@ Note that the oceanography and atmospheric communities often use $w$ to refer to
 The second term on the LHS, known as the advective term, is non-linear, which presents the foremost complication involved with solving eqn. (\ref{e:ns_f}). 
 Briefly put, the advection term permits interactions between large and small structures within the flow such that any attempt to solve must involve a procedure for handling a broad range of length scales. 
 In the context of planetary interiors, this would mean resolving scales that span the planet, all the way down to molecular distances where viscous effects arrest the flow. 
-It is the basis of the ``Butterfly effect,'' which suggests that the flap of a butterfly's wings may determine the path of a hurricane weeks later.
+It is the mathematical basis of the ``Butterfly effect,'' a popular expression suggesting that the flap of a butterfly's wings may determine the path of a hurricane weeks later\footnote{ Courtesy of Wikipedia:
+	Equivalent statements have been attributed to a littany of authors including Poincar\`e and Turing. A favorite variation appears in Norton Juster's \textit{The Phantom Tollbooth}, published the same year Ed Lorenz mistakenly demonstrated chaos while performing a computer simulation of atmospheric convection.\\ 
+	\textit{``...whatever we do affects everything and everyone else, if even in the tiniest way. Why, when a housefly flaps his wings, a breeze goes round the world..."} -The Princess of Pure Reason.
+%\footnote{Published 1961, coincidentally the same year Ed Lorenz mistakenly demonstrated chaos on a Royal McBee LGP-30} 
+}.
 Obviously such complexities are not tractable, and thus some system is necessary for resolving this difficulty. 
 %Indeed the entire scope of this dissertation can be summarized as developing strategies to get around this obstacle. 
 
@@ -169,8 +170,16 @@ To what extent remains an outstanding question, although much progress has been 
 
 
 \subsection*{The rotating Rayleigh-B\`enard problem}
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{Introduction/figures/rrbc.pdf}
+	\end{center}
+	\caption{Diagram for the rotating Rayleigh-B\`enard problem.}
+	\label{f:rrbc}
+\end{figure}
 In this section we discuss a canonical model for rotating convection.
-Consider a rotating fluid bounded between two infinite plates whose temperature's are fixed such that they have a temperature difference $\Delta T$. 
+Consider the setup presented in Figure \ref{f:rrbc}. 
+A rotating fluid is bounded between two infinite plates. The temperature of the plates are fixed such that they temperature difference between them is $\Delta T$. 
 The plates are separated by a distance $H.$ 
 Gravity and rotation are anti-parallel and oriented such that gravity points from cold to warm plate. The coordinate system is chosen such that $z = 0$ corresponds to the bottom plate and $\hat{\mathbf{z}}$ is parallel to $\mathbf{\Omega}.$ 
 It is useful to non-dimensionalize the system \citep{dT01}. We scale lengths and temperatures by $H$ and $\Delta T$ respectively. To best illustrate the role of geostrophy, we choose a viscous time-scale $H^{2}/\nu$ and a velocity scale of $\nu/H.$
@@ -190,7 +199,7 @@ The non-dimensional equations are
 \end{equation}
 	\label{e:rbc_eqn_nd}
 \end{subequations}
-All variables are dimensionless. This will be the convention for the remainder of this thesis unless otherwise noted. 
+The convention in the remainder of this thesis will be that all variables are dimensionless unless otherwise noted. 
 The Ekman ($Ek$), Rayleigh $\lb Ra\rb $, and Prandtl $\lb Pr\rb $ numbers are dimensionless parameters defined as
 \[Ek = \frac{\nu}{\Omega H^{2}}\qquad Ra = \frac{g\alpha \Delta T H^{3}}{\nu\kappa} \qquad Pr =\frac{\nu}{\kappa}.\]
 The Ekman number is a measure of the influence of rotation, with smaller values indicating larger Coriolis accelerations. 
@@ -277,19 +286,20 @@ Table \ref{t:asymp} provides a summary of the behaviour of the critical paramete
  \end{table}
 
 
-In a numerical simulation, it is important to resolve $\lambda_{c},$ because it is the forcing scale.
-It has been suggested that, as turbulence becomes more vigorous this scale may increase \citep{cG19,cG25}, although our findings in Chapter \ref{Oliver_2023} question whether this allows a relaxation of the resolution requirements \citep{tO23}.
+In a numerical simulation, it is important to resolve $\lambda_{c}$ because it is the forcing scale.
+It has been suggested that as turbulence becomes more vigorous this scale may increase \citep{jA20,cG19,cG25}, although our findings in Chapter \ref{Oliver_2023} question whether this allows a relaxation of the resolution requirements \citep{tO23}.
 
 As has been mentioned, geophysical parameters can be quite extreme; 
-a value of $Ek = 10^{-15}$ indicates that $\lambda_{c}\sim 10^{-5}.$ Scaled to the core, this suggests a critical wavelength around $10$ m, far too small to resolve in any global-scale simulation. There are a multiple ways around this problem. Perhaps the most common, and the approach we employ in Chapter \ref{Oliver_2025}, is to perform sweeps of simulations at moderate $Ek$ (eg. $ 10^{-4}-10^{-6}$) and determine a scaling relationship with $Ek$. We can then extrapolate our results to $10^{-15}.$
+a value of $Ek = 10^{-15}$ indicates that $\lambda_{c}\sim 10^{-5}.$ Scaled to the core, this suggests a critical wavelength around $10$ m, far too small to resolve in any global-scale simulation. There are multiple ways around this problem. Perhaps the most common, and the approach we employ in Chapter \ref{Oliver_2025}, is to perform sweeps of simulations at moderate $Ek$ (eg. $ 10^{-4}-10^{-6}$) and determine a scaling relationship with $Ek$. We can then extrapolate our results to $10^{-15}.$
 Another approach is to leverage the smallness of $Ek$ and determine a hierarchy of balances in eqns. \ref{e:rbc_eqn_nd} that are asymptotically distinct in the limit $Ek\rightarrow 0.$ 
 This approach has a successful history and was most notably used by Busse and collaborators in a series of papers \citep{fB70,fB86a,fB86c} in which they developed the cylindrical annulus model for spherical convection. 
 
 For the plane layer problem at hand, a reduced set of equations (which we refer to as the ``reduced model'' or  ``reduced equations'') were derived by Julien et al. \citep{kJ98a}, with additional details provided in \citep{mS06} (see also \citep{kJ12b,sM21,aR14}).
 They are valid in the asymptotic limit $Ek\rightarrow 0.$
 The full model is presented and used in Chapter \ref{Oliver_2023} without derivation, so we will make a few remarks about the underlying physics here.
+\subsection*{The reduced model}.
 
-The asymptotic reduction is underpinned by a rescaling of length and timescales. The horizontal directions ($\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$) are rescaled to the length of the critical modes ($\lambda_{c}$),
+The reduced model is underpinned by an asymptotic rescaling of length and timescales. The horizontal directions ($\hat{\mathbf{x}}$ and $\hat{\mathbf{y}}$) are rescaled to the length of the critical modes ($\lambda_{c}$),
 and the time $t$ is rescaled to accommodate the fast timescales.
 \begin{equation}
 x,y \rightarrow Ek^{1/3}\; x^{*},y^{*}\qquad \qquad  z\rightarrow z^{*}\qquad\qquad t \rightarrow Ek^{2/3} \;t^{*}.
@@ -366,7 +376,7 @@ As a result
 %	\label{e:f3}
 %\end{subequations}
 
-\subsection*{A comment on spherical geometries}
+\subsection*{Convection in spherical geometries}
 Plane layer geometries are exceedingly useful as \textit{local} models for geophysical systems. 
 The above system, for example, is a useful representation for the polar region of a planet, where rotation and gravity are anti-aligned. 
 However they can miss many important features such as boundary curvature or radial gravity.
