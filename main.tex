@@ -3,7 +3,9 @@
 \usepackage{amssymb}		% to get all AMS symbols
 \usepackage{adjustbox}
 \usepackage{multicol}
-%\usepackage{amsmath}		% to get all AMS symbols
+\usepackage{subfig}
+\usepackage{pifont}
+\usepackage{amsmath}		% to get all AMS symbols
 \usepackage{graphicx}		% to insert figures
 \usepackage{hyperref}		% PDF hyperreferences??
 \usepackage{xcolor}
@@ -13,6 +15,8 @@
 
 \newcommand\citep[1]{\cite{#1}}
 \newcommand\citeneed[1]{\textcolor{red}{cit.}}
+
+%\bibliographystyle{gji}
 
 %%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
 
@@ -67,10 +71,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+test
 %\input macros.tex
 \input{Opening_Remarks/main.tex}
 \input{Introduction/main.tex}
-\input{Oliver_2023/main.tex}
+%\input{Oliver_2023/main.tex}
 \input{Oliver_2025/main.tex}
 \input{Oliver_2026/main.tex}
 %\input chapter2.tex
@@ -84,7 +89,6 @@
 \appendix
 \input{GlossaryOfNonDim/main.tex}
 %\input appendixB.tex
-
 
 \end{document}
 

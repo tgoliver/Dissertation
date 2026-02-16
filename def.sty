@@ -241,3 +241,38 @@
 \def\xhat{{ {\hat{\mathbf{x}}} }}
 \def\yhat{{ {\hat{\mathbf{y}}} }}
 \def\zhat{{ {\hat{\mathbf{z}}} }}
+
+\newif\ifnewauthor
+\newauthortrue
+
+\newcounter{affils}
+
+\makeatletter
+\def\chapterauthor[#1]#2{\ifnewauthor\else, \fi
+       #2\textsuperscript{\hyperref[authaffil\the\value{chapter}.#1]{#1}}%
+       \ifnewauthor\newauthorfalse\gdef\chapterauthors{#2}\else
+               \g@addto@macro\chapterauthors{, #2}\fi
+       \ignorespaces % to remove end of line spaces from
+                     % \chapterauthor[foo]{bar} input lines
+}
+\makeatother
+
+\def\chapteraffil[#1]{
+\item[\textsuperscript{#1}]%
+    \refstepcounter{affils}%
+    \label{authaffil\the\value{chapter}.#1}%
+}
+
+\newenvironment{affils}
+   {\addtocontents{toc}{\chapterauthors\string\par}\begin{enumerate}}
+   {\end{enumerate}\global\newauthortrue}
+
+\newenvironment{chapterabstract}
+{
+	\begin{center}
+		\par \bfseries Abstract
+	\end{center}
+}
+  {\par\normalfont\normalsize\noindent\ignorespaces}
+  {\par\vskip9pt
+}  
