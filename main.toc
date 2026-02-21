@@ -1,0 +1,11 @@
+\contentsline {part} {\chapternameToC }{\relax }{}
+\contentsline {chapter}{\numberline {\th@ChapterStyle 1}\normalsize \normalfont Overview}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle 2}\normalsize \normalfont Introduction}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Earth's Core and other Planetary Interiors}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Modeling geophysical fluid systems}{8}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Consequences of Rotation and Geostrophy}{16}{section.2.3}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle 3}\normalsize \normalfont Oliver et. al. 2025}{20}{chapter.3}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle 4}\normalsize \normalfont Oliver et. al. 2026}{21}{chapter.4}%
+\contentsline {part}{ \normalsize \normalfont \bfseries Bibliography\normalfont }{22}{chapter*.19}%
+\contentsline {part} {\appendixnameToC }{\relax }{}
+\contentsline {chapter}{\numberline {\th@ChapterStyle A}\normalsize \normalfont Glossary of non-dimensional parameters}{28}{appendix.A}%
