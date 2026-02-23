@@ -11,12 +11,12 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{def}
+\usepackage[comma,numbers]{natbib}
 %\usepackage[lcgreekalpha]{stix2}
 
-\newcommand\citep[1]{\cite{#1}}
+%\newcommand\citep[1]{\cite{#1}}
 \newcommand\citeneed[1]{\textcolor{red}{cit.}}
 
-%\bibliographystyle{gji}
 
 %%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
 
@@ -35,8 +35,10 @@
 \advisor{Prof.}				%  #1 {title}
 	{Michael Calkins}			%  #2 {name}
 
-\reader{2nd Person}		%  2nd person to sign thesis
-\readerThree{3rd}		%  3rd person to sign thesis
+\reader{Shijie Zhong}	%  2nd person to sign thesis
+\readerThree{Michael Ritzwoller}
+\readerFour{Ian Grooms}
+\readerFive{Brad Hindman}	%  3rd person to sign thesis
 
 \abstract{  \OnePageChapter	% because it is very short
 %	Often the abstract will be long enough to require
@@ -48,8 +50,10 @@
 
 \dedication[Dedication]{	% NEVER use \OnePageChapter here.
 %	To all of the fluffy kitties.
+\begin{center}
+	\input{Dedication/ded.tex}
+\end{center}
 	}
-
 \acknowledgements{	\OnePageChapter
 \input{Acknowledgements/ack.tex}	% *MUST* BE ONLY ONE PAGE!
 %	Here's where you acknowledge folks who helped.
@@ -74,15 +78,16 @@
 \begin{document}
 
 %\input macros.tex
+
 \input{Opening_Remarks/main.tex}
 \input{Introduction/main.tex}
-%\input{Oliver_2023/main.tex}
+\input{Oliver_2023/main.tex}
 \input{Oliver_2025/main.tex}
 \input{Oliver_2026/main.tex}
 %\input chapter2.tex
 
 %%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
-\bibliographystyle{plain}	% or "siam", or "alpha", etc.
+\bibliographystyle{dst}	% or "siam", or "alpha", etc.
 %\nocite{*}		% list all refs in database, cited or not
 \bibliography{References,journal_abbreviations}		% Bib database in "refs.bib"
 
