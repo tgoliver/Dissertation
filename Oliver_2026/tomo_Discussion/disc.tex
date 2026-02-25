@@ -1,0 +1,106 @@
+
+\section{Discussion}
+\label{s:disc}
+
+%\textcolor{red}{Do you have torques for the `subcritical' cases?}
+
+
+
+Two geophysical observables that have long been thought to be linked with CMB structure are the $\Delta$LOD \citep[e.g.][]{rH69,sZ97,HdV05} and secular variation of the geomagnetic field \citep[e.g.][]{mD07,cD08,hR25}. Topographic torques that originate from interactions between turbulent pressure fluctuations in the outer core and the surrounding solid mantle are a likely candidate for explaining $\Delta$LOD \citep{aA77,wK01,pR12}. Paleo- and archaeomagnetic studies suggest inhomogeneities in the geomagnetic field are persistent in certain geographical locations implying coupling between the fluid motions in the core that generate magnetic field and the surrounding mantle \citep{jT15,dG07,cC16,jM23}. 
+Progress on understanding both of these aspects requires a combination of theory and numerical modeling that systematically explores the effects of the key non-dimensional control parameters that govern the geodynamo. 
+Our prior work used simulations to confirm that small scale convective turbulence generates torques that scale linearly with topographic amplitude for a single isolated topographic bump, and leveraged the asymptotic theory of rotating convection to explain the numerically observed dependence on the Ekman number and the Reynolds number. %Extrapolation of these scalings to core-like conditions suggests 
+Whereas the spatially localized nature of the topographic bump was ideal for precisely characterizing the torque scaling, it is expected that global scale CMB topography is present \citep{sT10,eS03} and may lead to significant change in the flow field in comparison to local topography. 
+The present work builds on our prior study by exploring varied topographic shapes and amplitude for a fixed value of the Ekman number. 
+
+ %A previous investigation by the authors showed that the topographic torque scales linearly with topographic amplitude for a spatially localised topographic protrusion. The spatial localisation of the topography resulted in minimal influence on the global properties of the convection. 
+
+One of the main effects of global scale topography is the ability for the buoyancy force to directly drive flow along geostrophic contours \citep{pB96}. In a purely spherical geometry, the geostrophic contours are circles about the origin, and a radial buoyancy force is unable to perform work on the component of the flow (the geostrophic flow) directed along these contours. Instead, geostrophic flow in a sphere is driven entirely by Reynolds stresses.
+Non-axisymmetric topography deforms the contours and allows for buoyancy to directly force the geostrophic flow. Using the two-dimensional quasi-geostrophic model for the Busse annulus, BS96 showed that this effect leads to novel instabilities that occur for Rayleigh numbers below that of the convective Rossby waves that are the primary instability in the absence of topography \citep{sC61,cJ00}.
+%As the topographic amplitude is increased this new instability transitions from oscillatory to steady. 
+The simulations presented in this study confirm the presence of this instability in a global geometry and show qualitative agreement with BS96, however we did not observe the overstable mode that BS96 predicted for small values of $\epsilon$. The quantitative discrepancies between our results and BS96 may not be surprising given that their analysis was for a simplified geometry and assumed short topographic wavelengths.
+%three-dimensional global geometry for Rayleigh numbers below the onset of convection. 
+In the turbulent regime we find that the amplitude of the geostrophic flow may be significantly larger than the corresponding flow in the spherical case, dependent on the shape and size of CMB topography. 
+
+%We find evidence for the oscillatory instability in the torque signal even when the Rayleigh number is far beyond the corresponding critical value for these modes. Similarly, the presence of the steady topographic mode is persistent in the turbulent regime, where it 
+%directly modulates the structure of the underlying convection and leads to persistent locking. 
+
+
+
+
+%Figure \ref{f:t_vis} demonstrates that the geostrophic contours continue to play an important role for turbulent flows which were performed at $\Rat = 40$ and $ Ek = 10^{-6}$. 
+%The Reynolds and Nusselt numbers both increase with $\epsilon$ with the effect most pronounced in the $\hlm{8}{4}$ and $\hlm{32}{16}$ topographies.
+%We attribute these increases to two separate effects. 
+
+The present study shows that globally distributed topography which deforms geostrophic contours leads to significant changes in turbulent mixing, as quantified through global heat ($Nu$) and momentum ($Re$) transport. 
+Over the investigated range of parameters we find changes in these measurements in excess of 100\% relative to the spherical case with no topography, indicating that the dynamics of this system are strongly influenced by boundary heterogeneities. 
+This enhanced transport can be attributed to two separate effects. 
+The first is the work done by the mean-mean buoyancy interaction, which is most prominent for topography with high equatorial symmetry and larger topographic amplitudes. 
+The flow locks to the geostrophic contours and temperature variations along the contours can significantly increase the buoyant work performed on the flow. Furthermore, the deformed geostrophic contours yield conveyor-belt-like structures that transport heat and momentum more effectively in comparison to the more chaotic mixing associated with convective Rossby waves.
+The second effect is a resonance that we propose arises between the convective instability and the topographic wavelengths. 
+
+Equatorially anti-symmetric topography, corresponding to spherical harmonics where $\ell-m$ is odd, generates smaller amplitude and larger wavenumber deviations than equatorially symmetric topography. 
+Therefore the locking phenomenon and the mean-mean buoyancy interaction are suppressed when the topography is anti-symmetric about the equator.
+Nevertheless, the $\hlm{32}{17}$ topography was found to elevate momentum and heat transport, which we attribute to the resonance with the convective instability at low wavenumber.
+In the core, the convective scales are likely much smaller than the scales of topography, so, for core-like parameters, we may not expect this second effect to significantly increase heat and momentum transport. 
+%The second interaction can be attributed , but the elevated $Re$ and $Nu$ values for $\hlm{32}{17}$ suggests an additional mechanism. \textcolor{red}{I am wondering if these are really the same effects. Had you done a sweep in amplitude for the 32 17 topography I wonder if the same effects would be observed}
+
+%This results in a less stable flow which convects at $Ra<Ra_c$ for sufficiently large $\epsilon$. 
+%These flows are characterized by laminar circulating flow along the contours and an $O\lb \epsilon\;Ra Ek \rb $ axial velocity. 
+
+The kinetic energy spectra show that certain topographic shapes lead to significant differences in the energetically active length scales of the flow. 
+The spectra display prominent peaks at the topographic wavenumber and the higher order harmonics. 
+The geostrophic contours contain power in the harmonic wavenumbers of the topography and the nonlinearities are also efficient at moving energy between these modes.
+%The strong nonlinearities in the system led to a noticeable sequence of harmonics.  
+The $\hlm{32}{16}$ and $\hlm{32}{17}$ topographies show elevated kinetic energy at short wavelengths, which we attribute to the topographic wavenumber being near the critical wavenumber $m_{c}$. 
+This effect likely leads to the observed enhancement in the work done by the fluctuating buoyancy force. 
+Calculations of effective length scales from these spectra show that the critical wavenumber remains important for our investigated range of parameters. 
+The $\hlm{8}{4}$ topography is characterized by a significant increase in the dominant length scale as the topographic amplitude is increased, which we attribute to the disparity in length scales between the topography and the underlying convection.
+
+
+%The kinetic energy spectrum demonstrates that the $\hlm{32}{16}$ and $\hlm{32}{17}$ topographies have elevated power at short wavelength, which we attribute to the topographic wavelength being near the critical wavelength $m_{c}.$ 
+%We believe this promotes the convective instability and increases the work done by the fluctuating buoyancy term. 
+%Figure \ref{f:buoy_work} (b) supports this claim, although we recognize that the data could be explained as simply the effect of larger values of $Re$ rather than the other way around. 
+
+The standard deviation of the topographic torque exhibits a roughly linear dependence on topographic amplitude for most topographic shapes. 
+This linear scaling is not as clear in comparison to the previously studied localized bump given the more pronounced effects of topography on the global scale flows. 
+For the particular case of the $\hlm{32}{16}$ topography we find that the torque essentially saturates near $\ep \approx 0.05$. 
+In the $\hlm{32}{16}$ case the pressure fluctuations in the torque yielding harmonic decreases with increasing $\epsilon$ for $\epsilon >0.02.$ We attribute this decrease to the convective instability preferentially locking to the mode in phase with the topography. 
+The locking of the convection to the topographic pattern leads to no significant increase of the torque with $\ep$ despite the increase in flow speeds. 
+%The symmetry of the pressure with regard to the position of the topography does not allow for a significant change in torque, i.e.~the pressure gradient and topography are out of phase with one another. 
+Although a preference for the mode in phase with the topography was observed in all topographic shapes, only the $\hlm{32}{16}$ topography exhibited a decrease in the out of phase mode (the mode that yields torques).
+We find that with the exception of the $\hlm{32}{16}$ topography, the dynamical scaling law $\Gamma_{z}^{\prime}\sim Re^{2}\epsilon$ agrees well with the data. 
+Analysis of the frequency content of the time-dependent topographic torque showed that, as for the isolated bump investigated previously, the global scale topography seems to interact with frequencies that scale as $\omega\sim Ek^{-2/3}$, which is indicative of convection dominating the signal.
+
+We expect CMB topography to be spectrally broad, and since its shape in unconstrained, we present a procedure for determining the effect of topographic shape. We find that the peak of the spherical harmonic spectra for the fluctuating pressure is located at a short wavelength which we associate with the convective scale. 
+Our data suggests that the magnitude of the harmonics is $O\lb Re^{2}\rb$ at scales larger than the convective scale. 
+Assuming a spectral distribution for the topography, the sum over spectral coefficients can be approximated to determine how the axial torque scales with the convective scale. 
+We note that our procedure ignores cancellation in the integral. A more sophisticated approach could account for variations in the sign of the spectra of the topography and pressure fluctuations, but this is beyond of the scope of the present work. 
+If we use Kaula's rule \citep{wK66} and approximate the convective scale as $O\lb Ek^{1/3}\rb, $ we determine that the axial torque fluctuations should scale as $\epsilon  Re^{2}Ek^{-\mu_\ell/3},$ where $\mu_\ell$ is a fit parameter chosen to satisfy $\PhatLM\sim\ell^{\mu_\ell}.$ Our data suggests that $\mu_\ell\approx1,$ although further investigation of the fluctuating pressure spectra is required. We note that if we set $\mu_\ell = 1,$ then we find $\Gstd\sim \epsilon Re^{2}Ek^{-1/3}$, which was reported in previous work where a localized topography was used. We think that the argument presented in this previous study, which relied solely on the determination of the magnitude of the pressure gradient and not the convolution with $h\lb \theta,\phi\rb $, may have been relevant to the particular parameter regime tested, but would not hold for arbitrary topography.
+Nevertheless, the results presented in this study and the proposed scaling approach agree with the previously reported scaling which, when extrapolated to the parameter regime of the core yields the $O\lb 10^{18}\text{N}\;\text{m}\rb $ torques thought to be necessary to generate $\Delta$LOD \citep{tO25,HdV05}.
+
+
+%Lastly we present the ratio of viscous to topographic axial torques and find that the ratio decreases with $\epsilon.$ With the exception of the $\hlm{2}{1}$ topography, where topographic torques are the smallest, the ratio $\gamma<1.$ Our previous study indicated that $\gamma$ continues to decrease as the Rayleigh number increases, so we confirm that viscous torques do not meaningfully contribute to the torques exerted by the core on the mantle.
+
+Several aspects of this problem warrant further investigation. The effects of magnetic field generation are certainly of interest with regard to applications to the geodynamo and efforts are underway to address this problem. Although the present work is entirely hydrodynamic, some of the results shown here are expected to have significant dynamical effects on the resulting dynamo. 
+For example, the broken equatorial symmetry associated with the $\hlm{32}{17}$ topography may yield a kinetic helicity that is not equatorially antisymmetric. 
+The kinetic helicity of the flow, defined as the dot product of the velocity and vorticity vectors, is known to be a crucial ingredient for the generation of global scale magnetic field \citep{eP55}. In spheres it is observed to be largely antisymmetric about the equator but if topography disrupts this behaviour, the resultant magnetic fields will likely exhibit significant inhomogeneity.
+ We also anticipate that the locking of flow to topography will generate a corresponding locked magnetic field, which will have ramifications for geomagnetic field observations.
+
+ As addressed in seismological investigations, the shape of the CMB is not well constrained. We have employed a simple adaptation of the `cluster analysis' or `voting map' procedure discussed in \cite{sC16}, \cite{pK21}, and \cite{vL12} to construct what we have referred to as our tomographic model. 
+ The voting map approach is helpful for identifying where seismic models overlap, but does not provide detailed structure of the topography. 
+ We have adopted the locations of the LLSVPs (as determined by the analysis) as CMB topography. 
+ Our approach was to employ sharp edges for the boundaries of the voting map model, which effectively localized the resulting topography model. 
+ The consequence of this localization were minimal changes to the geostrophic contours relative to the sphere. 
+ While the topographic torques for this particular model exhibited similar behavior in comparison to the other models (with the exception of the $\hlm{32}{16}$ model), the changes in flow patterns were minimal. 
+ Future efforts will examine the role of less `edgy' topography, including models inspired from mantle convection studies \citep[e.g.][]{tL07,tL10}.
+  Since a definite structure for CMB topography is not likely to be known in the near future, further investigation of the fluctuating pressure spectra is required to refine the proposed scaling procedure for the torques, which relies only on a power-law spectrum for topography.
+
+ Another effect of interest is the difference between equatorial and mid-latitude topography. Topography at the mid-latitudes alters the geostrophic contours in a similar fashion to the current study, while equatorial topography will serve to split the geostrophic flows between the two hemispheres, similar to how the inner core separates the contours at the northern and southern poles.
+ Equatorial topography is therefore less likely to generate the buoyantly forced geostrophic flows that we examined in this work.
+ 
+
+ In the Earth's core it is likely that mantle convection is necessary to sustain CMB topography over geologic timescales.
+This work focused on a deep spherical shell (i.e.~$1 - \chi = O(1)$) that is Earth-like, however we expect some of the dynamics to carry over to thin shells which may be applicable to other planetary systems, such as icy moons. 
+\cite{tG25} and \cite{jK22} investigated rotating convection in a thin shell in which the effects of melting are modeled.
+They find that convection can directly generate topography. 
+Therefore, models of dynamic topography that varies on the time scale of the convection may have application to other planetary bodies.

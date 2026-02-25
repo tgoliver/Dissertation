@@ -1,0 +1,4 @@
+The simulations are performed with the spectral element code \texttt{Nek5000} \citep{nek5000,pA84}. We use a cubed sphere to generate the mesh. In the radial direction we use $24$ elements distributed on a Chebyshev grid. This corresponds to a radial resolution of $192$ points.
+The longitudinal and latitudinal dimensions are composed of $6$ panels which are $40\times 40$ elements each. 
+The total number of spectral elements is $230,400$ and we use an order $7$ interpolating polynomial along each element so that the total resolution is $230,400\times8^3 \approx 1.2\times10^{8}$ points. 
+Radial resolution was chosen such that at least one element spans the Ekman boundary layer.

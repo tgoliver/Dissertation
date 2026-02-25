@@ -458,6 +458,10 @@
 \renewcommand*{\theparagraph}{\th@DefTheParagraph}
 \renewcommand*{\thesubparagraph}{\th@DefTheSubparagraph}
 
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@} 
+ {-18pt plus -9pt minus -1pt}{6pt} 
+ {\reset@font\large\it}} 
+
 % Figure, Table, and Equation numbering.
 \if@PerChptrNumbering\else
    	\newcounter{th@SaveFigure}

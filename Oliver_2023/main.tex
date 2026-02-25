@@ -9,7 +9,8 @@
    \chapteraffil[1]{Department of Physics, University of Colorado, Boulder, CO  80309, USA}
    \chapteraffil[2]{Department of Applied Mathematics, University of Colorado, Boulder, CO  80309, USA}
  \end{affils}
-
+ Originally published in:
+ Physical Review Fluids. 2023 (Reference \citep{tO23})
 \begin{chapterabstract}
 	A numerical investigation \textcolor{black}{ of an asymptotically reduced model for quasi-geostrophic} Rayleigh-B\'enard convection is conducted in which the \textcolor{black}{depth-averaged flows are numerically suppressed by modifying the governing equations.} 
 	\textcolor{black}{At the largest accessible values of the Rayleigh number $Ra$}, the Reynolds number and Nusselt number show some evidence of approaching the diffusion-free scalings of $Re \sim Ra Ek/Pr$ and $Nu \sim Pr^{-1/2} Ra^{3/2} Ek^2$, respectively, where $Ek$ is the Ekman number and $Pr$ is the Prandtl number.
@@ -18,7 +19,7 @@ The Taylor microscale does not vary significantly with increasing $Ra$, whereas 
 The computed length scales remain $O(1)$ with respect to the linearly unstable critical wavenumber; \textcolor{black}{we therefore conclude that these scales remain viscously controlled}.
 We do not find a point-wise Coriolis-Inertia-Archimedean (CIA) force balance in the turbulent regime; interior dynamics are instead dominated by horizontal advection (inertia), vortex stretching (Coriolis) and the vertical pressure gradient. 
 A secondary, sub-dominant balance between the \textcolor{black}{Archimedean} buoyancy force and the viscous force occurs in the interior and the ratio of the rms of these two forces is found to approach unity with increasing $Ra$. This secondary balance is attributed to the turbulent fluid interior acting as the dominant control on the heat transport. These findings indicate that a pointwise CIA balance does not occur in the high Rayleigh number regime of quasi-geostrophic convection \textcolor{black}{in the plane layer geometry.} 
-Instead, simulations are characterized by what may be termed a \textsl{nonlocal} CIA balance in which the buoyancy force is dominant within the thermal boundary layers and is spatially separated from the interior Coriolis and inertial forces.
+Instead, simulations are characterized by what may be termed a \textsl{non-local} CIA balance in which the buoyancy force is dominant within the thermal boundary layers and is spatially separated from the interior Coriolis and inertial forces.
 
 
 \end{chapterabstract}
@@ -42,7 +43,7 @@ Instead, simulations are characterized by what may be termed a \textsl{nonlocal}
 %P: scaling of heat and momentum transport
 %P: summary of paper
 
-Convection plays an important role in the dynamics of many planets and stars, where it serves as the power source for sustaining the magnetic fields of the planets \citep{sS10,cJ11b,pR13,jmA15} and the Sun \citep{pC14}. Convection may also be a possible driving mechanism for the observed large scale zonal winds  (eg. \citep{mH16}) and vortices (eg. \citep{lS22}) on the giant planets. The flows in these natural systems are strongly forced and turbulent and can be constrained by the Coriolis force. 
+Convection plays an important role in the dynamics of many planets and stars, where it serves as the power source for sustaining the magnetic fields of the planets \citep{sS10,cJ11b,pR13,jmA15} and the Sun \citep{pC14}. Convection may also be a possible driving mechanism for the observed large scale zonal winds  \citep[e.g.][]{mH16} and vortices \citep[e.g.][]{lS22} on the giant planets. The flows in these natural systems are strongly forced and turbulent and can be constrained by the Coriolis force. 
 Studying rotationally constrained convective turbulence is therefore important for improving understanding of such systems.
 However, experimental \citep{rE14,jC15,mM21,tV21} and numerical \citep{tG16,aG21,mY22} investigations have difficulty accessing this parameter regime due to the extreme scale separation that characterizes the dynamics.
 %but is intrinsically difficult due to the wide range of spatiotemporal scales that characterize such flows. Laboratory experiments and direct numerical simulations are all used toward this end, but extrapolation of such results to natural systems is questionable due to the vast separation in parameter values between model and nature. 
@@ -63,7 +64,7 @@ In the presence of a background rotation with angular frequency $\Omega$, the re
 \be
 Ro = \frac{U}{ \Omega H }, \qquad Ek = \frac{\nu}{ \Omega H^2},
 \ee
-where $U$ is a characteristic flow speed. In addition, the Reynolds number is given by $Re = U H/ \nu = Ro/Ek$; QG turbulence is characterized by $Re \gg 1$, and therefore $Ek \ll Ro \ll 1$. As an example, for the Earth's outer core estimates suggest $Ro = O(10^{-7})$, $Ek = O(10^{-15})$ and $Re = O(10^8)$ (eg. \citep{pR13}). 
+where $U$ is a characteristic flow speed. In addition, the Reynolds number is given by $Re = U H/ \nu = Ro/Ek$; QG turbulence is characterized by $Re \gg 1$, and therefore $Ek \ll Ro \ll 1$. As an example, for the Earth's outer core estimates suggest $Ro = O(10^{-7})$, $Ek = O(10^{-15})$ and $Re = O(10^8)$ \citep[e.g.][]{pR13}. 
 
 %Understanding how heat and momentum transport, as characterized by the Nusselt number $Nu$ and Reynolds number, respectively, behave in the high-Rayleigh number regime of QG convection is vital for relating model output to natural systems \textcolor{red}{This is kind of an awkward sentence. How about:}
 
@@ -79,35 +80,19 @@ QG convection dynamics are conveniently specified by the asymptotic combination
 which we refer to as the reduced Rayleigh number. With this rescaling, the onset of convection occurs at $\Rat \approx 8.7$, and the onset of turbulence occurs when $\Rat \gtrsim 40$  \citep{kJ12}. Previous work has found heat transport data that is consistent with the diffusion-free scaling, $Nu \sim \Rat^{3/2}Pr^{-1/2}$, in the turbulent regime \citep{kJ12b,tG16}, where $Pr=\nu/\kappa$ is the Prandtl number. 
 However, recent investigations that allow for the amplitude of the LSV to fully saturate have found a stronger scaling for $Nu$ \citep{sM21}, which might suggest that although the small scale convection approaches a $Nu \sim \Rat^{3/2}Pr^{-1/2}$, the interaction with the LSV provides an additional enhancement of heat transport.
 %, possibly by generating a coherent box scale convective mode. 
-A similar diffusion-free scaling for the flow speeds is given by $Re \sim Ra Ek/Pr$ implying a rotational free-fall velocity  $U_{r\!f\!f} = g \alpha \Delta T/2\Omega$.  Recent studies of convection in a spherical geometry support this behavior \citep{cG19}. However, similar to their heat transport findings, Ref.~\cite{sM21} find that the Reynolds number scales more strongly than the diffusion-free scaling. 
+A similar diffusion-free scaling for the flow speeds is given by $Re \sim Ra Ek/Pr$ implying a rotational free-fall velocity  $U_{r\!f\!f} = g \alpha \Delta T/2\Omega$.  Recent studies of convection in a spherical geometry support this behavior \citep{cG19}. However, similar to their heat transport findings, Reference \cite{sM21} find that the Reynolds number scales more strongly than the diffusion-free scaling. 
 
 
 A defining property of turbulence is the presence 
 of a broad range of length scales within the flow field. In spectral space this range of scales translates into a broadband kinetic energy spectrum. 
 The spectrum of non-rotating turbulence broadens via a forward cascade in which there is a net transfer of energy from low wavenumbers to high wavenumbers. A consequence of this transfer of energy is that the length scale at which viscous dissipation is dominant becomes ever smaller as $Re$ increases (e.g. \citep{sP00}). 
-%This phenomenology is generally consistent with studies of non-rotating convection \citep[e.g.][]{mY21}.
 
 The process by which spectral broadening occurs in QG convection is less clear. 
 In the limit $Ek \rightarrow 0$, linear theory shows that the onset of convection occurs on a length scale of size $\ell = O\lb Ek ^{1/3}\rb$.
-%Linear theory shows that at the onset of convection the flow is forced on a length scale of size $O(E^{1/3})$ in the limit $E \rightarrow 0$. 
 This length scale arises because the viscous force facilitates convection by simultaneously perturbing the geostrophic force balance and relaxing the Taylor-Proudman constraint. 
 Understanding which length scales emerge in the strongly nonlinear regime is important for characterizing QG convective turbulence. 
 Previous studies \textcolor{black}{in spherical geometry} suggest that the length scale varies with the Rossby number as $\ell \sim Ro^{1/2}$ (e.g. \citep{cG19}), which is thought to arise from the so-called Coriolis-Inertia-Archimedean (CIA) balance \citep{cJ15}. In terms of the reduced Rayleigh number this scaling is equivalent to $\ell \sim Ek^{1/3} \sqrt{\Rat/Pr}$ (e.g. \citep{jmA20}). 
 Recent experimental work using water as the working fluid has found a slightly weaker scaling than $\ell \sim Ro^{1/2}$ \citep{mM21}; this same investigation, and a numerical study of convection-driven dynamos \citep{mY22}, finds that the correlation length scale of the vorticity is approximately constant with increasing $\Rat$. It is presently unknown whether this behavior persists in the limit of large $\Rat$. 
-
-%If this length scale is interpreted as the length scale at which viscous dissipation occurs, then this result provides another key difference in the development of convective turbulence between rotating and non-rotating systems.
-
-
-%Furthermore, since the morphology of the large scale flow is directly influenced by the system geometry, the physics of the coupling may also depend on the particular geometry employed. 
-%%For these reasons, it seems beneficial to eliminate the growth of the large scale flow, both in terms of computational savings so that the strongly forced regime can be studied in greater detail, and to focus solely on the physics of the small scale convection.
-
-
-%The interaction between the LSV and the underlying small scale convection therefore complicates efforts to understand the behavior of the system, particularly in the limit of strong forcing. Furthermore, if the characteristics of the LSV are merely a consequence of the artificial nature of the geometry, it is all the more relevant to understand the system when such flows are not present. 
-
-%\textbf{Emphasize why it is important to remove the LSV. Because the two flows might be characterized by different balances in the governing equations, it is reasonable to assume that the LSV, or the barotropic/depth-invariant flows in general, might show different scaling behavior with the input parameters.}
-
-
-%The Nusselt number, $Nu$, which is the ratio of total heat transfer relative to conductive heat transfer, has been found to scale as $Nu \sim Pr^{-1/2} \Rat^{3/2}$, where $Pr=\nu/\kappa$ is the Prandtl number. This scaling represents a diffusion-free scaling since both the thermal conductivity and kinematic viscosity cancel out. However, a more recent study in which convection was simulated sufficiently long to allow the amplitude of the LSV to saturate indicates a slight departure from this behavior as $\Rat$ is increased. Previous work finds heat transfer scaling
 
 
 
@@ -120,27 +105,6 @@ In the present investigation we report on the results of numerical simulations o
 
 
 
-
-
-
-
-%Studying rapidly rotating convective turbulence is difficult due to the extreme parameter space that defines it and the associated range of spatiotemporal scales. Laboratory experiments, direct numerical simulation (DNS), and simulations of asymptotic models are all used. One of the benefits of asymptotic models is that they remove the stiffness associated with the Coriolis force in the governing equations and therefore directly model the rapidly rotating regime that is relevant to many natural systems. 
-%
-%
-%In natural systems the convection is strongly forced and turbulent, thus resulting in an inverse kinetic energy cascade. As a result of this cascade, fluid kinetic energy piles up at the largest scale present in the system; in the periodic plane layer geometry this corresponds to a dipolar structure often referred to as a large scale vortex (LSV). However, the relative size of the LSV does not increase monotonically with forcing strength, which may result from a decrease in the convective correlations that feed it. In particular, fast unbalanced inertial waves are filtered from the dynamics, allowing for direct modeling of the rapidly rotating regime. 
-%
-%
-%One of the key questions pertaining to these natural systems is whether there exists an asymptotically turbulent regime that is characterized by heat and momentum transport
-%
-%
-%The goal is to understand how the inverse kinetic energy cascade and the concomitant formation of a large-scale vortex influences heat and momentum transport. Natural systems are characterized by very large values of the Rayleigh number -- is an asymptotic scaling for these quantities present? This paper represents the state-of-the-art in this regard -- it will have the largest values of $\Rat$ thus far. The work presented investigates a model for thermal (buoyancy) driven, rotationally constrained flow. The model operates in the fast-rotation regime, in which the non-dimensional Ekman number (\textit{Ek}) is taken to be assymptotically small. \textit{Ek} can be thought of as the ratio of viscous and Coriolis forces. It is defined as 
-%\begin{equation}
-%	Ek = \frac{\nu}{2\Omega H^{2}}
-%	\label{eqn:Ek}
-%\end{equation}
-%where $\nu$ is the kinematic viscosity, $\Omega$ is the rotation rate, and $H$ is the vertical height of the simulation domain. It is believed that \textit{Ek} for the Earth's outer core sits somewhere in the range of $10^{-15}$ (\cite{Wijs}) to  
-
-
 \section{Methods}
 \label{S:methods}
 
@@ -148,7 +112,7 @@ In the present investigation we report on the results of numerical simulations o
 
 %We consider a rotating layer of Boussinesq fluid with depth $H$, bounded by plane parallel boundaries. The rotation rate of the system is $\Omega$, the gravitational acceleration is $g$, and the constant temperature difference between the boundaries is denoted by $\Delta T$. The fluid has kinematic viscosity $\nu$, thermal diffusivity $\kappa$ and thermal expansion coefficient $\alpha$. 
 
-In the present investigation we employ \textcolor{black}{a modified version of} the asymptotically reduced form of the governing equations given by Ref.~\citep{mS06}. When non-dimensionalized using the small-scale viscous diffusion speed $\nu/\ell^*_\nu$, where $\ell^*_\nu = H Ek^{1/3}$, \textcolor{black}{and temperature scale $\Delta T$,} these equations take the form
+In the present investigation we employ \textcolor{black}{a modified version of} the asymptotically reduced form of the governing equations given in Reference \citep{mS06}. When non-dimensionalized using the small-scale viscous diffusion speed $\nu/\ell^*_\nu$, where $\ell^*_\nu = H Ek^{1/3}$, \textcolor{black}{and temperature scale $\Delta T$,} these equations take the form
 	\be
 \dst \zeta + J\ls \psi,\zeta \rs - \textcolor{black}{\gamma \left< J\ls \psi,\zeta \rs \right>} - \dz w = \nabla_\perp^2 \zeta,
 		\label{eqn:barotropicvort}
@@ -178,43 +142,17 @@ In the present investigation we employ \textcolor{black}{a modified version of} 
 \ee
 so that the depth-averaged vorticity (streamfunction) trivially decays to zero as $t \rightarrow \infty$. In practice, simulations in which the depth-averaged flow is suppressed were initialized from states in which  $\left<\psi\right> = 0$.}
 
-%\textcolor{black}{The term in angled brackets denotes a depth average and is the implemented modification intended to suppress the largest scale vortex. Simulations that were performed ``with an LSV'' do not include this modification.}
-%\textcolor{black}{We thank an anonymous referee \textcolor{red}{What is the etiquette here?-TO} for raising an issue concerning our implementation of a previous method for removing the barotropic component. Upon review of the code, we discovered a mistake that has since been removed.}
 
 
 
 
 
-%It is expected that $\ell$ remains an important length scale even for large  $\Rat$ flows. The force balance study of \citep{aG21} suggests that viscous diffusion remains important even for supercritical $\Rat$. 
-	
-	
-	
-%The non-dimensional parameters are the reduced Rayleigh number and the Prandtl number defined by, respectively, 
-%\be
-% \Rat = E^{4/3} Ra,	\qquad
-% Pr = \frac{\nu}{\kappa} .
-% \label{eqn:Rat}
-%\ee
-%%where the Rayleigh number is
-%%\be
-%%Ra = \frac{g \alpha \Delta T H^3}{\nu \kappa}.
-%%\ee
-%All of the simulations presented here use $Pr=1$; see \cite{sM21} for a discussion on the influence of the Prandtl number.
-
-%For all cases the horizontal extent of the domain is $10 \widetilde{\lambda}_c \times 10 \widetilde{\lambda}_c$, where $ \widetilde{\lambda}_c \approx 4.8$ is the asymptotically rescaled critical horizontal wavelength. The critical reduced Rayleigh number is $\Rat_c \approx 8.7$.
 
 
 
-
-%\textcolor{black}{
-%	The depth average of \eqref{eqn:barotropicvort} is a simple diffusion equation \[\dst \left<\zeta\right>= \nabla_{\perp}^{2}\left<\zeta\right>,\] so that the depth-averaged vorticity (streamfunction) trivially decays to zero. In practice, simulations were initialized from states in which  $\left<\psi\right> = 0$. 
-%	Figure \ref{f:ke} shows a time series of the volume averaged kinetic energy for a representative case at $\Rat = 160$. The case where the LSV is not removed has far greater kinetic energy in its horizontal components than the vertical. In contrast, the case where the LSV is removed has less kinetic energy in the horizontal directions.
-%	The modification to $\eqref{eqn:barotropicvort}$ is the only change to the governing equations in \citep{mS06}.
-%Simulations are performed for the range $10 \le \Rat \le 280$ with $Pr=1$.
-%Details of the numerical simulations are provided in Table \ref{tab:run}. }
 \textcolor{black}{
 Simulations are performed for the range $10 \le \Rat \le 280$ with $Pr=1$.
-Details of the numerical simulations are provided in Table \ref{tab:run}. The equations are solved using a de-aliased pseudo-spectral method in which the flow variables are expanded as Chebyshev polynomials in the vertical dimension and Fourier series in the horizontal dimensions. A third-order accurate implicit-explicit Runge-Kutta scheme is used to advance the equations in time. Further details on the code can be found in Ref.~\cite{pM16}.
+Details of the numerical simulations are provided in Table \ref{tab:run}. The equations are solved using a de-aliased pseudo-spectral method in which the flow variables are expanded as Chebyshev polynomials in the vertical dimension and Fourier series in the horizontal dimensions. A third-order accurate implicit-explicit Runge-Kutta scheme is used to advance the equations in time. Further details on the code can be found in Reference \citep{pM16}.
 }
 
 \textcolor{black}{As a demonstration of the approach for suppressing the depth-averaged flow, Figure \ref{figure:ke} shows the temporal evolution of the volume averaged kinetic energy density for two sample simulations with $\Rat=100$. The simulation in which the depth-averaged flow is suppressed (maintained) is denoted by $\gamma=1$ ($\gamma=0$). Both simulations were initialized with identical initial conditions. We compute the depth-averaged (barotropic, $KE_{bt}$) and vertical ($KE_Z$) kinetic energy densities, respectively defined as
@@ -275,13 +213,8 @@ The Kolmogorov scale is often interpreted as the scale at which viscosity domina
 The integral scale and Taylor microscale are respectively interpreted as measures of the correlation length of turbulent motions and the intermediate length scale at which fluid viscosity significantly affects the dynamics of turbulent motions \textcolor{black}{\citep{sP00}}. 
 With these interpretations in mind, the relative ordering $\ell_I > \ell_T> \ell_K$ holds.
 Furthermore, for rotating convection, viscosity is a required ingredient in destabilizing a rotating fluid subject to an adverse temperature gradient \citep{sC61}. 
-This implies that convective motions are inherently influenced by viscosity and, as a consequence, the Taylor microscale (assuming the physical interpetation holds) is tied to the linear instability scale \textcolor{black}{such that we anticipate} $\ell_{T} = O(1)$. The integral scale for the temperature is interpreted as the scale at which the fluid is forced by buoyancy.
+This implies that convective motions are inherently influenced by viscosity and, as a consequence, the Taylor microscale (assuming the physical interpretation holds) is tied to the linear instability scale \textcolor{black}{such that we anticipate} $\ell_{T} = O(1)$. The integral scale for the temperature is interpreted as the scale at which the fluid is forced by buoyancy.
 
-%\textcolor{red}{The Kolmogorov scale defines the scale at which viscosity dominates and the turbulent kinetic energy is dissipated into heat. The integral scale and Taylor microscale  respectively measure the correlation length of turbulence and the intermediate length scale at which fluid viscosity significantly affects the dynamics of turbulent motions. Hence,  by definition the relative ordering $\ell_I > \ell_T> \ell_K$ holds. Furthermore, for rotating convection viscosity is a required ingredient in destabilizing a rotating fluid subject to an adverse temperature gradient \citep{sC61}. This implies that  convective motions are inherently influenced by viscosity, as a consequence the Taylor microscale is tied to the linear instability scale,  i.e., $\ell_T\sim1$.  }
-%
-%\textcolor{red}{TO- I am thinking that maybe we should say that $\ell_{I}$, $\ell _{T}$ \textit{are often interpreted as the scales at which...}, and that this interpretation would suggest that $\ell_{T}\sim 1.$}
-%
-%\textcolor{red}{KJ- I would also define and plot $\ell^\theta_I$ using $\hat{E}_{\theta,rms}$. Why? 1) buoyancy is the driver of all motions so this should also be sensitive to, or indeed, drive changes in the integral correlation length. 2) This is something experimentalist can measure accurately, we should lead the charge by proposing this,  ...}.
 
 
 
@@ -351,7 +284,7 @@ $200$ & $960\times960\times450$ & $5\times 10^{-5}$ & $10$ & $84.21$ & $146.2$ &
 	\end{tabular}
 \end{center}
 		%\end{footnotesize}
-\caption[Details of the numerical simulations for Chapter \ref{Oliver_2023} (with LSV)]{Details of the numerical simulations for cases in which depth-invariant flows are not suppressed. See Table \ref{tab:run} for specifics. Runs denoted with an asterisk ($*$) are from Ref.~\cite{sM21}.}
+\caption[Details of the numerical simulations for Chapter \ref{Oliver_2023} (with LSV)]{Details of the numerical simulations for cases in which depth-invariant flows are not suppressed. See Table \ref{tab:run} for specifics. Runs denoted with an asterisk ($*$) are from Reference \citep{sM21}.}
 \end{table}
 
 
@@ -364,7 +297,7 @@ $200$ & $960\times960\times450$ & $5\times 10^{-5}$ & $10$ & $84.21$ & $146.2$ &
 The presence of an inverse cascade complicates our understanding of rotating convection since the flow speeds associated with the LSV are known to grow linearly with the horizontal dimension of the simulation domain size \citep{sM21}. This linear dependence is tied to the fact that the inverse cascade is halted solely by the viscous force acting on the domain scale \citep{jN22}. While we eliminate the LSV (and all depth-invariant motions) in the current investigation, it is nevertheless important to determine the domain size that allows for convergence of key statistical quantities. 
 Towards this end, a series of simulations with $\Rat=40$ and $\Rat=100$ were performed for varying domain sizes. Here we scale the horizontal dimension of the simulation domain in integer multiples ($n$) of the critical horizontal wavelength, $\lambda_c \approx 1.3048$.
 The effective resolution (i.e.~number of grid points per critical wavelength) was held approximately constant as the domain size was varied.
-Figure \ref{figure:box_dim} shows the sensitivity of $\Nu$, $\Ret$, and the length scales $\ell_{I}$ and $\ell_{T}$ as a function of $n$. We find that $Nu$, $\Ret$, and $\ell_T$  show no significant sensitivity to domain size with $n \ge 10$, which is consistent with Ref.~\citep{sM21}. 
+Figure \ref{figure:box_dim} shows the sensitivity of $\Nu$, $\Ret$, and the length scales $\ell_{I}$ and $\ell_{T}$ as a function of $n$. We find that $Nu$, $\Ret$, and $\ell_T$  show no significant sensitivity to domain size with $n \ge 10$, which is consistent with Reference \citep{sM21}. 
 \textcolor{black}{The integral scale and the Taylor microscale also show little sensitivity to the box size beyond $n=10$.}
 %We find that the integral length scale $\ell_I$ exhibits more sensitivity to the domain size. For $\Rat=40$, it appears that $\ell_I$ converges to a nearly constant value for $n \ge 12$. For $\Rat=100$ it is less clear whether convergence in $\ell_I$ is achieved for the simulated range of $n$. 
 The focus of the present investigation is to reach the largest computationally affordable values of $\Rat$; for this reason we choose $n=10$ for all of the data that is presented in later subsections. 
@@ -412,14 +345,6 @@ For the `No LSV' data we find that both compensated quantities exhibit steep ini
  For $\Rat > 220$ we find scaling behavior that may be consistent with the CIA scaling, though the range over which this occurs is admittedly limited. The Reynolds number for the `No LSV' data scales more strongly than the CIA scaling in the range $80 < \Rat<200 $; we find that $\Ret \sim \Rat^{1.334}$ fits the data well in this region of parameter space. For $\Rat > 200$, we find a trend that is consistent with $\Ret \sim \Rat$.
  }
 Note that the value of $\Rat \approx 80$ coincides with the point at which the amplitude of the LSV reaches a maximum relative to the small scale convection \citep{sM21}. Interestingly, we find that both the `No LSV' cases and the `LSV' cases exhibit similar scaling trends over a certain range in $\Rat$. We find that the removal of the depth-averaged flow yields reduced heat and momentum transport relative to cases in which this component of the flow is present. 
-%  a slightly larger value than the $\Rat = 30$ peak for $\Nu$ in the cases with the LSV. At $\Rat\approx 80,$ the compensated $\Ret$ continues increasing.  
-%For large $\Rat,$ a $\Rat^{3/2}$ seems to agree with our data for $Nu$ as the scaled data appears to level off. 
-%The results for $\Ret$ are less clear, as the compensated value $\Ret/\Rat$ continues to increase up to $\Rat = 220,$ after which there is some evidence that it levels off. 
-%In comparison with the cases with an LSV, it appears that removal of the barotropic mode has reduced $\Ret$ as intended, but has not significantly changed the scaling behavior.
- 
-%Both compensated quantities show steep initial increases up to $\Rat \approx 30$, followed by a period of decrease before flattening out with increasing $\Rat$. The cases with the LSV also show a transition in scaling behavior near $\Rat \approx 30$, with an additional transition in the heat transport at $\Rat \approx 60$ in which a departure from the diffusion-free scaling is observed. At $\Rat \approx 80$ we find a crossover in the heat transport; for values less (more) than this the simulations without the LSV are more (less) efficient at heat transport. 
-%We also observe a crossover in the momentum transport near $\Rat \approx 40$. The data suggests that in the absence of the LSV, the baroclinic convection approaches scalings of $Nu \sim \Rat^{3/2}$ and $\Ret \sim \Rat$ for $\Rat \gg 1$. For non-unity Prandtl numbers, these scalings extend to  the form $Nu \sim Pr^{-1/2}\Rat^{3/2}$ and $\Ret \sim \Rat/Pr$.  
-%However, we find that in comparison to simulations without a LSV, simulations with a LSV show more efficient heat and momentum transport for sufficiently large values of $\Rat$. 
 
 With the scalings of $Nu \sim \Rat^{3/2}$ and $\Ret \sim \Rat$, equations \eqref{E:Nu} and \eqref{E:Re} indicate that the fluctuating temperature scales as $\vartheta \sim \Rat^{1/2}$. 
  %and the nondimensional convective velocity scales according to rotational free-fall $U^{*}\sim g\alpha \Delta T/2\Omega$. 
@@ -428,10 +353,10 @@ To test this scaling we compute rms values of the fluctuating temperature over v
 Figure \ref{F:temp}(a) shows these values; Figure \ref{F:temp}(b) shows the compensated values for the thermal boundary layer and entire depth. 
 We find that both the mid-depth and total depth rms values scale with $\Rat$ in the same manner, whereas the thermal boundary layer shows a stronger dependence on $\Rat$ (Figure \ref{F:temp}\protect\subref{temp_max_da}), suggesting that the relative thinness of the thermal boundary layer translates to an overall weaker influence of this region on the observed scaling of the Nusselt number. 
 %\textcolor{black}{The $\vartheta \sim \Rat^{1/2}$ scaling agrees with the CIA prediction, but only agrees with our empirical scalings for $\Rat>200$.} 
-From the data, it was difficult to determine the powerlaw scaling for $\vartheta_{rms}$ in the boundary layer, as results differed significantly depending on the range of data used.
+From the data, it was difficult to determine the power law scaling for $\vartheta_{rms}$ in the boundary layer, as results differed significantly depending on the range of data used.
 For example, fitting the data in Figure \ref{F:temp}\protect\subref{temp_max_da} for $\widetilde{Ra}>80$ gives a \textcolor{black}{$\Rat^{0.95}$} relation while fitting over only the last three points ($\Rat>200$) yields a \textcolor{black}{$\Rat^{0.70}$} scaling. 
-Nevertheless, we conclude that our results for $\vartheta_{rms}$ in the thermal boundary layer are consistent with the theoretically deduced $\Rat^{7/8}$ scaling discussed in \textcolor{black}{Ref.~\cite{kJ12b}.}
-As previously reported in \textcolor{black}{Ref.~\citep{mS06}}, we observe saturation of the interior mean temperature gradient with a value of $-\partial_{Z}\overline\Theta \approx 0.4$-$0.5$ (Figure \ref{F:temp}\protect\subref{dz_temp}). 
+Nevertheless, we conclude that our results for $\vartheta_{rms}$ in the thermal boundary layer are consistent with the theoretically deduced $\Rat^{7/8}$ scaling discussed in \textcolor{black}{Reference \citep{kJ12b}.}
+As previously reported in \textcolor{black}{Reference \citep{mS06}}, we observe saturation of the interior mean temperature gradient with a value of $-\partial_{Z}\overline\Theta \approx 0.4$-$0.5$ (Figure \ref{F:temp}\protect\subref{dz_temp}). 
 
 
 \begin{figure}
@@ -444,7 +369,6 @@ As previously reported in \textcolor{black}{Ref.~\citep{mS06}}, we observe satur
 		\protect\subref{temp_max_da} compensated fluctuating temperature;
 		%The results for $\vartheta_{bl}$ are consistent with a $\Rat^{7/8}$, scaling but do not rule out nearby fractional powers such as $3/4$ or $1$. A powerfit for $\Rat > 80$ gives $\vartheta_{rms}\sim\Rat^{0.776}$.
 \protect\subref{dz_temp} mean temperature gradient vs. $\Rat$. The vertical averaging range is indicated with subscripts in (a) and (c).
-%In \protect\subref{temp_da}, \protect\subref{temp_max_da}, \ding{110} are computed at the edge of the thermal boundary layer, defined as the location of max($\vartheta_{rms}$), black \ding{108} are averaged over the entire depth and orange \ding{115} are averaged over the mid-depth range $0.4 < Z < 0.6$.
 }
 \label{F:temp}
 \end{figure}
@@ -479,12 +403,6 @@ A broadening of dynamically active wavenumbers is observed in both spectra as $\
 %There is a trend to a self-similar structure for the largest values of $\Rat$.
 Figure \ref{F:spectra}\subref{energy_spectra_scaled} shows the kinetic energy spectra compensated by the Kolmogorov scaling of $k^{-5/3}$, 
 \textcolor{black}{ which we find agrees well with the data.} 
-%The exact cause for this spectrum under the present circumstances remains unknown since our simulations indicate viscosity plays an important role across all computed length scales (see below).}
-%\textcolor{red}{KJ: I think we need a more in-depth discussion of the meaning of \textit{inertial subrange} here. What we have is not classical, in that, the subrange is not dissipation-free. It does reside between forcing and viscous damping, but as evidenced by the Taylor microscale viscosity plays an active role in destabilizing the fluid. In this sense it is non-classical and perhaps surprising that a $k^{-5/3}$ spectrum results.} 
-%\textcolor{black}{TO: We note that this behavior is in contrast to a classical cascade in that it broadens towards the small wavenumbers only. Classicaly we would expect the inertial subrange to grow into larger wavenumbers as forcing is increased, which we do not observe. This observation is corroborated with the results for the Taylor microscale discussed later in this section. Based on our findings for the integral scale discussed below, we believe that the inertial subrange is not inviscid. Standard arguments for the Kolmogorov scaling require a constant energy flux across a range of length scales, but don't explicitly invoke an inviscid requirement.}
-
-%We find that the scaling of the kinetic energy spectra near $k/k_{box} \approx 10$ is somewhat steeper than this classical scaling; a scaling closer to $k^{-5/2}$ provided a better fit. 
-%This data suggests that an inertial subrange, at least in regards to its classical definition of being absent of forcing and dissipation, does not arise for the range of parameter values accessible here. 
 The red dashed curve shows the baroclinic kinetic energy spectra for a simulation with $\Rat = 200$ that includes the LSV. 
 Comparison of the spectra at $\Rat = 200$ for cases with and without the LSV indicates that significantly more energy is present in the smallest wavenumbers when the LSV is present. 
 This difference, along with the findings reported in Section \ref{S:Nu_Re}, suggests that the presence of more energy in the largest length scales contributes to more efficient heat and momentum transport.
@@ -530,7 +448,7 @@ The Kolmogorov scale exhibits an obvious decrease with $\Rat$ and, for the param
 The integral temperature scale remains $O\lb 1 \rb$ up to $\Rat = 280$, which suggests that the buoyancy forcing scale occurs at a viscous length scale.
 \textcolor{black}{$\ist$ reaches a maximum value at $\Rat = 50,$ which is coincident with the local maxima for the scaled $Nu$ and $\Ret$ data shown in Figure \ref{F:Nu_Re}.}
 Around $\Rat \geq 120$, $\ist$ begins to slowly increase. 
-This behaviour is co-incident with a decrease in $\ist$ for the LSV cases. 
+This behavior is co-incident with a decrease in $\ist$ for the LSV cases. 
 It appears that a crossover in $\ist$ for cases with the LSV and cases without a LSV occurs around \textcolor{black}{$\Rat = 180$}. 
 This result suggests that at large $\Rat$, the LSV facilitates the buoyancy forcing at smaller scales than those without the LSV. 
 
@@ -646,24 +564,12 @@ Panels (d)-(f) show horizontal slices at depths in which $\vartheta_{rms}$ reach
 The visualizations confirm that the characteristic size of the large scale flow patterns \textcolor{black}{in the fluid interior}, as quantified by the integral length scale, is weakly dependent on the Rayleigh number \textcolor{black}{since all three cases show similar large scale structure}. 
 %\textcolor{red}{KJ; I think is true for the interior but not the boundary layer. Not sure what features the read should be looking at. TO: seems like characteristic scale is weakly dependent on $\Rat$ for both to me}
 Moreover, these large scale structures show significant axial coherence even in the absence of depth-averaged flows.
-Even for $\Rat =280$, flow structures that span \textcolor{black}{nearly} the entire depth can be identified. However, it can be observed in both fields that the vertical length scale of coherence within the interior decreases with increasing $\Rat$. This is discussed in the context of nonlocal CIA theory in the final section.
-The thermal boundary layer visualizations show evidence of strong spatial correlation between the thermal and vortical fields. While the size of the largest vortical structures remain largely insensitive to $\Rat$, it is observed that the filamentary structures become increasingly finer which is consistent with the theoretical findings in Ref.~\citep{kJ12b}. For the vortical field, this fine scale is imprinted into the interior whereas the interior spatial structure of the temperature field is observed to be de-correlated with the boundary. In the next section, we associate this effect to the thermal field behaving as an advective-diffusive scalar stirred by the vortical field and thermally dissipated. 
+Even for $\Rat =280$, flow structures that span \textcolor{black}{nearly} the entire depth can be identified. However, it can be observed in both fields that the vertical length scale of coherence within the interior decreases with increasing $\Rat$. This is discussed in the context of non-local CIA theory in the final section.
+The thermal boundary layer visualizations show evidence of strong spatial correlation between the thermal and vortical fields. While the size of the largest vortical structures remain largely insensitive to $\Rat$, it is observed that the filamentary structures become increasingly finer which is consistent with the theoretical findings in Reference \citep{kJ12b}. For the vortical field, this fine scale is imprinted into the interior whereas the interior spatial structure of the temperature field is observed to be de-correlated with the boundary. In the next section, we associate this effect to the thermal field behaving as an advective-diffusive scalar stirred by the vortical field and thermally dissipated. 
 
 \textcolor{black}{Figures \ref{vortz_bc} (a,b) show the baroclinic vorticity for $\Rat = 160$ where the LSV is retained; these visualizations should be compared with the middle column in Figure \ref{vortz} [i.e.~panels (b,e)]. The presence of the large scale vortex is apparent even in the baroclinic dynamics in both the midplane and the boundary layer, however the smaller length scales remain similar to those shown in Figure \ref{vortz} (b,e).
 }
 
-%(a)-(c) where instantaneous renderings of the fluctuating temperature at the horizontal and vertical mid-planes ($y \approx 0.5$ and $Z\approx 0.5$) are plotted for three different values of $\Rat$. 
-%We recall that the horizontal dimensions of the simulation domain is fixed at 10 critical wavelengths for all cases. 
-%Figure \ref{temp} (d)-(f) shows the flow structure within the thermal boundary layer. 
-%Here the finer structures for high $\Rat$ are more visible.
-
-%These visualizations illustrate that while finer scale flow structures emerge with increasing $\Rat$, the largest structures remain approximately the same size. 
-
-%If we interpret $\ell_{T}$ as the longest length scale at which viscosity can deform eddies, this relationship makes sense. 
-%Eddies larger than $\ell_{T}$ would be inviscid and thus subject to the Taylor-Proudman constraint.
-%At each timestep, these eddies are supressed along with the rest of the barotropic component. 
-%\textcolor{red}{wrt. the vertical profiles, I don't really know what to say about the integral scale.}
-%A possible interpretation of the slow increase of the integral scale with $\Rat$ is that it represents the increase in the propensity for linear regions (continuous filaments) of the flow structure. \textcolor{red}{Some of these statements are unclear/vague}
 
 
 
@@ -681,32 +587,17 @@ The thermal boundary layer visualizations show evidence of strong spatial correl
 \end{figure}
 
 In an effort to understand the scaling behavior of the various quantities discussed thus far, we compute rms values of all terms appearing in equations \eqref{eqn:barotropicvort}-\eqref{eqn:barotropictemp}. Vertical profiles of these quantities are shown in Figure \ref{F:Force_Balances} for $\Rat = 200$, which is a value that is representative of the turbulent regime. The data shown in each plot is computed by squaring each term in the respective equations, averaging this quantity over the horizontal plane, taking the square root, and then averaging in time. The material derivative $D_{t}$ is the rms of the sum of all forcing terms with the advective terms subtracted off (\textit{i.e.} for the vorticity equation \eqref{eqn:barotropicvort}, rms($D_{t}\zeta$) = rms($\partial_{Z}w + \nabla_{\perp}^{2}\zeta$)). Note that a logarithmic scale is used on the vertical axis of each figure to illustrate the differences in balances that occur in the interior with those that occur within the thermal boundary layer. 
-We find that advection and the time derivative terms are largest in each of the three equations throughout the fluid layer, which agrees with the results of Ref.~\cite{sM21} for simulations in which depth-invariant flows were present. 
+We find that advection and the time derivative terms are largest in each of the three equations throughout the fluid layer, which agrees with the results of Reference \cite{sM21} for simulations in which depth-invariant flows were present. 
 However, the dynamics are controlled by the material derivative, rather than the time derivative and advection separately. 
 Panel (a) shows that  $D_t \zeta$ and $\partial_z w$ are nearly identical in magnitude throughout the fluid layer. However, while smaller, the diffusion of vorticity remains comparable in magnitude to these two terms; in the fluid interior ($0.5 > Z > 0.1$) we find rms($\nabla_\perp^2 \zeta$) $\sim 2 \times 10^3$, whereas rms($D_t \zeta$) \textcolor{black}{$\sim 4 \times 10^3$} and rms($\partial_z w$) \textcolor{black}{$\sim 4 \times 10^3$}. Within the thermal boundary layer ($Z \lesssim 10^{-3}$) we find that all terms in the vorticity equation are important, indicating that the large amplitude vortical motions are directly influenced by viscous diffusion at the boundaries. 
 
 For the vertical momentum equation balances shown in Figure \ref{F:Force_Balances}(b) we find that $D_t w$ and $\partial_Z \psi$ are of nearly identical magnitude in the fluid interior, whereas the buoyancy force and diffusion terms are comparable in magnitude and the smallest of all terms in the interior. These results show that the vertical pressure gradient acts as the dominant driver of vertical motion in the interior. In the thermal boundary layer we find that all terms in the vertical momentum equation become comparable in magnitude, though as a consequence of impenetrability, diffusion remains the smallest of all terms. Figure \ref{F:Force_Balances}(c) shows a tendency in the interior for the horizontal material advection of fluctuating temperature to be balanced by horizontal thermal diffusion, whereas all terms become comparable in magnitude within the thermal boundary layer.
 
-%At best, we have a CIA balance in the boundary layer only. However, vortical motions are entirely suppressed by viscosity there.
-
-
-%Comparing $D_{t}$ with other terms in each equation shows that diffusion and vortex stretching are both important effects in the vorticity equation throughout the fluid layer, as illustrated in . 
-%
-%
-%For the vertical momentum equation shown in panels (b) and (e), we find that vertical motion is influenced primarily by the pressure gradient in the fluid interior. In particular, we note that the buoyancy force and the diffusion of vertical momentum are comparable in magnitude and represent the smallest of all terms in the interior. However, the buoyancy force becomes comparable to $D_t w$ within the thermal boundary layer 
-%
-%Figure \ref{F:Force_Balances} shows that the flow is dominated by advection, although we can better understand the dynamics by considering the acceleration of a fluid parcel in its \textit{Lagrangian} reference frame ($D_{t}$). 
-%In this frame, the vorticity dynamics are due to the smaller vortex stretching and diffusion terms. Similarly, the temperature perturbation dynamics respond to vertical advection of the mean temperature and diffusion. 
-%	The vertical momentum equation balance (Figure \ref{F:Force_Balances}\subref{sub:veloz}) shows that vertical flows are predominantly dependent on the pressure gradient, with a lower order balance between viscosity and buoyancy. 
 	
 	
 	
 
 	
-%	The vertical vorticity equation balance (Figure \ref{F:Force_Balances}\subref{sub:vortz}) shows that vortical flows are predominantly dependent on vortex stretching. 
-%	All momentum forces evolve to be the same magnitude in the thermal boundary layer. 
-%This reveals that interior dynamics driven by convective motions within the thermal boundary layer. 
-%The thermal field is therefore decoupled \textcolor{red}{(from the dynamics in the (non-bl) interior?), MAC: I don't think this is correct}and driven by the potential energy released through vertical advection of the mean temperature as indicated in the balances  (Figure \ref{F:Force_Balances}\subref{sub:temp}). \textcolor{red}{MAC: not exactly sure what this last point means.}
  
  
  
@@ -759,23 +650,17 @@ were entirely suppressed.
 The suppression was done to isolate the dynamics of the small scale convection and to enable simulations at previously inaccessible values of $\Rat$. A comparison was made with data from previously published simulations of the asymptotic model in which large amplitude, depth-invariant flows (e.g.~LSVs) were present. 
 This comparison has allowed for additional insight into the physics of small scale, QG convective turbulence, which drives the inverse kinetic energy cascade in this system. Asymptotically reduced Rayleigh and Reynolds numbers up to $\Rat = 280$ and $\Ret \approx 100$ were simulated, which represents the most extreme parameter regime accessed to date for QG convection in either the plane layer or spherical geometry. 
 %For comparison, at a representative value of $Ek\sim 10^{-15}$ for the Earth's outer core, this equates to $Ra\sim10^{22}$ and $Re\sim 10^7$.
-Recent DNS studies have reached small scale Reynolds numbers up to $\Ret \approx 33$ in the plane layer \citep{mY22a,mY22}, and up to $\Ret \approx 24$ in a spherical shell geometry \citep{nS17}. Ref.~\cite{cG19} used a non-asymptotic two-dimensional model in the equatorial region of a full sphere to reach $\Ret \approx 20$. For context, estimates suggest that characteristic flow speeds in the Earth's outer core yield reduced Reynolds numbers of $\Ret \approx 10^3-10^4$, clearly indicating that it is necessary to understand the physics of QG convection at large values of the reduced parameters. 
+Recent DNS studies have reached small scale Reynolds numbers up to $\Ret \approx 33$ in the plane layer \citep{mY22a,mY22}, and up to $\Ret \approx 24$ in a spherical shell geometry \citep{nS17}. Reference \cite{cG19} used a non-asymptotic two-dimensional model in the equatorial region of a full sphere to reach $\Ret \approx 20$. For context, estimates suggest that characteristic flow speeds in the Earth's outer core yield reduced Reynolds numbers of $\Ret \approx 10^3-10^4$, clearly indicating that it is necessary to understand the physics of QG convection at large values of the reduced parameters. 
 
 A subset of simulations were performed in which the horizontal dimensions of the simulation domain were systematically varied.
 In agreement with previous studies of non-rotating convection (e.g. \citep{rS18}), we find that \textcolor{black}{globally}
 %different quantities show a different dependence on the simulation domain size (Figure~\ref{figure:box_dim}). 
 averaged statistics, such as the Nusselt number and the Reynolds number, converge rapidly for horizontal dimensions that are larger than ten critical horizontal wavelengths (Figure~\ref{figure:box_dim}). 
 The \textcolor{black}{calculated length scales remained} approximately constant across the different domain sizes. 
-%The integral length scale of the flow field converges to a constant value with increasing domain size, but at a rate that may be influenced by the particular value of $\Rat$. However, the relative differences observed are small for our investigated range of $\Rat$; a conclusion that is supported by the rapid convergence of the Reynolds number with increasing domain size.  
-%\textcolor{red}{Perhaps a discussion of the box size and relationship to sphere would be useful. For the spherical geometry, reducing the Ekman number becomes equivalent to increasing the box size in some sense. TO, by this do you mean that it makes the critical wavelength smaller wrt box dimension? I'm not sure how constructive this comparison will be, as it might give the impression that changing box size actually changed your parameters. Maybe we just make a comment about the size of the domain that we would be simulating for the Earth ($10\times D \times E^{1/3} \sim 200 m?$).}
 
 
 Our investigation finds evidence that in the absence of depth-invariant flows both the heat and momentum transport approach asymptotic scaling regimes for large Rayleigh numbers (Figure~\ref{F:Nu_Re}), \textcolor{black}{though these scaling regimes occur only at the largest accessible values of $\Rat$.} When generalized to non-unity Prandtl numbers, \textcolor{black}{these scalings are} $Nu \sim Pr^{-1/2}\Rat^{3/2}$ and $\Ret \sim \Rat/Pr$. 
 When recast in terms of large scale quantities these scalings become $Nu \sim Pr^{-1/2} Ra^{3/2} Ek^2$ and $Re \sim Ra Ek/Pr$, which represent diffusion-free scalings when interpreted on the large domain scale \citep{jmA20}.
-%\textcolor{black}{For $Nu$, the data suggests this asymptotic scaling, but it is possible that a large enough $\Rat$ regime has not been reached. 
-%	The momentum transport data is less convincing. For $\Rat>10,$ a power scaling of $\Rat^{1.33}$ was found to fit the data.  
-%Renormalizing  $\Ret$ by $\Rat$ as suggested by CIA theory appears to only flatten the data for $\Rat\geq 220.$ Further simulations would be required to confirm whether this scaling continues to hold. 
-%}
 
 
 % are consistent with a diffusion-free scaling resulting from a Coriolis-Inertia-Archimedean (CIA) balance \citep{cG19,jmA20}. 
@@ -783,16 +668,6 @@ The simulations that include depth-invariant flows exhibit heat and momentum tra
 %The findings from the present small-scale QG convection study therefore provides an important benchmark for comparison.
 
 %
-% MAC: not totally convinced the section below is necessary, or it needs more explanation
-%
-% The Reynolds number scaling indicates that fluid flow velocities achieve rotational free-fall $U_{r\!f\!f}=g\alpha\Delta T/2\Omega$, whereas the Nusselt number scaling indicates that non-dimensional temperature fluctuations obey $\theta \equiv E^{-1/3} (\theta^*/\Delta T) \sim  \lb\Rat/Pr\rb^{1/2}$. \textcolor{red}{MAC: strange to switch back and forth between dimensional and non-dimensional}
-%These scalings are also consistent with the large and small scale Reynolds number estimates
-%\be
-% Re = \left [ \frac{Ra}{Pr}\frac{Nu-1}{Pr}  \right ]^{2/5} E^{1/5}
-%\quad \Longleftrightarrow \quad
-%  \Ret = \left [ \frac{\Rat}{Pr}\frac{Nu-1}{Pr}  \right ]^{2/5} 
-%\ee
-%deduced from the exact relation \eqref{eq:edisspn} for the volume-averaged energy dissipation $\epsilon_u$ upon estimating it dimensionally as $\epsilon^*_u =  (\nu^3/\ell_\nu)\epsilon_u \sim u^{*3}/{\ell^*_I}$ (see also \citep{ek13b}). \textcolor{red}{This assumes that the large length scales control dissipation?}
 
 
 
@@ -865,7 +740,7 @@ We therefore find an interior Coriolis-Inertial (CI) balance in which the geostr
 %D^*_{t^*} \theta^* \sim  \kappa \nabla^{*2}_\perp \theta^*.
 %\ee
  
- To summarize, we observe what may be termed a \textsl{nonlocal} CIA balance where the action of the Archimedean buoyancy force occurring within the thermal boundary layers is spatially separated from the interior Coriolis and inertial forces. It can now be shown that this finding resolves the dichotomy of not finding a diffusion-free integral scale $\ell^*_I$ as  predicted by a local CIA balance.   Assuming velocities achieve rotational free-fall, as presently observed, and that pressure is the geostrophic streamfunction, i.e., 
+ To summarize, we observe what may be termed a \textsl{non-local} CIA balance where the action of the Archimedean buoyancy force occurring within the thermal boundary layers is spatially separated from the interior Coriolis and inertial forces. It can now be shown that this finding resolves the dichotomy of not finding a diffusion-free integral scale $\ell^*_I$ as  predicted by a local CIA balance.   Assuming velocities achieve rotational free-fall, as presently observed, and that pressure is the geostrophic streamfunction, i.e., 
  \be
  \ub^*\sim U_{r\!f\!f} =\frac{g\alpha\Delta T}{2\Omega}, \quad  p^*\sim 2\Omega U_{r\!f\!f}\ell^*_I, \quad  \zeta^*\sim U_{r\!f\!f}/ \ell^*_I,
  \ee
@@ -934,7 +809,7 @@ Most importantly, we note that the absence of a local  Archimedean force in the 
 %We emphasis that all scaling exponents are uniquely determined and depend on the heat transport scaling exponent. For an ultimate heat transport law these findings are all consistent with the simulated results. Specifically, Figure \ref{F:bl_scaling} shows that the vorticity, velocity, and thermal boundary layer thickness scalings are consistent with the $5/4,\; 5/8,$ and $-15/8$ exponents \textcolor{red}{This figure has disappeared}. From  Figure~\ref{temp} we observe diminishing scale of convection with increasing $\Rat$. Furthermore we observe that $\max{\vartheta}_{rms}$ scaling with a $7/8$ exponent agrees with the data in Figure \ref{temp}. 
  
 
-The results presented in this study highlight the non-trivial behavior of rapidly rotating convection and provide a foundation for comparison with DNS and experiment in both the plane-layer and spherical geometries. By removal of the LSV, our study was able to investigate the origin of the inverse cascade and our results demonstrate how rotating convection departs from the theory of isotropic, homogenous turbulence. Most significantly, we have shown that diffusion free force-balance arguments, even in the regime of large $Re$ provide an incomplete picture of the convective dynamics, and are insufficient when attempting to identify the pertinent length scales in the flow. Instead, our investigations reveal that the interior, despite controlling the global momentum and heat transport, is forced externally by the boundary layers. 
+The results presented in this study highlight the non-trivial behavior of rapidly rotating convection and provide a foundation for comparison with DNS and experiment in both the plane-layer and spherical geometries. By removal of the LSV, our study was able to investigate the origin of the inverse cascade and our results demonstrate how rotating convection departs from the theory of isotropic, homogeneous turbulence. Most significantly, we have shown that diffusion free force-balance arguments, even in the regime of large $Re$ provide an incomplete picture of the convective dynamics, and are insufficient when attempting to identify the pertinent length scales in the flow. Instead, our investigations reveal that the interior, despite controlling the global momentum and heat transport, is forced externally by the boundary layers. 
 Therefore, we \textcolor{black}{conclude} that QG dynamics at large Rayleigh number should not be considered diffusion free.
 
 Several open questions are apparent from this investigation, \textcolor{black}{including:} Does the\\

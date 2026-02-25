@@ -19,4 +19,6 @@
 
 #*.png
 Oliver_2023/figures/*
+Oliver_2025/figures/*
+Oliver_2026/figures/*
 !Introduction/figures/*.pdf
