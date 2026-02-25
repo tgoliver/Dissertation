@@ -19,3 +19,4 @@
 
 #*.png
 Oliver_2023/figures/*
+!Introduction/figures/*.pdf
