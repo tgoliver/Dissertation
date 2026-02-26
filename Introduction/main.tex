@@ -2,7 +2,7 @@
 \label{Introduction}
 \section{Earth's Core and other Planetary Interiors}
 \label{s:pi}
-\subsection*{The core}
+\subsection{The core}
 \label{s:thecore}
 The inner core and outer core combined make up $32\%$ of the mass of the Earth, but only $16\%$ of the volume. 
 This discrepancy is because the core is predominantly composed of heavy iron (Fe) and, to a lesser extent, nickel (Ni) \citep{hK13}.
@@ -47,12 +47,12 @@ An average rate of reversals is estimated to be around three each million years 
 
 The studies presented in this dissertation are purely hydrodynamic only and do not include magnetic effects.  
 Nevertheless, the results can still be applied to the dynamo problem, as the magnetic and hydrodynamic problems share many similarities.  
-\subsection*{Topography at the core mantle boundary}
+\subsection{Topography at the core mantle boundary}
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Introduction/figures/llsvp_lekic}
 	\end{center}
-	\caption[Vote map of Large Low Shear Velocity Provinces]{Vote map for the presence of Large Low Shear Velocity Provinces (LLSVPs) at the deepest part of the mantle ($1000–2800$ km depth). Warmer colors correspond to greater consensus about the presence of LLSVPs. Borrowed from Lekic et al. (2012) \citep{vL12}.}
+	\caption[Vote map of Large Low Shear Velocity Provinces]{Vote map for the presence of Large Low Shear Velocity Provinces (LLSVPs) at the deepest part of the mantle ($1000$–$2800$ km depth). Warmer colors correspond to greater consensus about the presence of LLSVPs. Borrowed from Lekic et al. (2012) \citep{vL12}.}
 	\label{f:llsvp_lekic}
 \end{figure}
 Chapters \ref{Oliver_2025} and \ref{Oliver_2026} are motivated by hypothesized topography at the CMB. 
@@ -79,7 +79,7 @@ We do this because our simulations are much more viscous than the actual core, a
 In particular the Ekman layer, which is estimated to be $<O(1$m$)$ in the core \citep[e.g.][]{hG68}, is at least  $10^{4}$ times larger in our simulations. 
 For this reason, we perform a suite of simulations at varied topographic amplitude and determine a scaling relationship which we extrapolate to the core.
 
-\subsection*{Beyond the core}
+\subsection{Beyond the core}
 Although special to us, there does not seem to be anything particularly unique about the Earth's liquid core. 
 Liquid and fluid layers are ubiquitous within and beyond the solar system.
 Convection plays a critical role in the formation and evolution of stars. In the Sun, the convection zone, which begins at a depth of around $2\times10^{5}$ km and extends to the surface, powers the solar dynamo and transports heat and light to the exterior.
@@ -140,7 +140,7 @@ These approximations permit a simplification of equation \eqref{e:ns_f}.
 The advective term, however, is unchanged, so solving equation \eqref{e:ns} for planetary parameters remains infeasible.
 Our approach will involve solving equation (\ref{e:ns}) under achievable circumstances and then developing scaling arguments which can be extended to the regimes of planets.
 
-\subsection*{Geostrophy and Rotation} 
+\subsection{Geostrophy and Rotation} 
 Planets, including Earth, tend to rotate very quickly such that viscous and buoyant effects cannot balance the Coriolis acceleration.
 In this limit, equation \eqref{e:ns} satisfies
 \begin{equation}
@@ -172,7 +172,7 @@ An important consequence is that convection, which generally requires velocities
 The extent to which the Taylor-Proudman constraint inhibits geophysical flows remains an outstanding question, although much progress has been made, particularly through analysis of the rotating Rayleigh-B\`enard system.
 
 
-\subsection*{The rotating Rayleigh-B\`enard problem}
+\subsection{The rotating Rayleigh-B\`enard problem}
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.7\textwidth]{Introduction/figures/rrbc.pdf}
@@ -245,7 +245,8 @@ For small $Ek$ and $Pr = O\lb 1\rb $, the rotational constraint inhibits convect
 The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling law $Ra_c\sim Ek^{-4/3}$.
 	\begin{table}
 		\begin{center}
-		\begin{tabular}{|c c c c c c|}
+		\begin{tabular}{c c c c c c}
+			\hline
 			\hline
 			Body&$Ra$ &$Ek$ &$Pr$ &$Re$ &$Ro$\\
 			\hline
@@ -254,6 +255,7 @@ The critical value $Ra_c$ increases with decreasing $Ek,$ following the scaling 
 			Plane Layer (Numerical) &$3\times 10^{13}$ &$5\times10^{-9}$&$1$&$6\times 10^{4}$ &$3\times10^{-4}$ \\
 			Cylinder (Water)&$4\times 10^{12}$ & $5\times 10^{-8}$ & $5.2$&$10^{4}$ &$5\times 10^{-4}$\\
 \hline
+			\hline
 \end{tabular}
 		\end{center}
 		\caption[Example values for non-dimensional parameters]{Example values for the non-dimensional parameters.
@@ -272,12 +274,14 @@ Table \ref{t:asymp} provides a summary of the behavior of the critical parameter
 
  \begin{table}
  \begin{center}
- \begin{tabular}{|c c c c c|}
+ \begin{tabular}{c c c c c}
+ \hline
  \hline
  $Ek$ Limit& $Ra_c$ & $k_{c}$ &$\lambda_{c}$ & $\omega_{c}$\\
  \hline
  $Ek\rightarrow \infty$ & $657.5$ & $2.22$ & 2.82 & 0 \\
  $Ek\rightarrow 0$ & $8.70\times Ek^{-4/3}$ & $1.30\times Ek^{-1/3}$ & $4.82\times Ek^{1/3}$ & $Ek^{-2/3}$ \\
+ \hline
  \hline
  \end{tabular}
  \end{center}
@@ -377,7 +381,7 @@ As a result
 %	\label{e:f3}
 %\end{subequations}
 
-\subsection*{Convection in spherical geometries}
+\subsection{Convection in spherical geometries}
 Plane layer geometries are exceedingly useful as \textit{local} models for geophysical systems. 
 The rotating Rayleigh-B\`enard system, for example, is a useful representation for the polar region of a planet, where rotation and gravity are anti-aligned. 
 However planar models can miss many important features such as boundary curvature or radial gravity.
@@ -389,7 +393,7 @@ Unfortunately, the asymptotic reduction approach of Julien et al. does not exten
 \section{Consequences of Rotation and Geostrophy}
 The previous section introduced geostrophy and the Taylor-Proudman constraint, and we discussed some of the dynamical consequences related to convection. 
 In this section, we will discuss a few phenomena particular to rotating flows which play important roles in the projects discussed in this dissertation.
-\subsection*{The inverse cascade and large scale vortices}
+\subsection{The inverse cascade and large scale vortices}
 The canonical picture of turbulence is that advection forces the transfer of energy between length scales. The result of this transfer is a tendency for energy to move from large scales to small, or small scales to large, depending on the system in question. 
 This process is known as the energy cascade, and is a hallmark feature of a turbulence \citep{sP00}.
 In most cases, the cascade is ``forward,'' which means that the net effect of the cascade is to move energy from large scales to small.
@@ -406,7 +410,7 @@ Although the inverse cascade and the build up of energy in large scales is thoug
 Indeed, simulations of planetary convection indicate the generation of zonal flows which fill the entire sphere \citep{cJ03,yL21,jN24,sT24}.
 In Chapter \ref{Oliver_2023}, we present a study in which the LSV is artificially removed via the suppression of the component of the nonlinear term which generates depth invariant flows. We chose to remove the LSV so that we could better understand the dynamics underlying the convection, which are otherwise obscured by the large scale flow.
 
-\subsection*{Geostrophic Contours}
+\subsection{Geostrophic Contours}
 A separate phenomenon is the coherence of rotating flows with the so-called ``geostrophic contours.''
 The key result is that in the limit $Ro,Ek\rightarrow0$ the geostrophic flow is constrained to lines of constant height, where height is measured as the distance between bounding surfaces along the rotation axis. 
 Here we provide a physical justification for the phenomenon, and note that a full mathematical treatment of the problem can be found in Greenspan \cite{hG68}.

@@ -304,7 +304,7 @@ However, because the primary flow quantities, such as flow speeds, show similar 
 %\renewcommand{\thetable}{M.\arabic{table}}
 %\setcounter{table}{0}
 
-\subsection*{Governing Equations}
+\subsection{Governing Equations}
 For simplicity, the present work focuses solely on the hydrodynamic problem of convection of a Boussinesq fluid contained within a rotating spherical shell with inner radius $\ricb$ and outer radius $\rcmb$. In the absence of topography the aspect ratio of the shell is fixed at $\chi = \ricb/\rcmb = 0.35$. As discussed below, finite amplitude topography is superposed onto the outer shell. The physical properties of the fluid are the kinematic viscosity $\nu$, thermal diffusivity $\kappa$ and thermal expansion coefficient $\alpha$. 
 The inner and outer boundaries are held at fixed temperatures $\ticb$ and $\tcmb$, respectively. 
 $\Omega $ is the angular rotation rate.
@@ -340,7 +340,7 @@ The Reynolds number is a diagnostic parameter that characterizes the flow speed.
 \end{equation}
 where the overline denotes a time average and  $\left<\cdot\right>$ indicates a volume average.
 
-\subsection*{Model Setup and Numerical Details}
+\subsection{Model Setup and Numerical Details}
 
 Given that the CMB is poorly constrained by seismology, we are motivated to use as simple a model as possible for its shape, whilst retaining the ability to easily control essential physical characteristics such as amplitude and width. 
 In this regard we superpose a Gaussian bump on the outer boundary, as shown in Figure \ref{f:25topo}. 
@@ -385,10 +385,14 @@ The use of no-slip mechanical boundary conditions implies viscous torques act al
 \begin{table}
 \textcolor{\revtxt}{
 \begin{center}
-\begin{tabular}{|c c c c|}
+\begin{tabular}{c c c c}
 \hline
+\hline
+\\
 $\epsilon$ &Amplitude (km)&Aspect Ratio ($\epsilon /w$) &$\cos^{-1}(\mathbf{\hat{r}}\cdot\mathbf{\hat{n}})$\\
+\\
 \hline
+\\
 $0.005$&11.3 &$4.8\times 10^{-2}$ &$1.01^{\circ}$\\
 $0.01$&22.6  & $9.5\times 10^{-2}$&$2.02^{\circ}$\\
 $0.02$&45.2  &$0.019$ &$4.06^{\circ}$\\
@@ -397,6 +401,8 @@ $0.05$&113   & 0.048&$10.2^{\circ}$\\
 $0.1$&226    &0.095 &$20.1^{\circ}$\\
 $0.2$&452    & 0.19&$37.5^{\circ}$\\
 $0.3$&678    & 0.29&$50.3^{\circ}$\\
+\\
+\hline
 \hline
 \end{tabular}
 \end{center}
@@ -410,7 +416,7 @@ The maximum angle between the surface normal vector $\mathbf{\hat{n}}$ and the r
 \label{t:bump_geo}
 \end{table}
 
-\subsection*{Choice of parameter values}
+\subsection{Choice of parameter values}
 
 Core turbulence is thought to be strongly constrained by the effects of the Coriolis force. 
 Thus, our present goal is to model convection in this rotationally constrained regime while simultaneously allowing for as broad a range of spatiotemporal scales as is numerically feasible. 
@@ -427,7 +433,7 @@ We therefore choose topographic amplitudes that maintain this ordering of length
 \textcolor{\revtxt}{The majority of the simulations were performed with $\epsilon  = 0.2, 0.1$ in which this ordering is well satisfied, and more limited sweeps are carried out for $\epsilon  = [0.005,0.01,0.02,0.03,0.05,0.1,0.2,0.3].$ }
 
 
-\subsection*{\textcolor{\revtxt}{Asymptotic Scalings for Topographic Torques
+\subsection{\textcolor{\revtxt}{Asymptotic Scalings for Topographic Torques
 }}
 \label{s:25tt}
 %The topographic torque is defined by
@@ -551,7 +557,7 @@ Equations \eqref{e:25gtz_ek_sc} and \eqref{e:25gtz_re_sc} can be reconciled by n
 
 
 
-\subsection*{Relating $\widetilde{t}$ to length of day}
+\subsection{Relating $\widetilde{t}$ to length of day}
 
 The rescaled time $\tt$ can be related to the length of day as follows. Denoting dimensional time (in seconds) as $\tau$ we have
 \be 

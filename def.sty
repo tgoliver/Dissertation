@@ -279,3 +279,74 @@
   {\par\normalfont\normalsize\noindent\ignorespaces}
   {\par\vskip9pt
 }  
+
+
+%\newcounter{alphasect}
+%\newcounter{alphatab}
+%\def\alphainsection{0}
+%\def\alphaintable{0}
+%\newcounter{alphafig}
+%\def\alphainfigure{0}
+%
+%\let\oldsection=\section
+%\def\section{%
+%  \ifnum\alphainsection=1%
+%    \addtocounter{alphasect}{1}
+%  \fi%
+%\oldsection}%
+%\renewcommand\thesection{%
+%  \ifnum\alphainsection=1%
+%    A.\arabic{alphasect}%
+%  \else
+%    \arabic{section}%
+%  \fi%
+%}%
+%\newenvironment{alphasection}{%
+%  \ifnum\alphainsection=1%
+%    \errhelp={Let other blocks end at the beginning of the next block.}
+%    \errmessage{Nested Alpha section not allowed}
+%  \fi%
+%  \setcounter{alphasect}{0}
+%  \def\alphainsection{1}
+%  \setcounter{alphatab}{0}
+%  \def\alphaintable{1}
+%  \setcounter{alphafig}{0}
+%  \def\alphainfigure{1}
+%}
+%
+%\let\oldfigure=\figure
+%\def\figure{%
+%  \ifnum\alphainfigure=1%
+%    \addtocounter{alphafig}{1}
+%  \fi%
+%\oldfigure}%
+%\renewcommand\thefigure{%
+%  \ifnum\alphainfigure=1%
+%    A.\arabic{alphafig}%
+%  \else
+%    \arabic{figure}%
+%  \fi%
+%}%
+%\let\oldtable=\table
+%\def\table{%
+%  \ifnum\alphaintable=1%
+%    \addtocounter{alphatab}{1}
+%  \fi%
+%\oldtable}%
+%\renewcommand\thetable{%
+%  \ifnum\alphaintable=1%
+%    A.\arabic{alphatab}%
+%  \else
+%    \arabic{table}%
+%  \fi%
+%}%
+%
+%{%
+%  \setcounter{alphasect}{0}
+%  \def\alphainsection{0}
+%%  \setcounter{alphatab}{0}
+%%  \def\alphaintable{0}
+%%  \setcounter{alphafig}{0}
+%%  \def\alphainfigure{0}
+%}%
+\renewcommand{\arraystretch}{1.5} % Default value: 1

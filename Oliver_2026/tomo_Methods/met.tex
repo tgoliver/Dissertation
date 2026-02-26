@@ -40,7 +40,7 @@ where $\nu$ is the kinematic viscosity, $g_o$ is the gravitational acceleration 
 
 The primary goal of the present study is to determine the role played by the topographic parameters $\epsilon $ and $h\lb \theta,\phi\rb $. Thus, to narrow the parameter space, the Prandtl number is fixed at $Pr = 1$. 
 With the exception of five simulations performed at $Ek = 10^{-4},$ the Ekman number is fixed at $Ek = 10^{-6}.$ 
-No-slip, fixed temperature boundary conditions are employed. The temperature at $r_{cmb}$ is set to zero in all simulations except for a small set of laminar simulations which we discuss in Section \ref{s:subc}. 
+No-slip, fixed temperature boundary conditions are employed. The temperature at $r_{cmb}$ is set to zero in all simulations except for a small set of laminar simulations which we discuss in if the first section of Results. 
 In the absence of topography, the onset of convection occurs at the critical Rayleigh number $Ra_c \approx 1.8\times 10^8$ and critical azimuthal wavenumber $m_c = 32$ \citep[e.g.][]{aB22}. 
 Because the critical Rayleigh number increases with decreasing $Ek,$ it is useful to define the reduced Rayleigh number
 $\Rat = Ra Ek^{4/3},$ 
@@ -49,31 +49,26 @@ However, as mentioned previously, unique instabilities arise in the deformed geo
 
 The results in this study are grouped into two categories. We first present results for small values of $\Rat,$ such that $\Rat<\Rat_{c}.$
 As we show, some of these cases are unstable to fluid motion due to topographic instabilities. We will nevertheless refer to these simulations as ``subcritical'' because $\Rat<Ra_{c}.$
-The second group of results are turbulent, and for these cases we fix $\Rat = 40$ and $Ek = 10^{-6}$. Tables \ref{t:p_space} - \ref{t:p_space3} provide a comprehensive list of the run parameters.
+The second group of results are turbulent, and for these cases we fix $\Rat = 40$ and $Ek = 10^{-6}$. Tables \ref{t:p_space} - \ref{t:p_space3} in the Appendix provide a comprehensive list of the run parameters.
 
 
 \subsection{Numerical Methods}
 
-\input{tomo_Methods/nek.tex}
+\input{Oliver_2026/tomo_Methods/nek.tex}
 
 \subsection{Topography}
 
 
 \begin{figure*}
 	\begin{center}
-         \subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/Y0201_topo}}
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/Y0804_topo}} 
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/Y3216_topo}}\\
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/Y3217_topo}} 
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/tomo_topo}}
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{figures/hump_vis_white}}\\
-%         \subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y0201}}
-%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y0804}}
-%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y3216}}
-%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y3217}} 
-%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/tomo_moll}}
+         \subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0201_topo}}
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0804_topo}} 
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3216_topo}}\\
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3217_topo}} 
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/tomo_topo}}
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/hump_vis_white}}\\
 	\end{center}
-	\caption{Visualisations of the topography used in the simulations: (a) $\hlm{2}{1}$;  (b) $\hlm{8}{4}$; (c) $\hlm{32}{16}$; (d)$\hlm{32}{17}$; (e) $h_t$. (f) The localized topography from \citep{tO25}.
+	\caption[Topographic models]{Visualisations of the topography used in the simulations: (a) $\hlm{2}{1}$;  (b) $\hlm{8}{4}$; (c) $\hlm{32}{16}$; (d)$\hlm{32}{17}$; (e) $h_t$. (f) The localized topography from \citep{tO25}.
 	}
 
 	\label{f:topo}
@@ -93,7 +88,7 @@ We consider $\hlm{32}{16},\hlm{8}{4},$ and $\hlm{2}{1},$ across a sweep of $\eps
 
 We also study a topographic shape informed by seismological investigations of the deep mantle. 
 %suggesting the presence of LLSVP's at the base of the mantle. 
-For this shape, which we refer to as the ``tomographic model'' and denote the corresponding shape function as $h_{t}$, we use the cluster analysis maps developed in \cite{vL12}, and consider only the areas where all of the included studies \citep{cH08,jR11,bK08,cM00,nS10} agree on the presence of an LLSVP.
+For this shape, which we refer to as the ``tomographic model'' and denote the corresponding shape function as $h_{t}$, we use the cluster analysis maps developed in Lekic et al. (2012) \citep{vL12}, and consider only the areas where all of the included studies \citep{cH08,jR11,bK08,cM00,nS10} agree on the presence of an LLSVP.
 We associate LLSVPs with intrusions into the core due to their high density \citep{jT15}, although this model is largely ad-hoc. 
 Although CMB topography is likely broadband in structure, the voting map is essentially binary -- it shows where models agree and where they disagree concerning LLSVPs, but it does not inform us of the shape of the topography. Thus, a choice must be made with regards to representing this voting map. 
 To smooth the edges which are otherwise sharp due to the discrete cluster analysis, we use an error function to build $h_{t}$. 
@@ -103,26 +98,25 @@ We fix the parameter determining the gradient of the topographic edges, so that 
 	\label{e:ht}
 \end{equation}
 where $\delta\lb \theta,\phi\rb $ gives the nearest distance to a cluster edge with the convention chosen such that $\delta\lb \theta,\phi\rb <0$ ($>0$) within (outside) the clusters. The slope parameter is $\sigma=28.2,$ which we choose because it corresponds to an average gradient of 0.02 per degree (that is a topography of amplitude $\epsilon=0.02$ decays to $10^{-2} \times\epsilon $ over $1^{\circ}$). 
-The Supplementary Information contains values for $h_{t}$ on a latitude-longitude grid. 
 
-Figures \ref{f:topo}(a)-(e) display the topographic shapes studied in the present work. For comparison, Figure \ref{f:topo}(f) displays the localized Gaussian bump investigated in \cite{tO25}.
+Figures \ref{f:topo}(a)-(e) display the topographic shapes studied in the present work. For comparison, Figure \ref{f:topo}(f) displays the localized Gaussian bump investigated in Oliver et al. (2025).
 In all cases $h\lb \theta,\phi\rb $ is normalized such that $\text{max}{\left|h\right|} = 1.0$. 
 %such that $\epsilon$ can then be thought of as the max amplitude of the topography. 
 We note that this is not the same as the orthonormal or  ``4$\pi$'' normalizations used in many texts, and that the surface area of the outer boundary is not constant across the different topographic shapes.
 Since $\hlm{\ell}{m}$ is composed of a single harmonic, the surface area of the CMB is only weakly dependent on the topographic amplitude ($O\lb \epsilon^{2}\rb $). This is not the case for the tomographic model, where $h_{t}$ has a spherical mean. Table \ref{t:sa} gives the CMB surface areas for all geometries, showing that only small changes in the surface area are observed over our range of parameters.
 
 During the discussion of topographic torques we present a scaling argument which requires a distribution rule for the size of the spherical harmonic coefficients of topography. 
-\cite{mP23} and \cite{vD25} used Kaula's rule \citep{wK66} to extend the CMB topography spectrum when calculating topographic torques, and we adopt the same approach here.
+Puica et al. (2023) \cite{mP23} and Dehant et al. (2025) \cite{vD25} used Kaula's rule \citep{wK66} to extend the CMB topography spectrum when calculating topographic torques, and we adopt the same approach here.
 Kaula's rule suggests that the spherical harmonic coefficients for geophysical topography scale as $\ell^{-2}$. 
 The tomography shape that we employ is artificial and so it is helpful to compare it with Kaula's rule.
-Figure \ref{f:ht_spec} shows the magnitudes of the spectral coefficients for $\epsilon  = 0.20,$ $h_{t},$ where we observe that the spectrum roughly follows Kaula's rule. This rough agreement is interpreted as coincidental although it may be that the coarse cluster analysis performed by \cite{vL12} is sufficient to reproduce the rule. 
+Figure \ref{f:ht_spec} shows the magnitudes of the spectral coefficients for $\epsilon  = 0.20,$ $h_{t},$ where we observe that the spectrum roughly follows Kaula's rule. This rough agreement is interpreted as coincidental although it may be that the coarse cluster analysis performed in Lekic et al. (2012) \cite{vL12} is sufficient to reproduce the rule. 
 Regardless, the plot in Figure \ref{f:ht_spec} does not reflect any physical result, it merely indicates that we expect our argument using Kaula's rule to apply to the tomography model.  It is straightforward to adjust the scaling law according to any topography spectrum.
 
 \begin{figure}
 	\begin{center}
-		\subfloat[][]{\includegraphics[width=0.48\textwidth]{figures/ht_spec}}
+		\subfloat[][]{\includegraphics[width=0.48\textwidth]{Oliver_2026/figures/ht_spec}}
 	\end{center}
-	\caption{Spectral decomposition of the tomographic shape function, $h_{t}$ at $\epsilon  = 0.20$, averaged over $m$. The solid black line shows the scaling for Kaula's rule \citep{wK66}, which we use to estimate the torques. The dashed black line shows $\ell^{-1}$ for reference.}
+	\caption[Spectral decomposition of the tomographic shape function]{Spectral decomposition of the tomographic shape function, $h_{t}$ at $\epsilon  = 0.20$, averaged over $m$. The solid black line shows the scaling for Kaula's rule \citep{wK66}, which we use to estimate the torques. The dashed black line shows $\ell^{-1}$ for reference.}
 	\label{f:ht_spec}
 \end{figure}
 
@@ -135,19 +129,13 @@ Regardless, the plot in Figure \ref{f:ht_spec} does not reflect any physical res
 
 \begin{figure}
 	\begin{center}
-        \subfloat[][]{\includegraphics[width=0.19\textwidth]{figures/0x10Y0201_geo_contours}}
-	\subfloat[][]{\includegraphics[width=0.19\textwidth]{figures/0x10Y0804_geo_contours}}
-	\subfloat[][]{\includegraphics[width=0.19\textwidth]{figures/0x10Y3216_geo_contours}}
-	\subfloat[][]{\includegraphics[width=0.19\textwidth]{figures/0x10Y3217_geo_contours}}
-	\subfloat[][]{\includegraphics[width=0.19\textwidth]{figures/0x10tomo_geo_contours}} \\
-	%%UNCOMMENT HERE TO SEE VIS
-%        \subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y0804_equator_uphi_avg}}
-%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y3216_equator_uphi_avg}}
-%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y3217_equator_uphi_avg}}
-%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10tomo_equator_uphi_avg}} 	
-	%%
+        \subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y0201_geo_contours}}
+	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y0804_geo_contours}}
+	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y3216_geo_contours}}
+	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y3217_geo_contours}}
+	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10tomo_geo_contours}} \\
 	\end{center}
-	\caption{Geostrophic contours and impact on time-averaged flow. Geostrophic contours for (left to right) $\hlm{2}{1}$, $\hlm{8}{4}$, $\hlm{32}{16}$, $\hlm{32}{17}$, and $h_{t}$ for $\epsilon  = 0.1$. }
+	\caption[Example gesotrophic contours]{Geostrophic contours and impact on time-averaged flow. Geostrophic contours for (left to right) $\hlm{2}{1}$, $\hlm{8}{4}$, $\hlm{32}{16}$, $\hlm{32}{17}$, and $h_{t}$ for $\epsilon  = 0.1$. }
 	\label{f:t_geo_c}
 \end{figure}
 
@@ -179,7 +167,7 @@ An important consequence is that the perturbations to $H_{geo}$ are larger ampli
 	%\end{aligned}
 	\label{e:h_geo}
 \end{equation}
-A derivation of this result is included in the Appendix.
+A derivation of this result is included in the Appendix \ref{a:oddveven}.
 
 \subsection{Output/definitions}
 
@@ -230,7 +218,7 @@ To quantify the flow morphology we report a weighted wavenumber $m_{eq}$, based 
 	m_{eq} = \frac{\sum_{m=1}m \mathcal{E}_{m}}{\sum_{m=1}\mathcal{E}_{m}}.
 	\label{e:meq}
 \end{equation}
-The weighted wavenumber is similar to the mean spherical harmonic degree used in \cite{uC06} (also \cite{jN24}), however it is defined for the order rather than the degree.
+The weighted wavenumber is similar to the mean spherical harmonic degree used in Christensen and Aubert (2006) \citep{uC06} (also \citep{jN24}), however it is defined for the order rather than the degree.
 We found $m_{eq}$ was a useful quantity because the topography significantly alters the azimuthal structure of the flow.
 
 %As a reminder, $\mathcal{E}_{m}$ and $m_{eq}$ are calculated from data in the equatorial plane only.
