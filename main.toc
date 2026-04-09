@@ -18,44 +18,44 @@ Tobias G. Oliver, Adrienne S. Jacobi, Keith Julien, Michael A. Calkins\par
 \contentsline {section}{\numberline {3.2}Methods}{27}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Governing equations}{27}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Diagnostic quantities}{29}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Results}{31}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Influence of simulation domain size}{31}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Heat and momentum transport}{33}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.3}Results}{30}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Influence of simulation domain size}{30}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Heat and momentum transport}{32}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Length scales and flow structure}{35}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Balances}{45}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Discussion and Conclusions}{48}{section.3.4}%
-\contentsline {chapter}{\numberline {\th@ChapterStyle 4}\normalsize \normalfont Turbulence in Earth's core generates large topographic torques on the mantle}{56}{chapter.4}%
+\contentsline {subsection}{\numberline {3.3.4}Balances}{44}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Discussion and Conclusions}{46}{section.3.4}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle 4}\normalsize \normalfont Turbulence in Earth's core generates large topographic torques on the mantle}{53}{chapter.4}%
 Tobias G. Oliver, Eric G. Blackman, John A. Tarduno, Michael A. Calkins\par 
-\contentsline {section}{\numberline {4.1}Introduction}{57}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Results}{60}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Discussion}{67}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Methods}{70}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Governing Equations}{70}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Model Setup and Numerical Details}{71}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Choice of parameter values}{73}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}\textcolor {black}{Asymptotic Scalings for Topographic Torques }}{75}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Relating $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle t$}\mathaccent "0365{t}$ to length of day}{77}{subsection.4.4.5}%
-\contentsline {section}{\numberline {4.5}Extended Data}{79}{section.4.5}%
-\contentsline {chapter}{\numberline {\th@ChapterStyle 5}\normalsize \normalfont Dynamical effects of core mantle boundary topography in the Earth's core}{82}{chapter.5}%
+\contentsline {section}{\numberline {4.1}Introduction}{54}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Results}{57}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Discussion}{63}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Methods}{68}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Governing Equations}{68}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Model Setup and Numerical Details}{69}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Choice of parameter values}{72}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}\textcolor {black}{Asymptotic Scalings for Topographic Torques }}{72}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Relating $\setbox \z@ \hbox {\mathsurround \z@ $\textstyle t$}\mathaccent "0365{t}$ to length of day}{74}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Extended Data}{76}{section.4.5}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle 5}\normalsize \normalfont Dynamical effects of core mantle boundary topography in the Earth's core}{79}{chapter.5}%
 Tobias G. Oliver, Eric G. Blackman, John A. Tarduno, Michael A. Calkins\par 
-\contentsline {section}{\numberline {5.1}Introduction}{83}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Methods}{86}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Governing equations}{86}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Numerical Methods}{87}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Topography}{88}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}The geostrophic height function}{91}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Output/definitions}{93}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{80}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Methods}{83}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Governing equations}{83}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Numerical Methods}{85}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Topography}{85}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}The geostrophic height function}{89}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Output/definitions}{92}{subsection.5.2.5}%
 \contentsline {section}{\numberline {5.3}Results}{96}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Subcritical flows: comparison with Bell \& Soward theory}{96}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Flow structure in the turbulent regime}{104}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Global transport quantities}{108}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.2}Flow structure in the turbulent regime}{103}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Global transport quantities}{107}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}Energy spectra and length scales}{111}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Topographic torques}{115}{subsection.5.3.5}%
-\contentsline {section}{\numberline {5.4}Discussion}{126}{section.5.4}%
-\contentsline {part}{ \normalsize \normalfont \bfseries Bibliography\normalfont }{133}{chapter*.60}%
+\contentsline {subsection}{\numberline {5.3.5}Topographic torques}{114}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5.4}Discussion}{124}{section.5.4}%
+\contentsline {part}{ \normalsize \normalfont \bfseries Bibliography\normalfont }{132}{chapter*.60}%
 \contentsline {part} {\appendixnameToC }{\relax }{}
-\contentsline {chapter}{\numberline {\th@ChapterStyle A}\normalsize \normalfont Glossary of non-dimensional parameters}{146}{appendix.A}%
-\contentsline {chapter}{\numberline {\th@ChapterStyle B}\normalsize \normalfont Appendices for Chapter \ref {Oliver_2026}}{151}{appendix.B}%
-\contentsline {section}{\numberline {B.1}Deformations to the geostrophic contours}{151}{section.B.1}%
-\contentsline {section}{\numberline {B.2}BS96 stability curves}{153}{section.B.2}%
-\contentsline {section}{\numberline {B.3}Viscous torques}{155}{section.B.3}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle A}\normalsize \normalfont Glossary of non-dimensional parameters}{145}{appendix.A}%
+\contentsline {chapter}{\numberline {\th@ChapterStyle B}\normalsize \normalfont Appendices for Chapter \ref {Oliver_2026}}{150}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Deformations to the geostrophic contours}{150}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Stability curves}{152}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Viscous torques}{154}{section.B.3}%

@@ -9,7 +9,9 @@ We perform numerical simulations of convection in deformed spherical shell geome
 r_{cmb} = r_o - \epsilon  h\lb \theta,\phi\rb,
 \label{e:rcmb}
 \ee
-where $h\lb \theta,\phi\rb$ is the topographic shape function and $\epsilon$ is the maximum topographic amplitude. The colatitude and azimuthal angle are $\theta$ and $\phi,$ respectively. In a co-rotating frame the non-dimensional governing equations for a Boussinesq fluid are
+where $h\lb \theta,\phi\rb$ is the topographic shape function and $\epsilon$ is the dimensionless maximum topographic amplitude. 
+\TOr{We note that a positive value of $h\lb\theta,\phi\rb$ corresponds to a topographic intrusion into the core, while a negative value generates positive \textit{mantle-side} topography; throughout this study, we use the terms \textit{CMB topography} and \textit{topography} to indiscriminately refer to positive and negative values of $h$. }
+The colatitude and azimuthal angle are $\theta$ and $\phi,$ respectively. In a co-rotating frame the non-dimensional governing equations for a Boussinesq fluid are
 given by
 \begin{subequations}
 \begin{equation}
@@ -21,26 +23,40 @@ given by
 	\label{e:energy}
 \end{equation}
 \begin{equation}
-	\nabla\cdot\mathbf{u} = 0 ,
+	\nabla\cdot\mathbf{u} = 0,
 	\label{e:incom}
 \end{equation}
-\label{e:gov_eqn}
+%\label{e:gov_eqn}
 \end{subequations}
-where the velocity, pressure and temperature are denoted by $\ub $, $p$, and $\vartheta$, respectively, and the position vector is $\mathbf{r}$. The equations have been non-dimensionalised using the shell depth $d$, viscous diffusion time $d^2/\nu$, and temperature $\Delta T$, which is the temperature difference between the inner and outer boundaries.
+where the velocity, pressure and temperature are denoted by $\ub $, $p$, and $\vartheta$, respectively, and the position vector is $\mathbf{r}$. The equations have been non-dimensionalized using the shell depth $d$, viscous diffusion time $d^2/\nu$, and temperature $\Delta T$, which is the temperature difference between the inner and outer boundaries.
 We use $u,v,$ and $w$ to refer to the $\hat{\mathbf{x}},\hat{\mathbf{y}}$, and $\hat{\mathbf{z}}$ components of the velocity field respectively, and $u_{r}, u_{s},$ and $u_{\phi}$ to refer to the
-$\hat{\mathbf{r}},\hat{\mathbf{s}}$, and $\hat{\boldsymbol{\phi}}$ components, where $s$ is the radial coordinate in cylindrical coordinates. 
-%The second term on the right hand side of equation (\ref{e:gov_eqn}a) is the buoyancy term, which we abbreviate as $\mathbf{F_b}.$
+$\hat{\mathbf{r}},\hat{\mathbf{s}}$, and $\hat{\boldsymbol{\phi}}$ components, where $s$ refers to the cylindrical radial coordinate. 
 
 The non-dimensional control parameters appearing above are the Ekman, Rayleigh, and Prandtl numbers defined, respectively, as
 \be
 Ek = \frac{\nu}{\Omega d^{2}},\;\; Ra = \frac{g_o \alpha \Delta T d^{3}}{\nu\kappa}, \;\; Pr = \frac{\nu}{\kappa},
 \ee
 where $\nu$ is the kinematic viscosity, $g_o$ is the gravitational acceleration at the CMB, $\alpha$ is the coefficient of thermal expansion, and $\kappa$ is the thermal diffusivity of the fluid. 
+\TOr{ 
+It is useful to define the conductive temperature profile 
+\be
+\vartheta_{c}\lb r\rb  = \frac{r_{i}r_{o}}{ r} - r_{i},
+\label{e:tec}
+\ee
+which satisfies equations \eqref{e:mom}-\eqref{e:incom} in the absence of fluid motion and temporal variation ($\mathbf{u} = 0,$ $\frac{\partial}{\partial t} = 0$). Per our choice, $\vartheta_c$ is non-dimensionalized by $\Delta T$.
+}
+%\TOr{ For clarity, we remind the reader that $\vartheta_{c}$ is a dimensionless quantity. It is related to the hypothetical conductive temperature profile in the core $T_{c}$ which would exist in the absence of fluid motion and under certain idealized conditions such as perfectly spherical boundaries and a constant thermal conductivity. $T_{c}$ and $\vartheta_{c}$ are related via the expression 
+%\[
+%T_c(r) = T_o + \vartheta_{c}(r) \Delta T,
+%\]
+%where $T_o$ is the temperature (K) of the CMB.}
+%The second term on the right hand side of equation (\ref{e:gov_eqn}a) is the buoyancy term, which we abbreviate as $\mathbf{F_b}.$
+
 
 
 The primary goal of the present study is to determine the role played by the topographic parameters $\epsilon $ and $h\lb \theta,\phi\rb $. Thus, to narrow the parameter space, the Prandtl number is fixed at $Pr = 1$. 
 With the exception of five simulations performed at $Ek = 10^{-4},$ the Ekman number is fixed at $Ek = 10^{-6}.$ 
-No-slip, fixed temperature boundary conditions are employed. The temperature at $r_{cmb}$ is set to zero in all simulations except for a small set of laminar simulations which we discuss in if the first section of Results. 
+No-slip, fixed temperature boundary conditions are employed. The temperature at $r_{cmb}$ is set to zero in all simulations except for a small set of laminar simulations which we discuss in Section \ref{s:subc}. 
 In the absence of topography, the onset of convection occurs at the critical Rayleigh number $Ra_c \approx 1.8\times 10^8$ and critical azimuthal wavenumber $m_c = 32$ \citep[e.g.][]{aB22}. 
 Because the critical Rayleigh number increases with decreasing $Ek,$ it is useful to define the reduced Rayleigh number
 $\Rat = Ra Ek^{4/3},$ 
@@ -49,7 +65,7 @@ However, as mentioned previously, unique instabilities arise in the deformed geo
 
 The results in this study are grouped into two categories. We first present results for small values of $\Rat,$ such that $\Rat<\Rat_{c}.$
 As we show, some of these cases are unstable to fluid motion due to topographic instabilities. We will nevertheless refer to these simulations as ``subcritical'' because $\Rat<Ra_{c}.$
-The second group of results are turbulent, and for these cases we fix $\Rat = 40$ and $Ek = 10^{-6}$. Tables \ref{t:p_space} - \ref{t:p_space3} in the Appendix provide a comprehensive list of the run parameters.
+The second group of results are turbulent, and for these cases we fix $\Rat = 40$ and $Ek = 10^{-6}$. Tables \ref{t:p_space} - \ref{t:p_space3} provide a comprehensive list of the run parameters.
 
 
 \subsection{Numerical Methods}
@@ -59,20 +75,6 @@ The second group of results are turbulent, and for these cases we fix $\Rat = 40
 \subsection{Topography}
 
 
-\begin{figure*}
-	\begin{center}
-         \subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0201_topo}}
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0804_topo}} 
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3216_topo}}\\
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3217_topo}} 
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/tomo_topo}}
-	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/hump_vis_white}}\\
-	\end{center}
-	\caption[Topographic models]{Visualisations of the topography used in the simulations: (a) $\hlm{2}{1}$;  (b) $\hlm{8}{4}$; (c) $\hlm{32}{16}$; (d)$\hlm{32}{17}$; (e) $h_t$. (f) The localized topography from \citep{tO25}.
-	}
-
-	\label{f:topo}
-\end{figure*}
 
 
 One of the primary goals in the present work is to better understand the impact of topography morphology on outer core convection.  
@@ -83,33 +85,67 @@ For most of the cases we therefore choose topographic shapes characterized by si
 \end{equation}
 where $P_{\ell}^{m}\lb \cos\theta\rb $ is the associated Legendre polynomial for degree $\ell$ and order $m,$ and $Q_{\ell}^{m}$ is the maximum value of $P_{\ell}^{m}\lb \cos\theta\rb .$
 We study topographic amplitudes ranging from $0.01<\epsilon<0.2.$ All studied values of $\epsilon$ are larger than the estimated core value $\epsilon \approx 10^{-3},$ because we desire topography with amplitudes greater than the viscous Ekman boundary layer thickness $\delta_{E}=O\lb Ek^{1/2}\rb.$ In the core, a conservative estimate is $\epsilon /\delta_{E}=10^{4}$, and it is necessary to maintain this hierarchy of length scales. $\delta_{E}= O\lb 10^{-3}\rb $ in our simulations, so we study topographic amplitudes $\epsilon >\delta_{E}.$
-We consider $\hlm{32}{16},\hlm{8}{4},$ and $\hlm{2}{1},$ across a sweep of $\epsilon$ and $\hlm{32}{17}$ for $\epsilon  = 0.1$.
+We consider $\hlm{32}{16},\hlm{8}{4},$ and $\hlm{2}{1},$ across a sweep of $\epsilon$ and $\hlm{32}{17}$ for $\epsilon  = 0.1$. \TOr{We note that $\epsilon  = 0.1$ corresponds to a topographic amplitude of $226 \text{ km}$ when scaled to the parameter regime of the Earth's core.}
 
 
 We also study a topographic shape informed by seismological investigations of the deep mantle. 
 %suggesting the presence of LLSVP's at the base of the mantle. 
 For this shape, which we refer to as the ``tomographic model'' and denote the corresponding shape function as $h_{t}$, we use the cluster analysis maps developed in Lekic et al. (2012) \citep{vL12}, and consider only the areas where all of the included studies \citep{cH08,jR11,bK08,cM00,nS10} agree on the presence of an LLSVP.
-We associate LLSVPs with intrusions into the core due to their high density \citep{jT15}, although this model is largely ad-hoc. 
-Although CMB topography is likely broadband in structure, the voting map is essentially binary -- it shows where models agree and where they disagree concerning LLSVPs, but it does not inform us of the shape of the topography. Thus, a choice must be made with regards to representing this voting map. 
-To smooth the edges which are otherwise sharp due to the discrete cluster analysis, we use an error function to build $h_{t}$. 
+\TOr{The LLSVPs are likely denser than the surrounding mantle and are expected to generate topographic intrusions into the core \citep{jT15}. However, identifying density variations and the resulting topography at the CMB is more complicated than simply locating LLSVPs. For example, many studies have identified ultralow velocity zones \citep[e.g.][]{sR06,sY18,sH23}, indicating heterogeneity within the LLSVPs. Furthermore, dynamic modeling in the mantle indicates that the thermal and compositional structure of the LLSVPs can generate a variety of topographic structures \citep{tL07}. Since our intention is to model a topography with a similar spatial distribution to deep mantle structure,
+we follow the conceptual model of Tarduno et al. (2015) \citep{jT15}, who were motivated by the occurrence of a prominent CMB reversed flux patch with the edge of the African LLSVP. Tarduno et al. (2015) \citep{jT15} noted that the LLSVP might affect core flow through differences in core-side CMB topography \citep{mC12}, and mantle-side differences in conductivity or heat flow \citep{bB96}. While recognizing the desire to understand the interplay between these factors, Tarduno et al. (2015) \citep{jT15} focused first on a potential topographic effect, with an intrusion into the core compensating the high density of the LLSVP.} Therefore, we
+simply associate LLSVPs with \TOr{uniform} intrusions into the core.
+
+\TOr{
+Several studies have investigated the effects of heterogeneous heating at the CMB, which are believed to influence the morphology of the geomagnetic field \citep{cD08,pO10,jM23}. In this study we do not consider heterogeneous thermal boundary conditions except for a small sweep of low $\Rat$ simulations discussed in Section \ref{s:subc}; otherwise, the temperature is fixed at a constant value across the surface $r= r_{cmb}$.
+}
+%due to their high density \citep{jT15}, although this model is largely ad-hoc. 
+
+Although CMB topography is likely broadband in structure, the voting map is essentially binary -- it shows where models agree and where they disagree concerning LLSVPs. \TOr{The shape of the LLSVPs is likely well represented by the voting map, however the structure near the edges is artificial. The voting procedure yields a discrete distribution of votes,
+although we note that the boundaries of the LLSVPs are expected to be sharp \citep[e.g.][]{jR11}. Nevertheless, a choice must be made with regards to representing the voting map as a continuous, smooth function on the CMB.} 
+To smooth the edges we use an error function to build $h_{t}$. 
 We fix the parameter determining the gradient of the topographic edges, so that $h_{t}$ depends on the value of the topographic amplitude according to
 \begin{equation}
 	h_{t}\lb \epsilon ,\theta,\phi\rb  = 0.5\lb1-\text{erf}\ls \delta \lb \theta,\phi\rb/\sigma \epsilon \rs \rb,
 	\label{e:ht}
 \end{equation}
-where $\delta\lb \theta,\phi\rb $ gives the nearest distance to a cluster edge with the convention chosen such that $\delta\lb \theta,\phi\rb <0$ ($>0$) within (outside) the clusters. The slope parameter is $\sigma=28.2,$ which we choose because it corresponds to an average gradient of 0.02 per degree (that is a topography of amplitude $\epsilon=0.02$ decays to $10^{-2} \times\epsilon $ over $1^{\circ}$). 
+where $\delta\lb \theta,\phi\rb $ gives the nearest distance to a cluster edge with the convention chosen such that $\delta\lb \theta,\phi\rb <0$ ($>0$) inside (outside) the clusters. The slope parameter is chosen such that $\sigma=28.2,$ and corresponds to an average gradient of 0.02 per degree (that is a topography of amplitude $\epsilon=0.02$ decays to $10^{-2} \times\epsilon $ over $1^{\circ}$). 
+\TOr{
+We note that $h_t\geq0$ everywhere such that all of the modeled topography can be thought of as an intrusion into the core.
+}
+%The Supplementary Information contains values for $h_{t}$ on a latitude-longitude grid. 
 
-Figures \ref{f:topo}(a)-(e) display the topographic shapes studied in the present work. For comparison, Figure \ref{f:topo}(f) displays the localized Gaussian bump investigated in Oliver et al. (2025).
+\begin{figure*}
+	\begin{center}
+         \subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0201_topo}}
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y0804_topo}} 
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3216_topo}}\\
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/Y3217_topo}} 
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/tomo_topo}}
+	\subfloat[][]{\includegraphics[width=0.3\textwidth]{Oliver_2026/figures/hump_vis_white}}\\
+%         \subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y0201}}
+%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y0804}}
+%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y3216}}
+%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/Y3217}} 
+%	\subfloat[][]{\includegraphics[width=0.2\textwidth]{figures/tomo_moll}}
+	\end{center}
+	\caption[Topographic models]{Visualizations of the topography used in the simulations: (a) $\hlm{2}{1}$;  (b) $\hlm{8}{4}$; (c) $\hlm{32}{16}$; (d)$\hlm{32}{17}$; (e) $h_t$. (f) Localized topography used in the study of Oliver et al. (2025) \citep{tO25}.
+	}
+
+	\label{f:topo}
+\end{figure*}
+
+
+Figures \ref{f:topo}(a)-(e) display the topographic shapes studied in the present work. For comparison, Figure \ref{f:topo}(f) displays the localized Gaussian bump investigated in Oliver et al. (2025) \citep{tO25}.
 In all cases $h\lb \theta,\phi\rb $ is normalized such that $\text{max}{\left|h\right|} = 1.0$. 
 %such that $\epsilon$ can then be thought of as the max amplitude of the topography. 
 We note that this is not the same as the orthonormal or  ``4$\pi$'' normalizations used in many texts, and that the surface area of the outer boundary is not constant across the different topographic shapes.
-Since $\hlm{\ell}{m}$ is composed of a single harmonic, the surface area of the CMB is only weakly dependent on the topographic amplitude ($O\lb \epsilon^{2}\rb $). This is not the case for the tomographic model, where $h_{t}$ has a spherical mean. Table \ref{t:sa} gives the CMB surface areas for all geometries, showing that only small changes in the surface area are observed over our range of parameters.
+Since $\hlm{\ell}{m}$ is composed of a single harmonic, the surface area of the CMB is only weakly dependent on the topographic amplitude ($O\lb \epsilon^{2}\rb $). This is not the case for the tomographic model, where $h_{t}$ has an $O(\ep)$ spherical mean. Table \ref{t:sa} provides the CMB surface areas for all geometries, demonstrating that only small changes in the surface area are observed over our range of parameters.
 
 During the discussion of topographic torques we present a scaling argument which requires a distribution rule for the size of the spherical harmonic coefficients of topography. 
-Puica et al. (2023) \cite{mP23} and Dehant et al. (2025) \cite{vD25} used Kaula's rule \citep{wK66} to extend the CMB topography spectrum when calculating topographic torques, and we adopt the same approach here.
+Puica et al. (2023) \citep{mP23} and Dehant et al. (2025) \citep{vD25} used Kaula's rule \citep{wK66} to extend the CMB topography spectrum when calculating topographic torques, and we adopt the same approach here.
 Kaula's rule suggests that the spherical harmonic coefficients for geophysical topography scale as $\ell^{-2}$. 
 The tomography shape that we employ is artificial and so it is helpful to compare it with Kaula's rule.
-Figure \ref{f:ht_spec} shows the magnitudes of the spectral coefficients for $\epsilon  = 0.20,$ $h_{t},$ where we observe that the spectrum roughly follows Kaula's rule. This rough agreement is interpreted as coincidental although it may be that the coarse cluster analysis performed in Lekic et al. (2012) \cite{vL12} is sufficient to reproduce the rule. 
+Figure \ref{f:ht_spec} shows the magnitudes of the spectral coefficients for $\epsilon  = 0.20,$ $h_{t},$ where we observe that the spectrum roughly follows Kaula's rule. This rough agreement is interpreted as coincidental although it may be that the coarse cluster analysis performed by Lekic et al. (2012) \citep{vL12} is sufficient to reproduce the rule. 
 Regardless, the plot in Figure \ref{f:ht_spec} does not reflect any physical result, it merely indicates that we expect our argument using Kaula's rule to apply to the tomography model.  It is straightforward to adjust the scaling law according to any topography spectrum.
 
 \begin{figure}
@@ -134,13 +170,19 @@ Regardless, the plot in Figure \ref{f:ht_spec} does not reflect any physical res
 	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y3216_geo_contours}}
 	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10Y3217_geo_contours}}
 	\subfloat[][]{\includegraphics[width=0.19\textwidth]{Oliver_2026/figures/0x10tomo_geo_contours}} \\
+	%%UNCOMMENT HERE TO SEE VIS
+%        \subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y0804_equator_uphi_avg}}
+%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y3216_equator_uphi_avg}}
+%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10Y3217_equator_uphi_avg}}
+%	\subfloat[][]{\includegraphics[width=0.25\textwidth]{figures/0x10tomo_equator_uphi_avg}} 	
+	%%
 	\end{center}
-	\caption[Example gesotrophic contours]{Geostrophic contours and impact on time-averaged flow. Geostrophic contours for (left to right) $\hlm{2}{1}$, $\hlm{8}{4}$, $\hlm{32}{16}$, $\hlm{32}{17}$, and $h_{t}$ for $\epsilon  = 0.1$. }
+	\caption[Example gesotrophic contours]{Geostrophic contours and impact on time-averaged flow. Geostrophic contours for (left to right) $\hlm{2}{1}$, $\hlm{8}{4}$, $\hlm{32}{16}$, $\hlm{32}{17}$, and $h_{t}$ for $\epsilon  = 0.1$. Panels (a) and (d) correspond to topographies with odd values of $\ell-m.$ The resulting geostrophic contours are significantly less deformed than panels (b) and (c) (even $\ell-m$). A mathematical description for why even valued $\ell-m$ topographies yield larger deformations to the contours is provided in Appendix \ref{a:oddveven}}
 	\label{f:t_geo_c}
 \end{figure}
 
 
-Using a cylindrical coordinate system ($s,\phi, z$), the geostrophic height function, $H_{geo}\lb s , \phi \rb$, measures the total axial height of the domain.  
+Using a cylindrical coordinate system ($s,\phi, z$), the geostrophic height function, $H_{geo}\lb s , \phi \rb$, measures the axial distance spanned by the fluid domain at $(s,\phi)$.  
 %indicates the length of the chord which runs parallel to the rotation axis, intersects the point $\mathbf{r}$, and terminates at the boundaries of the solution domain. 
 Curves of constant $H_{geo}$ are known as the geostrophic contours since motions that are in a purely geostrophic balance follow these contours \citep{hG68} (see Appendix \ref{a:oddveven} and Figure \ref{f:sketch} for a more complete discussion). 
 As an example, $H_{geo}$ for a full sphere of radius $r_{o}$ is
@@ -155,19 +197,20 @@ In this study we will refer to the isosurfaces of $H_{geo}$ as geostrophic cylin
 
 Figure \ref{f:t_geo_c} displays geostrophic contours for the topographic shapes investigated in the present work when $\epsilon  = 0.1$. 
 Figures \ref{f:t_geo_c}(b), corresponding to $\hlm{32}{16}$, and \ref{f:t_geo_c}(c), $\hlm{32}{17}$, illustrate an important distinction between topographies where $\ell - m$ is even and odd.
-In our notation $\hlm{\ell}{m} (\theta,\phi) = \lb -1\rb ^{\ell - m} \hlm{\ell}{m}\lb \pi-\theta,\phi\rb $, which indicates that when $\ell - m$ is even, the topography at antipodal points are identical. When $\ell - m$ is odd, the topography differs in sign.
+In our notation $\hlm{\ell}{m} (\theta,\phi) = \lb -1\rb ^{\ell - m} \hlm{\ell}{m}\lb \pi-\theta,\phi\rb $, which indicates that when $\ell - m$ is even the topography at antipodal points are identical. When $\ell - m$ is odd, the topography at antipodal points differs in sign.
 An important consequence is that the perturbations to $H_{geo}$ are larger amplitude and have longer wavelength when $\ell-m $ is even. In particular, outside the tangent cylinder
 \begin{equation}
 	H_{geo}^{shell}- H_{\ell,m}^{\epsilon}\sim
 	\begin{cases}
 		 \epsilon  \cos m\phi\qquad &\ell - m \text{ even}\\
-		 \epsilon^{2}  \cos 2m\phi\qquad &\ell - m \text{ odd.}
+		 \epsilon^{2}  \cos 2m\phi\qquad &\ell - m \text{ odd,}
 	\end{cases}
 	%\begin{aligned}
 	%\end{aligned}
 	\label{e:h_geo}
 \end{equation}
-A derivation of this result is included in the Appendix \ref{a:oddveven}.
+where $H_{\ell,m}^{\epsilon}$ is $H_{geo}$ for the topography characterized by shape $\hLM$ and amplitude $\epsilon$.
+A derivation of this result is included in the Appendix.
 
 \subsection{Output/definitions}
 
@@ -183,11 +226,9 @@ We discuss the geostrophic and ageostrophic Reynolds numbers ($Re_{\gchar}$ and 
 
 
 The Nusselt number ($Nu$) compares the ratio of convective to conductive heat transport over a closed surface enclosing the inner core. 
-The conductive heat profile differs between topographies, but the effect is negligible for small amplitudes. We therefore approximate the conductive heat profile using the temperature field that solves Laplace's equation in a sphere 
-\be
-\vartheta_{c}\lb r\rb  = \frac{r_{i}r_{o}}{ r} - r_{i}.
-\label{e:tec}
-\ee
+The conductive heat profile differs between topographies, but the effect is negligible for small amplitudes. We therefore approximate the conductive heat profile using $\vartheta_c\lb r\rb$, the temperature field that solves Laplace's equation in a sphere (see equation \eqref{e:tec}).
+
+
 %\[\nabla^{2}T_{c} = 0\qquad T_{c}\lb r_{i}\rb =1\qquad T_{c}\lb r_{o}\rb =0.\] 
  $Nu $ can be calculated over any surface, but for a statistically steady flow, the time averaged value is the same for any surface. 
 We therefore present a Nusselt number calculated over the inner core boundary (ICB) surface according to
@@ -199,7 +240,7 @@ One dimensional (azimuthal) kinetic energy spectra are computed for various comp
 In general, we define the radially averaged one dimensional energy spectra over fields $v_{i}$ as
 \begin{equation}
 	\mathcal{E}_{m}\lb v_{0},v_{1}...,v_{N}\rb = \lb r_c -r_{i}\rb ^{-1} 
-	\int_{r_i}^{r_{c}} \sum_{i}^{N}\hat{v}_{i}^{m}\lb r\rb \hat{v}_{i}^{m^*}\lb r\rb  \partial r ,
+	\int_{r_i}^{r_{c}} \sum_{i}^{N}\hat{v}_{i}^{m}\lb r\rb \hat{v}_{i}^{m^*}\lb r\rb  d r ,
 \label{e:spectra_def}
 \end{equation}
 %We present an ageostrophic, two dimensional kinetic energy spectra of the flow in the equatorial plane. The ageostrophic energy spectral density is 
@@ -218,7 +259,7 @@ To quantify the flow morphology we report a weighted wavenumber $m_{eq}$, based 
 	m_{eq} = \frac{\sum_{m=1}m \mathcal{E}_{m}}{\sum_{m=1}\mathcal{E}_{m}}.
 	\label{e:meq}
 \end{equation}
-The weighted wavenumber is similar to the mean spherical harmonic degree used in Christensen and Aubert (2006) \citep{uC06} (also \citep{jN24}), however it is defined for the order rather than the degree.
+The weighted wavenumber is similar to the mean spherical harmonic degree used in Christensen and Aubert (2006) \citep{uC06} (also Nicoski et al. (2024) \citep{jN24}), however it is defined for the order rather than the degree.
 We found $m_{eq}$ was a useful quantity because the topography significantly alters the azimuthal structure of the flow.
 
 %As a reminder, $\mathcal{E}_{m}$ and $m_{eq}$ are calculated from data in the equatorial plane only.
@@ -229,7 +270,7 @@ The topographic torque is defined as
 \mathbf{\Gamma} = \oint_{CMB} \mathbf{r}\times p \; d\mathbf{a},
 \label{e:ttorque}
 \ee
-where $d\mathbf{a}$ is a surface area element on the CMB. We use the convention that the normal points away from the core. As in previous work \citep{tO25}, we will limit our analysis to the axial torque, which is responsible for LOD variations. For small topographic amplitude ($\ep \ll 1$) an approximate expression for the axial torque is 
+where $d\mathbf{a}$ is a surface area element on the CMB. We use the convention that the normal points away from the core. As in previous work \citep{tO25}, we will limit our analysis to the axial torque, which can generate $\Delta$LOD. For small topographic amplitude ($\ep \ll 1$) an approximate expression for the axial torque is 
 \be
 \Gamma_z \approx \oint \epsilon h\lb\theta,\phi\rb \partial_\phi p\; da.
 \label{e:ax_torque}
@@ -240,10 +281,15 @@ The approximation in equation \eqref{e:ax_torque} is accurate up to $O\lb \epsil
 Motivated by equation \eqref{e:ax_torque}, we find it useful to investigate the spherical harmonic decomposition of the pressure field to better understand which components of the pressure contribute to the torque. For the $\hlm{\ell}{m}$ topographies, only a single harmonic contributes to the torque, whereas for the tomography model the entire spectrum of $p$ is convolved with $h_{t}.$ 
 We report fluctuations in $\Gamma_{z}$ so rather than present the spectra of $p,$ we present the rms spectra of $p^{\prime}=p-\overline{p}$ on the outer surface. The overline $\overline{\cdot}$ denotes a time average.
 We define the quantity
-\[\phatLM = \sqrt{\overline {c_{\ell,m}^{2} + s_{\ell,m}^{2} } },\]
+\be \phatLM = \sqrt{\overline {c_{\ell,m}^{2} + s_{\ell,m}^{2} } },
+\label{e:phat}
+\ee
 %\[p^{\prime m}_{\ell} = \sqrt{\overline {\left| p^{m}_{\ell}-\overline{p^{m}_{\ell}}\right|^{2}}},\]
 where $c_{\ell,m}$ and $s_{\ell,m}$ satisfy
-\[p(r_{cmb})-\overline{p}\lb r_{cmb}\rb = \sum_{\ell=0}\sum_{m = 0}^{\ell}P_{\ell}^{m}\lb \cos\theta\rb\; (c_{\ell,m}\cos(m\phi) + s_{\ell,m}\sin(m\phi)).\]
+\be 
+p(r_{cmb})-\overline{p}\lb r_{cmb}\rb = \sum_{\ell=0}\sum_{m = 0}^{\ell}P_{\ell}^{m}\lb \cos\theta\rb\; (c_{\ell,m}\cos(m\phi) + s_{\ell,m}\sin(m\phi)).
+\label{e:pfs}
+\ee
 We refer $\phatLM$ as the fluctuating pressure spectrum.
 For the $\hlm{\ell}{m}$ topographies, which are proportional to $\cos \lb m\phi\rb$, only the power in the corresponding $s_{\ell,m}$ mode contributes to the torque, so we find it useful to separate the sine and cosine modes. The data in Figure \ref{f:p_disp} reports 
 $C_{\ell,m}=\sqrt{\overline{c_{\ell,m}^{2} } }$ and

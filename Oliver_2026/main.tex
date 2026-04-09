@@ -39,6 +39,7 @@
 %
 \newcommand{\MC}[1]{\textcolor{red}{#1}}
 \newcommand{\TO}[1]{\textcolor{black}{#1}}
+\newcommand{\TOr}[1]{\textcolor{black}{#1}}
 \def\hc{\mathcal{H}}
 \newcommand\hlm[2]{h_{#1,#2}}
 \newcommand\phatlm[2]{\pi^{\prime}_{#1,#2}}
@@ -74,9 +75,13 @@
 
 
 \begin{chapterabstract}
-Topography at the core mantle boundary (CMB) allows for angular momentum exchange between the core and mantle and likely generates observable signatures in the geomagnetic field.
-The effects of CMB topography on core convection and the corresponding torques are studied with direct numerical simulations of rotating spherical shell convection with finite amplitude boundary topography. 
-A range of topographic shapes are used, including a model that represents seismically inferred topography at the CMB and simplified shapes represented in terms of single spherical harmonics. As predicted by Bell and Soward (1996) \cite{pB96}, a new instability arises with topography for Rayleigh numbers below the onset of convection; we find reasonable qualitative agreement with their theory. The shape of the geostrophic contours, or lines of constant axial height, play an important role in determining when topography has a significant influence on fluid flows and heat transport. A high degree of equatorial symmetry leads to buoyantly-driven geostrophic flows which then feed back on to the convection. These effects can be profound for relatively small topographic amplitude and likely play a role in the core. Frequency-domain analysis shows that the small-scale convection is the main contributor to topographic torques across the range of topography shapes investigated. Previous work found that the magnitude of topographic torques scales linearly with topographic amplitude and quadratically with flow speeds. We confirm this relationship and provide new theory to estimate topographic torques for global scale, spectrally broad topography.
+Topography at the core mantle boundary (CMB) allows for angular momentum exchange between the core and mantle and likely generates observable signatures in the geomagnetic field, though these effects remain poorly understood. 
+We use direct numerical simulations of rotating spherical shell convection with finite amplitude boundary topography to investigate the dynamical effects on the outer core.
+%The effects of CMB topography on core convection and the corresponding torques are studied with direct numerical simulations of rotating spherical shell convection with finite amplitude boundary topography. 
+A range of topographic shapes are used, including a model that represents seismically inferred \TOr{heterogeneities in the deep mantle} and simplified shapes represented in terms of single spherical harmonics. As predicted by Bell and Soward (1996) \citep{pB96}, a new instability arises with topography for Rayleigh numbers below the onset of convection; we find qualitative agreement with some aspects of their theory. The shape of the geostrophic contours, or lines of constant axial height, play an important role in determining when topography has a significant influence on fluid flows and heat transport. 
+\TOr{When buoyancy is able to do work on the time-averaged flow, we find increased flow velocities and convective heat transfer.}
+%A high degree of equatorial symmetry leads to buoyantly-driven geostrophic flows which then interact with the convection. These effects can be profound for relatively small topographic amplitude and likely play a role in the core. Frequency-domain analysis shows that the small-scale convection is the main contributor to topographic torques across the range of topography shapes investigated. 
+Previous work found that the magnitude of topographic torques scales linearly with topographic amplitude and quadratically with flow speeds; this relationship is confirmed here and new theory is used to estimate topographic torques for global, spectrally broad topography. 
 \end{chapterabstract}
 
 
@@ -106,9 +111,10 @@ A range of topographic shapes are used, including a model that represents seismi
 		\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/bs_stab_cond}}
 	\end{center}
 	\caption[Linear stability diagram for BS96]{
-		(a) Linear stability diagram for $\hlm{8}{4}$. The dashed line marks $Ra_{c},$ above which convection in a pure spherical shell is unstable. The solid and dotted lines mark the stability curve from BS96. At fixed $\epsilon,$ the system is susceptible to an oscillatory (stationary) instability above the solid (dotted) line. The open symbols are stable (beneath all stability curves) according to the BS96 theory.
+		(Both panels) Linear stability diagram for $\hlm{8}{4}$ and simulated parameter values. The dashed line marks $Ra_{c},$ above which convection in a pure spherical shell is unstable. The solid and dotted lines mark the stability curve from BS96. BS96 predicts that at fixed $\epsilon$ the system is susceptible to an oscillatory (stationary) instability above the solid (dotted) line. 
+		(a) The open (closed) symbols are stable (unstable) according to the BS96 theory. 
 		(b) Stability results for subcritical cases with a boundary condition that prevents baroclinic flows $\vartheta\lb r_{cmb}\rb =\vartheta_{c}\lb r_{cmb}\rb$.
-	$RaEk = 10$ data (blue) is performed at $Ek = 10^{-4}$ rather than $Ek = 10^{-6}$. Open (closed) symbols indicate stable (unstable) configurations based on the growth of kinetic energy. Compared to panel (a), the flows are more stable than BS96 would suggest, however the flow is still unstable below $Ra_{c}$ (dashed line) for a spherical shell \citep{aB22}.
+	$RaEk = 10$ data (blue) is performed at $Ek = 10^{-4}$ rather than $Ek = 10^{-6}$. Open (closed) symbols indicate stable (unstable) configurations based on the growth of kinetic energy. Compared to panel (a), the flows are more stable than BS96 would suggest, however the flow is still unstable below $Ra_{c}$ (dashed line) for a spherical shell \citep[e.g.][]{aB22}.
 	}		
 	\label{f:bs_stab}
 \end{figure}
@@ -116,7 +122,7 @@ A range of topographic shapes are used, including a model that represents seismi
 %The critical Rayleigh number for rotating spherical convection scales as $\Ra_{c}\sim Ek^{-4/3}$ as $Ek \rightarrow 0$ \citep{fB70,cJ00}. This scaling is a consequence of the viscous force perturbing the leading order geostrophic force balance. 
 As previously explained, the presence of topography allows the buoyancy force to enter the leading order force balance. 
 Dissipation or other small perturbative forces are not necessary for instability. 
-Bell and Soward (1996) \cite{pB96} (hereafter referred to as BS96) developed theory that identified a distinct linear instability in this system. 
+Bell and Soward (1996) \citep{pB96} (hereafter referred to as BS96) developed theory that identified a distinct linear instability in this system. 
 The instability is characterized by a critical Rayleigh number that scales as $Ra\sim\Ek^{-1}$, which is less than $Ra_c$ by a factor of $Ek^{-1/3}$. 
  We performed a sweep of simulations with $Ra <Ra_{c}$ (referred to as ``subcritical'') for the $\hlm{8}{4}$ topography with varying topographic amplitude $\epsilon$. 
 The $\hlm{8}{4}$ topography was chosen because it is both simple and characterized by a wavenumber that is significantly smaller than the critical wavenumber for convection, i.e.~$m = 4 < m_{c} = 32$. 
@@ -124,10 +130,10 @@ Figure \ref{f:bs_stab}(a) shows the simulated parameter regime and the linear st
 The solid line is the boundary for an overstable instability and the dotted line is the boundary for a stationary instability.
  A detailed explanation of the generation of these curves is provided in Appendix \ref{a:bs_stab}. 
  The dashed line is placed at $Ra_{c}Ek,$ marking the boundary between stable and unstable flows in a spherical shell with the same aspect ratio $\chi$ and no topography \citep{aB22}.
- According to the BS96 theory, the closed (open) symbols denote unstable (stable) cases. The yellow $\blacktriangleright$'s mark the parameter space for our turbulent simulations and are shown for reference only.
+ According to the BS96 theory, the closed (open) symbols denote unstable (stable) cases. The yellow, right-pointing triangles mark the parameter space for our turbulent simulations and are shown for reference only.
 
- We can identify the instability by a positive kinetic energy growth rate, but only if a static state solves equations (\ref{e:gov_eqn}a)-(\ref{e:gov_eqn}c). 
- The homogeneous temperature boundary condition on $r_{cmb}$ generates non-zero baroclinic flows which makes the identification of the instability difficult. Therefore, we use the boundary condition $\vartheta\lb r_{cmb}\rb = \vartheta_{c}\lb r_{cmb}\rb$ (hereafter referred to as the heterogeneous boundary condition), to test the instability. The heterogeneous boundary condition permits a static, conductive solution to equations (\ref{e:gov_eqn}a)-(\ref{e:gov_eqn}c).  The heterogeneous boundary condition is consistent with the BS96 theory because in the topographic annulus model the fixed temperature boundaries are separate from the topographic boundaries such that the system supports a static, conductive solution.
+The instability is identified by a positive valued kinetic energy growth rate, but only if a static state solves equations (\ref{e:mom})-(\ref{e:incom}). 
+ The homogeneous temperature boundary condition on $r_{cmb}$ generates non-zero baroclinic flows which makes the identification of the instability difficult. Therefore, we use the boundary condition $\vartheta\lb r_{cmb}\rb = \vartheta_{c}\lb r_{cmb}\rb$ (hereafter referred to as the heterogeneous boundary condition), to test the instability. The heterogeneous boundary condition permits a static, conductive solution to equations (\ref{e:mom})-(\ref{e:incom}).  The heterogeneous boundary condition is consistent with the BS96 theory because in the topographic annulus model the fixed temperature boundaries are separate from the topographic boundaries such that the system supports a static, conductive solution.
  Figure \ref{f:bs_stab}(b) displays the same parameter space as Figure \ref{f:bs_stab}(a) and each symbol identifies the stability based on the growth rate of the kinetic energy. 
  The closed (open) symbols in Figure \ref{f:bs_stab}(b) denote unstable (stable) cases. We note that the $RaEk = 10$ simulations were performed at $Ek = 10^{-4}.$ 
  We find that the BS96 stability curves only provide qualitative agreement with the data. 
@@ -143,7 +149,7 @@ The solid line is the boundary for an overstable instability and the dotted line
 	\label{e:geo_dec}
 \end{equation}
 where $\gvec$ and $\avec$ are unit vectors tangential and perpendicular to the geostrophic contours. Our chosen handedness is such that in a sphere $\gvec$ and $\avec $ coincide with $\hat{\boldsymbol{\phi}}$ and $\hat{\mathbf{s}}$ respectively. 
-The Coriolis term is expressed as
+The cross-product in the Coriolis term is expressed as
 \[\hat{\mathbf{z}}\times\mathbf{u} = -u_{\gchar}\avec + u_{\achar}\gvec,\]
 and the steady, low-amplitude momentum equation is
 \begin{equation}
@@ -173,21 +179,15 @@ The axial velocity therefore scales as
 \begin{equation}
 w \sim Ra Ek\; \epsilon^{2}/ Pr. 
 \label{e:u_bs}
-\end{equation}
+\end{equation}We note the similarity between equation (\ref{e:u_bs}) and the Coriolis-inertial-Archimedean (CIA) scaling $Re\sim RaEk/Pr$ observed in turbulent rotating flows \citep[e.g.][]{cG19}. 
+Both results arise from a balance between Coriolis and buoyancy terms, although we stress that equation (\ref{e:u_bs}) is for laminar flows and non-linear effects are so far ignored.
 The Ekman pumping condition \citep[e.g.][]{hG68} yields a scaling for the geostrophic velocity based on $w.$
 \be
 u_{\gchar} \sim Ra Ek^{1/2}\epsilon^{2}/Pr.
 \label{e:g_bs}
 \ee
-In light of equations \eqref{e:u_bs} and \eqref{e:g_bs}, we define rescaled axial and geostrophic Reynolds numbers as
-\begin{equation}
-	Re^{*}_{w} = \frac{Pr}{Ra Ek \;\epsilon^{2}}Re_{w}\qquad Re^{*}_{\gchar} = \frac{Pr}{Ra Ek^{1/2} \;\epsilon^{2}}Re_{\gchar}.
-	\label{e:rew_r}
-\end{equation}
-For simplicity, we calculate the geostrophic Reynolds number $Re_{\gchar}$ in the equatorial plane only (see equation \eqref{e:re} and ensuing discussion for a definition).
 
-We note the similarity between equation (\ref{e:u_bs}) and the Coriolis-inertial-Archimedean (CIA) scaling $Re\sim RaEk/Pr$ observed in turbulent rotating flows \citep[e.g.][]{cG19}. 
-Both results arise from a balance between Coriolis and buoyancy terms, although we stress that equation (\ref{e:u_bs}) is for laminar flows and non-linear effects are so far ignored.
+
 
 With the heterogeneous temperature boundary condition (data in Figure \ref{f:bs_stab}(b)), we were unable to adequately test the scalings predicted by equations \eqref{e:u_bs} and \eqref{e:g_bs}. The saturation time is on the order of a viscous diffusion time, which was computationally prohibitive for $Ek=10^{-6}.$  
 The simulations at $RaEk=10$ were performed at the more moderate value of $Ek=10^{-4}$ so that we could saturate the flow speeds, although only two data points were unstable. We will discuss these two points in the following discussion which otherwise focuses on simulations with the homogeneous temperature boundary condition on $r_{cmb}$. 
@@ -195,7 +195,15 @@ The simulations at $RaEk=10$ were performed at the more moderate value of $Ek=10
 
 \subsubsection*{Saturated flow speeds with $\vartheta\lb r_{cmb}\rb = 0 $ }
 We found that it was much easier to saturate the flow speeds when $\vartheta\lb r_{cmb} \rb =0$.
-We attribute this effect to the baroclinic flows at the outer boundary.
+We attribute this effect to the baroclinic flows at the outer boundary. 
+\TOr{In light of equations \eqref{e:u_bs} and \eqref{e:g_bs}, we define rescaled axial and geostrophic Reynolds numbers as
+\begin{equation}
+	Re^{*}_{w} = \frac{Pr}{Ra Ek \;\epsilon^{2}}Re_{w}\qquad Re^{*}_{\gchar} = \frac{Pr}{Ra Ek^{1/2} \;\epsilon^{2}}Re_{\gchar}.
+	\label{e:rew_r}
+\end{equation}
+For simplicity, we calculate the geostrophic Reynolds number $Re_{\gchar}$ in the equatorial plane only (see equation \eqref{e:re} and ensuing discussion for a definition).
+}
+
 \begin{figure}
 	\begin{center}
 %		\subfloat[][]{\includegraphics[width=0.45\textwidth]{figures/re_lin_scaled}} 
@@ -204,7 +212,7 @@ We attribute this effect to the baroclinic flows at the outer boundary.
 		\subfloat[][]{\includegraphics[width=0.30\textwidth]{Oliver_2026/figures/R000x1_0x05_Y0804_w_meridion}} \hspace{1.5cm}
 		\subfloat[][]{\includegraphics[width=0.41\textwidth]{Oliver_2026/figures/R000x1_0x05_Y0804_t_equator}} 
 	\end{center}
-	\caption[Visualizations of subcritical flow]{\TO{Visualizations of the subcritical flow for $\hlm{8}{4}$ at $RaEk = 10,$ $Ek = 10^{-6},$ and $\epsilon  =0.05.$ 
+	\caption[Visualizations of subcritical flow]{\textcolor{black}{Visualizations of the subcritical flow for $\hlm{8}{4}$ at $RaEk = 10,$ $Ek = 10^{-6},$ and $\epsilon  =0.05.$ 
 		(a) Axial velocity $w$ in the meridional plane. 
 	 	(b) Temperature $\vartheta$ in the equatorial plane. Although difficult to see, the isotherms are slightly misaligned with the geostrophic contours. The misalignment facilitates buoyant work on the flow.}
 	 The homogeneous boundary condition $\vartheta\lb r_{cmb}\rb =0 $ is used.}
@@ -232,17 +240,19 @@ As such, the Reynolds numbers are not plotted, and instead we simply place the m
 		\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/reg_lin_bs_scale}}
 		
 	\end{center}
-	\caption[Saturated flow speeds at subcritical parameters]{Saturated flow speeds for the subcritical parameters. The open markers denote simulations that had monotonically decreasing speeds with time and could not be saturated; they are omitted from panels (c) and (d). All data is for the homogeneous temperature boundary condition except for the two points denoted by blue $\blacktriangleleft$'s, which correspond to the heterogeneous boundary condition simulations shown in Figure \ref{f:bs_stab}(b) ($RaEk = 10$). We note that the empty symbols all correspond to parameter regions below or near the stability curves shown in Figure \ref{f:bs_stab}(a) suggesting qualitative agreement with BS96. The rescaled axial and geostrophic Reynolds numbers are shown in (c) and (d) respectively, and we find that the scaling proposed in BS96 is inadequate for the data.}
+	\caption[Saturated flow speeds at subcritical parameters]{Saturated flow speeds for the subcritical parameters. The open markers denote simulations that had monotonically decreasing speeds with time and could not be saturated; they are omitted from panels (c) and (d). All data is for the homogeneous temperature boundary condition except for the two points denoted by blue left-pointing triangles, which correspond to the heterogeneous boundary condition simulations shown in Figure \ref{f:bs_stab}(b) ($RaEk = 10$). We note that the empty symbols all correspond to parameter regions below or near the stability curves shown in Figure \ref{f:bs_stab}(a) suggesting qualitative agreement with BS96. The rescaled axial and geostrophic Reynolds numbers are shown in (c) and (d) respectively, and we find that the scaling proposed in BS96 is inadequate for the data.}
 	\label{f:bs_stab_vel}
 \end{figure}
+
 The axial and geostrophic Reynolds numbers both increase with topographic amplitude and $Ra.$
 To test the BS96 scaling, Figures \ref{f:bs_stab_vel}(c) and \ref{f:bs_stab_vel}(d) display $Re_{w}^{*}$ and $Re_{\gchar}^{*}$ respectively.
 We observe that $Re_{w}^{*}$ is $O\lb 10\rb $ and decreases with $\epsilon$, which indicates that the $\epsilon^{2}$ scaling presented in BS96 is too strong to fit the data.
 The rescaled geostrophic Reynolds number $Re_{\gchar}^{*}$ is $O\lb 1\rb $, but also decreases with $\epsilon $.
- The blue $\blacktriangleleft$'s plot Reynolds numbers for the two unstable heterogeneous boundary condition cases at $RaEk=10$. Although the Reynolds numbers are less than for the homogeneous boundary condition counterparts (blue \ding{108}'s), the behavior is similar and the scalings in equation \eqref{e:u_bs} are too strong.
+ The blue left-pointing triangles indicate Reynolds numbers for the two unstable heterogeneous boundary condition cases at $RaEk=10$. Although the Reynolds numbers are less than for the homogeneous boundary condition counterparts shown by blue circles, the behavior is similar and the scalings in equation \eqref{e:u_bs} are too strong.
 
-Overall we find that the BS96 theory incompletely describes the instability and flow speeds in the sphere.
-However, we hypothesize that the theory identifies the correct instability mechanism and that the disagreement between the data and theory is expected given the difference in geometry.
+Overall we find that the BS96 theory correctly identifies the instability mechanism though the details appear to be geometry dependent.
+ %incompletely describes the instability and flow speeds in the sphere.
+%However, we hypothesize that the theory identifies the correct instability mechanism and that the disagreement between the data and theory is expected given the difference in geometry.
 %First we note that the open markers in Figure \ref{f:bs_stab_vel} (a) and (b) all correspond to parameters that either fall below or very near the stability curves in Figure \ref{f:bs_stab}(a). 
 Based on the flow speeds, we conclude that there is significantly more forcing for the configurations denoted by the closed symbols in Figure \ref{f:bs_stab_vel} than the open symbols. 
 In the annulus, $O\lb \epsilon\rb $ buoyancy fluctuations generate $O\lb \epsilon^2\rb$ buoyant forcing in unstable flows (see equations \eqref{e:m_avg2}-\eqref{e:g_bs}). 
@@ -257,6 +267,124 @@ The homogeneous boundary condition creates an additional source of axial velocit
 Finally, we point out that the temperature fluctuations are visible in the visualization shown in Figure \ref{f:lin_vis}(b). 
 A geostrophic flow coincides with the contours, and the visible misalignment between the isotherms and the contours indicates the presence of the large fluctuation which is able to do work on the geostrophic flow.
 We stress the importance of buoyancy forcing the geostrophic flow. This source of mechanical work underpins the BS96 analysis, and in the next section we will show how in turbulent flows this mechanism can generate large variations in the momentum and heat transport.
+%Integrating equation \eqref{e:m_s} along a closed geostrophic contour and multiplying by $Ek$ yields
+%\begin{equation}
+%%Ek\oint d\mathbf{g} \cdot (\ref{e:m_s}) \rightarrow 
+%\frac{1}{2}\oint u_{\achar}\;d\gchar =\frac{Ra Ek}{Pr}\frac{1}{r_{o}}\oint \vartheta \mathbf{r} \cdot d\mathbf{\gchar} 
+%+ Ek\oint \nabla^{2}u_{\gchar}\;d\gchar.
+%\label{e:m_avg}
+%\end{equation}
+%
+%
+%In the simulations presented in Figure \ref{f:bs_stab}(a), the geostrophic contours are similar to those shown in Figure \ref{f:topo}(b), and $\mathbf{r}\cdot\gvec\approx \epsilon \sin\lb 4\phi\rb. $  TP can relaxed at lower $Ra$ as a result, provided the term on the right hand side (RHS) of equation \eqref{e:m_avg2} is larger than the dissipation (times $Ek$). 
+%All that remains is to determine the magnitude of the temperature fluctuations that contribute to the integral. The BS96 analysis predicts that the fluctuations scale as $\epsilon,$ so that the RHS $\sim Ra Ek \;\epsilon^{2}/Pr.$
+%The axial derivatives are $O\lb 1\rb , $ yielding
+%\be
+%w \sim Ra Ek\; \epsilon/ Pr .
+%\label{e:w_bs}
+%\ee
+%The flow is ultimately controlled by the Ekman layers, which determines a relationship between $w$ and the geostrophic velocity,
+%\begin{equation}
+%u_{\gchar} \sim Ra Ek^{1/2}\epsilon^{2}/Pr.
+%\label{e:ug_bs}
+%\end{equation}
+%
+%We could not adequa
+%
+% We will demonstrate that the flows saturate to a value of $Re_{w}$ consistent with BS96.
+% Figure \ref{f:bs_stab}(b) displays $Re_{w}$ for the 
+%
+% For instance, for $Ra Ek = 1$ we find stable states up to $\ep=0.05$, and geostrophic instabilities are present for $\ep \ge 0.1$. 
+% The oscillatory instabilities are indicated by the wedge bounded from above by the onset of convection (dashed line), from the left by the solid line, and from the right by the dotted line. 
+%
+% Although we find instabilities within this wedge, they are not observed to be oscillatory. 
+%
+%\textcolor{blue}{The morphology of these topographically-induced instabilities is indicated by Figures \ref{f:bs_stab}(b) and (c), which correspond to }
+%
+%
+% Figure \ref{f:bs_stab} (b) and (c) show a snapshot of the axial velocity in the meridional plane and temperature in the equatorial plane respectively. The axial structure of $w$ is characterized by a single mode which crosses zero at the equator.
+% The temperature is clearly influenced by the presence of topography, but we notice that the isotherms are slightly misaligned to the contours. 
+%  The behavior is steady in time, and is due to ageostrophic flow generated by Ekman pumping. 
+% We believe that this effect arises due to the BS96 instability.
+%
+%
+%%analysis and the run parameters for $\hlm{8}{4}$.  
+%%Because their analysis is for a simplified geometry we expect only qualitative agreement. 
+%%Nevertheless we find a distinct change in behavior near the boundary drawn by the stability curves.
+%%Despite the differences in geometry between the BS96 theory and the fully three-dimensional system used here, we find good agreement overall. In particular...
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%%Instead, we suggest that $Re\sim O\lb 1\rb $ due to a thermal-wind instability. 
+%
+%\MC{Expand the discussion below to include the geostrophic flow too. Is this identical to BS96? Maybe start off with that}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%Figure \ref{f:re_lin}(a) shows axial velocities, $Re_w$, across this sweep. 
+%Our results demonstrate that topography with a sufficiently large amplitude will lead to order one flow speeds, which indicates a different instability is present. 
+%We attribute this result to the BS96 instability which arises due to the azimuthal asymmetry of the geostrophic contours. 
+%Their analysis suggest that these flows should generate Reynolds numbers $Re\sim \lb RaEk \;\epsilon\rb$ due to a balance between the buoyancy and Coriolis forces, often referred to as a thermal wind. 
+%We provide a simplified argument below.
+%Figure \ref{f:bs_stab}(b) shows values of $Re_{w}^{*}$. We identify a few cases with low axial velocities ($Re_{w}^{*}<0.1$) and to highlight them have used empty symbols in plots (a) and (b). We note that they all correspond to run parameters that either fall beneath or very near the stability boundaries.
+%Otherwise, $Re_{w}^{*} \approx 1$ for all of the subcritical (below the dashed line in Figure \ref{f:bs_stab}(a)) simulations, which indicates that the BS96 analysis is appropriate for the deformed sphere and that equation (\ref{e:w_bs}) is  the correct scaling at small $\Rat.$
+%The turbulent data (yellow) follows a weaker scaling for $Re_{w}^{*}$ although it nevertheless approaches unity for our largest $\epsilon$.
+%Whether this is just a coincidence at our chosen parameter regime or related to topographic locking is unclear. 
+%It should be explicitly noted that the unscaled Reynolds numbers $\lb Re,Re_{w},\text{etc}...\rb $ are significantly larger for the turbulent data. 
+%Section \ref{s:gs} elaborates further on the relationship between $Re_{w}^{*}$ and $\epsilon$ for turbulent simulations (see Figure \ref{f:re_geo_a} (c)).
+%
+%
+%
+%
+%
+%
+%
+%%For the simulations shown in Figure \ref{f:bs_stab}(a) $Ra Ek \;\epsilon  \in [0.01,20].$
+%
+%
+%BS96 investigated the linear stability associated with the geostrophic contours. 
+%Rather than a sphere, BS96 consider an annulus with single-mode, sinusoidal topography imposed on the vertical surfaces. 
+%The annulus geometry is intended to model a spherical geometry, but only captures a small region of the flow and largely ignores the radial boundary conditions as well as the curvature of the surface. 
+%Nevertheless, the dynamics in the annulus have been shown to share many similarities spherical geometries and is a useful model for understanding basic processes (eg. \citep{fB70, cJ00}).
+%
+%\MC{put the above in intro -- it seems repetitive}
+%
+%
+%
+%
+%We note that all of the simulations presented in this work are susceptible to baroclinic flows along the boundary. 
+%The fixed $T=0$ boundary condition at $r_{cmb}$ drives creeping flow within the Ekman layer as long as $r_{cmb} $ does not coincide with an equipotential. 
+%Regions where these flows converge are transported axially through the domain via Ekman pumping.
+%We believe this effect is responsible for the finite flow velocities in the empty data points, but that the transition to larger flows is due specifically to the BS96 instability. The baroclinic effect likely promotes this instability because it generates flow in the interior, but we expect the instability to persist even if temperature boundary conditions that permit a purely conductive temperature profile are imposed. 
+%
+%To test this hypothesis, \MC{what hypothesis?} we performed a set of simulations using values of $Ra Ek$ below the onset of convection using the boundary conditions given by
+%\begin{equation}
+%\vartheta\lb \rcmb\rb = \vartheta_{c}\lb\rcmb\rb.
+%\label{e:t_cond}
+%\end{equation}
+%A static velocity field and a temperature given by equation \ref{e:tec} solves equations \eqref{e:gov_eqn} with the above boundary condition.
+%%The static, conductive solution $T = r_{o}r_{i}/r - r_{i}$ solves equations \eqref{e:gov_eqn}.  \MC{spell out equation/equation and use eqref}
+%%
+%%\MC{merge these two paragraphs}
+%We repeated the $Ra\;Ek = 10^{0}\text{ and }10^{2}$ simulations at $Ek = 10^{-6}$ simply to determine stability. 
+%Without the boundary flows, we found that the instability takes much longer to saturate such that it was not feasible to determine saturated values of $Re_{w}^{*}.$ Therefore, we additionally performed a sweep of simulations at $Ek = 10^{-4},$ $Ra\;Ek = 10$ similar to the blue data in Figure \ref{f:bs_stab}. 
+%The simulations were initialized with zero velocity field and a conductive temperature profile with a small random perturbation. 
+%We find that flows are stable (velocity and temperature perturbations decay to $0$) \MC{spell zero} for larger values of $Ra\;Ek$ and $\epsilon$ than previous, however we still identify instability below the critical Rayleigh number $Ra_{c}$. The results are shown in the Appendix in Figure \ref{f:bs_stab_cond}.
+%Furthermore, the unstable flows that were saturated $\lb Ra\;Ek =10, \;Ek=10^{-4},\;\epsilon  =0.1 \text{ and }0.2\rb $ were found to have rescaled axial Reynolds numbers of $Re_{w}^{*}=0.29$ and $0.38$ respectively, which agrees with the prediction of equation \eqref{e:w_bs}.
+
+
 
 A final comment on the linear theory is that BS96  assumes that topography  on the upper cap of the annulus is mirrored onto the lower cap. The spherical equivalent is topography composed entirely of spherical harmonics where $\ell - m$ is even (we refer to this as symmetric topography). 
 Special care needs to be taken when considering topography generated exclusively by spherical harmonics corresponding to odd values of $\ell - m$. 
@@ -271,6 +399,25 @@ The difference between odd and even values of $\ell - m$ comes down to geometry,
 
 
 
+%\begin{figure}
+%	\begin{center}
+%	\subfloat[][]{\includegraphics[width=0.325\textwidth]{figures/rat000x01}}
+%	\subfloat[][]{\includegraphics[width=0.325\textwidth]{figures/rat000x1}}
+%	\subfloat[][]{\includegraphics[width=0.325\textwidth]{figures/rat001}} \\
+%	\end{center}
+%	\caption{Radial profiles of the ageostrophic velocity at (a) $Ra = 10^{6}$, (b) $Ra = 10^{7}$, and (c) $Ra = 10^{8}$ at $\phi = 22.5^{\circ}.$ The linestyles correspond to different topographic amplitudes.}
+%	\label{f:rad_contours}
+%\end{figure}
+%A sweep of low $Ra$ simulations ($Ra = [10^{6},10^{7},10^{8}]$) were performed across  $5$ topographic amplitudes for $\hlm{8}{4}.$ In the absence of topography, these values of $Ra$ are all below the critical Rayleigh number \citep{aB22}, so we refer to these cases as the sub-critical runs, despite the fact that some are supercritical to convection. 
+%Figure \ref{f:rad_contours} shows radial profiles at $\phi = 22.5^{\circ}$ of the ageostrophic velocity at (a) $Ra = 10^{6}$, (b) $Ra = 10^{7}$, and (c) $Ra = 10^{8}.$ The thermal wind scaling reduces the $Ra = 10^{7}$ and $Ra = 10^{8}$ cases to $O\lb 1\rb $ quantities, but appears too strong for $Ra=10^{6}.$ \textcolor{red}{ This is likely because these cases are not saturated. There is secular growth of the Reynolds number, but it seems like it is going to take a very long time for the run to saturate}.
+%
+%
+%
+%
+%%\subsection*{Visualizations}
+%
+%
+%\textcolor{red}{We need some fancy volume renderings, or similar}
 
 \subsection{Flow structure in the turbulent regime}
 
@@ -303,7 +450,7 @@ The difference between odd and even values of $\ell - m$ comes down to geometry,
 		\subfloat[][]{\includegraphics[width=0.45\textwidth]{ Oliver_2026/figures/visualizations/0x05_temp_meridion_mashup}
 		}
 	\end{center}
-	\caption[Temperature field fluctuations]{Instantaneous visualizations for temperature field fluctuations in the (a) equatorial and (b) meridional planes. The left-hand side of either visualization corresponds to $\hlm{32}{16}$ and the right-hand side to $\hlm{8}{4}$. (a) $\vartheta_{a}$ the temperature with the time and geostrophic contour average removed. The green contour depicts a contour that terminates on the CMB rather than completing a closed loop. (b) The fluctuating temperature field $\vartheta^{\prime}=\vartheta -\overline{\vartheta}$.}
+	\caption[Temperature field fluctuations]{Instantaneous visualizations for temperature field fluctuations in the (a) equatorial and (b) meridional planes. The left-hand side of either visualization corresponds to $\hlm{32}{16}$ and the right-hand side to $\hlm{8}{4}$. (a) $\vartheta_{a}$, the temperature with the time and geostrophic contour average removed. The green contour depicts a contour that terminates on the CMB rather than completing a closed loop. (b) The fluctuating temperature field $\vartheta^{\prime}=\vartheta -\overline{\vartheta}$.}
 	\label{f:t_vis}
 \end{figure}
 
@@ -356,7 +503,15 @@ The top row of Figure \ref{f:gs} displays the Reynolds number and Nusselt number
 The black datum gives values for convection in the control case. 
 We first note that for the smoothest topography ($\hlm{2}{1}$) there is little variation in both $Re$ and $Nu$. Otherwise, there tends to be an increase in both quantities as the topographic amplitude is increased, although no obvious scaling law exists. 
 The Reynolds and Nusselt number values for the $\epsilon  = 0.1, \hlm{32}{17}$ topography (yellow triangle) is particularly interesting because that model, having an odd value of $\ell-m$, does not exhibit particularly large deformations to the geostrophic contours. Despite this, $Re$ and $Nu$ are significantly elevated compared to the perfectly spherical shell.
+%, excepting the torques presented in Section \ref{s:top_torque}, which can be reasonably flattened with the linear $\epsilon$ dependence reported in \citep{tO25}.
 
+
+
+%\begin{figure}
+%	\begin{center}
+%	\end{center}
+%	\label{f:buoy_work}
+%\end{figure}
 \begin{figure}
 	\begin{center}
 		\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/Re} 
@@ -367,7 +522,7 @@ The Reynolds and Nusselt number values for the $\epsilon  = 0.1, \hlm{32}{17}$ t
 		\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/buoy_work_norm}}
 		%\includegraphics[width=0.45\textwidth]{figures/Ektorque}	
 	\end{center}
-	\caption[Global transport quantities]{Top row -- global transport quantities: (a) Reynolds and (b) Nusselt numbers plotted against topographic amplitude $\epsilon$. Both quantities tend to increase with $\epsilon$ and the effect is most pronounced in the $\hlm{8}{4},\hlm{32}{16},$ and $\hlm{32}{17}$ topographies. 
+	\caption[Global transport quantities and buoyant work]{Top row -- global transport quantities: (a) Reynolds and (b) Nusselt numbers plotted against topographic amplitude $\epsilon$. Both quantities tend to increase with $\epsilon$ and the effect is most pronounced in the $\hlm{8}{4},\hlm{32}{16},$ and $\hlm{32}{17}$ topographies. 
 		Bottom row -- Equatorial average of the time averaged buoyancy work: (c) the first and (d) the second terms in equation (\ref{e:buoy_work}). 		
 		(c) The mean-mean interaction is near zero for no topography, but tends to increase with $\epsilon.$ The effect is most pronounced in the $\hlm{32}{16}$ and $\hlm{8}{4}$ topographies where the contours are most deformed. (d) The fluctuating interaction, which increases with $\epsilon $ for $\hlm{32}{16}$ and $\hlm{8}{4}$ but tends to decrease for $\hlm{2}{1}$. Note that the vertical scales are different for the two plots, and that the increase due to the mean-mean interaction for $\hlm{32}{16}$ and $\hlm{8}{4}$ is significantly greater than any of the observed increase for the fluctuating interaction. 
 	}
@@ -375,7 +530,7 @@ The Reynolds and Nusselt number values for the $\epsilon  = 0.1, \hlm{32}{17}$ t
 \end{figure}
 
 We can explain the elevated transport quantities by calculating the work done by buoyancy.
-The second term on the right hand side of equation (\ref{e:gov_eqn}a) is the buoyancy term, which we abbreviate as $\mathbf{F_b}.$
+The second term on the right hand side of equation (\ref{e:mom}) is the buoyancy term, which we abbreviate as $\mathbf{F_b}.$
 The time-averaged power delivered by buoyancy is $\overline{\mathbf{u}\cdot\mathbf{F_{b}}}$ and can be decomposed into the sum of averaged and fluctuating components (denoted with a prime $\cdot^\prime$). 
 \begin{equation}
 	\overline{\mathbf{u}\cdot\mathbf{F_b}}
@@ -427,6 +582,26 @@ When $\ell - m$ is even (odd), an axial mode that is odd (even) across the equat
 This may explain the elevated values of $Re_{w},$ in which we also see an increase in the $\hlm{2}{1}$ data.
 
 
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[width=0.45\textwidth]{figures/E1e-6_R020_0x05_wavg}
+%		\includegraphics[width=0.45\textwidth]{figures/E1e-6_R020_0x05_uphiavg}
+%	
+%	\end{center}
+%	\caption{Time averages of vertical velocity and azimuthal velocity. Contours show geostrophic contours.$Ek= 10^{-6}$,$\Rat = 20$}
+%	\label{f:Ek1e-6}
+%\end{figure}
+
+
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[width=0.45\textwidth]{figures/0x05Y0804_u_geo}
+%		\includegraphics[width=0.45\textwidth]{figures/0x05Y0804_u_ageo}\\
+%		\includegraphics[width=0.45\textwidth]{figures/0x05Y0804_u_geo_avg}
+%	\end{center}
+%	\caption{(a) velocity component parallel to contours. (b) velocity component perpendicular to contours. (c) velocity component parallel to contours averaged over contours.}
+%	\label{f:vis}
+%\end{figure}
 
 \subsection{Energy spectra and length scales}
 \label{s:ke}
@@ -479,6 +654,24 @@ As $\epsilon$ increases, $m_{eq}$ does not accurately reflect the topographic wa
 Although it decreases for $\hlm{8}{4},$ it is much larger than $4$, even at the largest $\epsilon,$ and the data for $\hlm{32}{16}$ is larger than the critical wavelength for the largest topography. 
 Since $m_{eq}$ is a weighted average over $\mathcal{E}_{m},$ we attribute this behavior to the peaks at integer multiples of $m$ and, for $\hlm{32}{16}$ and  $\hlm{32}{17}$, the belly at high wavenumber, which shifts $m_{eq}$ to values higher than the topographic wavenumber.
 
+%\begin{figure}
+%	\begin{center}
+%	\subfloat[][]{\includegraphics[width=0.47\textwidth]{figures/buoy_avg_spectra_ep}}\quad
+%	\subfloat[][]{\includegraphics[width=0.47\textwidth]{figures/buoy_fluc_spectra_ep}}\\
+%	\end{center}
+%	\caption{
+%		\TO{
+%			Energy spectra of the buoyant work at $\epsilon  = 0.1$ (control is $\epsilon  = 0$) normalized by $\mathcal E_{0}\lb \vartheta ^{\prime},u_{s}^{\prime}\rb $ in the control. Color scheme is the same as Figure \ref{f:spectra}(a). (a) the mean-mean interaction which displays spectral peaks at the same locations as the horizontal kinetic energy. In the cases with even $\ell - m$ the contribution from the mean-mean interaction is significant. (b) The fluctuating interaction which has a peak at similar wavenumber for all spectra including the control. The $\hlm{32}{16}$ and $\hlm{32}{17}$ topographies exhibit a belly similar to the kinetic energy spectra.
+%}
+%}
+%	\label{f:buoy_spectra}
+%\end{figure}
+%\TO{
+%	Figure \ref{f:buoy_spectra} displays the spectra of the two terms in the time averaged buoyant power (equation \ref{e:buoy_work}). Data is shown for $\epsilon  = 0.1$ Figure \ref{f:buoy_spectra}(a) displays the mean-mean interaction and \ref{f:buoy_spectra}(b) the fluctuating interaction. The mean-mean interaction is dominated by resonances at the topographic wavelengths and is otherwise small. Buoyancy does significant work on the geostrophic flow at the wavelengths corresponding to the peaks. We note that the mean-mean interaction is not identically zero for any case because we are only calculating the spectra in the equatorial plane and Ekman pumping generates a mean radial flow. 
+%	Figure \ref{f:buoy_spectra}(b) shows the fluctuating interaction.
+%	The spectra are relatively similar among the different topographies, although the location of the spectral peak for $\hlm{8}{4}$ is at a lower value of $m$ than the other topographies, which corroborates with the values of $m_{eq}.$ 
+%	We interpret this as evidence that the convective instability known from the pure spherical shell primarily controls the fluctuating buoyancy term, although the bellies in $\hlm{32}{16}$ and $\hlm{32}{17}$ contribute to the elevated fluctuating buoyancy work shown in Figure \ref{f:gs}(d). As with the kinetic energy spectra, we believe this is due to a resonance between the convective wavelength and the topographic wavelengths.
+% }
 
 
 
@@ -491,6 +684,7 @@ Since $m_{eq}$ is a weighted average over $\mathcal{E}_{m},$ we attribute this b
 \label{s:top_torque}
 
 \begin{figure*}
+	%\subfloat[][]{\includegraphics[width=0.45\textwidth]{figures/re_ts.pdf}\label{f:ts_re}}
 	\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/torque_ts0x01.pdf}\label{f:ts_tq0x01}}
 	\subfloat[][]{\includegraphics[width=0.45\textwidth]{Oliver_2026/figures/torque_ft0x01.pdf}\label{f:ts_nu0x01}}
 	\\
@@ -534,29 +728,33 @@ At the same time, the other topographies exhibit much larger torques for $\epsil
 In order to better understand the effect of topographic amplitude on torque magnitude, we present the standard deviations (time) of the axial torques in Figure \ref{f:ekt}. 
 Figure \ref{f:ekt}(a) shows the standard deviation of the reduced torque for all cases at $\Rat = 40.$ In general, larger topographies and larger topographic order yield the largest torques, however the torques saturate for $\hlm{32}{16}$ at the large amplitudes. The saturation of the torque magnitude is only observed for $\hlm{32}{16}$, so for the present discussion, we will omit the $\hlm{32}{16}$ cases. Afterwards we will explain why we think $\hlm{32}{16}$ may be unique among the studied topographies. 
 
-We can attribute the increasing torques (as a function of $\epsilon$) to two mechanisms. First is the factor of $\epsilon$ in equation \eqref{e:ax_torque}, which suggests a straightforward linear relationship. Second is the change in the flow itself; both the speeds and morphology change with topography. 
-In previous work, where a single bump was used, this second effect was negligible. When only the topographic amplitude was changed, flow speeds were almost unaffected and the only morphological difference was the presence of a small cyclonic patch over the bump. The linear scaling with $\epsilon$ was confirmed \citep{tO25}. 
-However, Oliver et al. (2025) \citep{tO25} was able to test the effect of varied flow speed by testing different values of $\Rat$ and $Ek.$ A dynamic scaling law which accounted for changes in flow speed was proposed, 
+The increase of the torque with $\epsilon$ can be attributed to two mechanisms. First is the factor of $\epsilon$ in equation \eqref{e:ax_torque}, which suggests a straightforward linear relationship. Second is the change in the flow itself; both the speeds and morphology change with topography. 
+In previous work, where a single bump was used, this second effect was negligible. When only the topographic amplitude was changed, flow speeds were almost unaffected and the only morphological difference was the presence of a small cyclonic patch over the bump. The linear scaling with $\epsilon$ was confirmed by Oliver et al. (2025) \citep{tO25}. 
+However, Oliver et al. (2025) \citep{tO25} were able to test the effect of varied flow speed by testing different values of $\Rat$ and $Ek.$ A dynamic scaling law which accounted for changes in flow speed was proposed, 
 \be
 \Gstd \sim \epsilon\;Re^{2}Ek^{-1/3}.
 \label{e:tq_dynamic}
 \ee
-The most turbulent simulations presented in that work appeared to confirm this scaling. 
+The most turbulent simulations presented in that work indicate convergence toward this scaling. 
 
-In this study, we cannot test the $Ek^{-1/3}$ scaling because $Ek$ is held constant. We note, however, that the $Ek^{-1/3}$ term assumes a spectrally broad topography. This is relevant to the tomographic model or the single bump tested in \citep{tO25}, but does not apply to the single harmonic topographies.
-The single harmonic topographies interact with only one mode, determined by the topographic wavelength rather than the convection. We will show that spectrally broad topographies likely interact with all wavelengths down to $Ek^{1/3},$
-but we first test the $Re^{2}$ dependence.
+%In this study, we do not test the $Ek^{-1/3}$ scaling because $Ek$ is not varied. 
 
-Figure \ref{f:ekt}(b) shows the torques rescaled as in equation \eqref{e:tq_dynamic}, omitting the $Ek$ dependence. We find that the $\epsilon$ dependence varies with the topographic shape. 
-A quadratic scaling is too strong, while a linear scaling appears to either match, or be slightly too weak for all topographies excepting $\hlm{32}{16}$, which actually decreases with $\epsilon$ for $\epsilon > 0.05$. Polynomial fits of the form
-$\Gstd = Re^{2} \;\epsilon^{\mu}$ 
-yield power laws of $ \mu = [1.25\pm0.08,0.92\pm0.05,0.0\pm 0.1,$ and $1.15 \pm 0.04]$ for $\ls\hlm{2}{1},\hlm{8}{4},\hlm{32}{16},\text{ and }h_t,\rs$ respectively. The reported uncertainties are determined from the covariance matrix associated with the polynomial fit.
-Fitting all of the data (excluding $\hlm{32}{16}$) yields $\mu =0.94\pm 0.45,$ which agrees with the findings of \citep{tO25}, although the uncertainty is large because the magnitude of the torques strongly varies between topographic shapes. 
-The dynamical scaling successfully accounts for changes in the flow speed, but it clearly does not collapse the data among the different topographies, and it does a poor job accounting for the behavior of the $\hlm{32}{16}$ topography. 
+%change wording
+The $Ek^{-1/3}$ factor arises due to the dominant scales present in the convection. In order for these scales to generate torques, the topography must also contain $Ek^{-1/3}$ scales. The tomographic model and the single bump tested in Oliver et al. (2025) \citep{tO25} contain these small scales, however the single harmonic topographies do not.
+%We note that the $Ek^{-1/3}$ factor essentially assumes a spectrally broad topography which facilitates interaction with the many scales of the convective flow. 
+%This feature is relevant to the tomographic model or the single bump tested in \cite{tO25}, but does not apply to the single harmonic topographies.
+The single harmonic topographies interact with only one mode, determined by the topographic wavelength rather than the convection. We will demonstrate that the $Ek^{-1/3}$ factor applies to spectrally broad topographies, but we first test the $Re^{2}$ dependence. 
+%\textcolor{green}{reword or omit this paragraph?}
+
+Figure \ref{f:ekt}(b) shows the torques rescaled as in equation \eqref{e:tq_dynamic}, where the $Ek$ dependence is omitted. We find that the linear dependence on $\epsilon$ is roughly consistent with all topographic shapes except $\hlm{32}{16}$ since this case exhibits saturation for $\epsilon > 0.05$. 
+%A quadratic scaling is too strong, while a linear scaling appears to either match, or is slightly too weak for all topographies excepting $\hlm{32}{16}$, which actually decreases with $\epsilon$ for $\epsilon > 0.05$. 
+Polynomial fits of the form $\Gstd = Re^{2} \;\epsilon^{\mu}$  yield power laws of $ \mu = [1.25\pm0.08,0.92\pm0.05,0.0\pm 0.1,$ and $1.15 \pm 0.04]$ for $\ls\hlm{2}{1},\hlm{8}{4},\hlm{32}{16},\text{ and }h_t,\rs$ respectively. The reported uncertainties are determined from the covariance matrix associated with the polynomial fit.
+Fitting all of the data (excluding $\hlm{32}{16}$) yields $\mu =0.94\pm 0.45,$ which agrees with the findings of Oliver et al. (2025) \citep{tO25}, although the uncertainty is large because the magnitude of the torques strongly varies between topographic shapes. 
+The dynamical scaling successfully accounts for changes in the flow speed, but it clearly does not collapse the data among the different topographies. % and it does a poor job accounting for the behavior of the $\hlm{32}{16}$ topography. 
 
 As has been pointed out, for $\hlm{32}{16}$ only the $ m=16$ components of the pressure field will contribute to the torques (see equation \eqref{e:ax_torque}).
 More precisely, only the component of the pressure that is one half wavelength out of phase with $\hlm{\ell}{m}$ will contribute -- in this case it is the component proportional to $\sin \lb 16 \phi \rb$.
-For topography with a sufficiently large amplitude, the base flow tends to lock to the geostrophic contours, and therefore does not contribute to the torques since a phase shift with respect to the topography is necessary. 
+For a topography with sufficiently large amplitude, the largest component of the flow tends to lock to the geostrophic contours. The locked flow does not contribute to the torques since a non-zero phase shift with respect to the topography is necessary. 
 
 \begin{figure}
 	\begin{center}
@@ -564,8 +762,10 @@ For topography with a sufficiently large amplitude, the base flow tends to lock 
 		\subfloat[][]{\includegraphics[width=0.42\textwidth]{Oliver_2026/figures/pspec_3216}}\\
 	%	\subfloat[][]{\includegraphics[width=0.42\textwidth]{figures/pspec_t}}
 	\end{center}
-	\caption[Fluctuating values of particular pressure components]{(a-b) Fluctuating values of the component of the pressure field that contributes to the torque. As the topographic amplitude is increased, the separation between the cosine ($C$) and sine ($S$) components tends to increase. 
-		The power in the sine component alone contributes to the torques. For $\hlm{32}{16},$ the power in the sine component decreases. 	%(c) Same as (a,b) but for the $\ell=2,m =2$ component for the tomography model.
+	\caption[Fluctuating values of particular pressure components]{Rescaled magnitudes of the cosine $(C)$ and sine $(S)$ components for the indicated spherical harmonic of the pressure on the outer boundary for the (a) $\hlm{8}{4}$ and (b) $\hlm{32}{16}$ cases. 
+	%As the topographic amplitude is increased, the separation between the cosine ($C$) and sine ($S$) components tends to increase. 
+		%Only the sine component contributes to the torque. For $\hlm{32}{16},$ the power in the sine component decreases. 
+		%(c) Same as (a,b) but for the $\ell=2,m =2$ component for the tomography model.
 	}
 	\label{f:p_disp}
 \end{figure}
@@ -578,7 +778,7 @@ For topography with a sufficiently large amplitude, the base flow tends to lock 
 		\subfloat[][]{	\includegraphics[width=0.48\textwidth]{Oliver_2026/figures/pspectra_sum_m_tomo.pdf}}
 		\subfloat[][]{	\includegraphics[width=0.48\textwidth]{Oliver_2026/figures/pspectra_sum_m_scale_tomo.pdf}}\\
 	\end{center}
-	\caption[Spectra of the fluctuating spectra]{Fluctuating pressure spectra. (a) Spectra for all $\ell$ up to $m = 24$ for $\epsilon  = 0.0$. We identify two distinct branches corresponding to even and odd values of $\ell-m$. (b) Same as (a) for $\epsilon  = 0.2$ and $h_t$. The branches are less distinguished because the boundary is no longer spherical and the spectra are calculated on $r_{cmb}$. (c) Fluctuating pressure spectra for the tomography model across all amplitudes. Spectra are summed on $m$ and normalized by $Re^{2}.$ There is a clear distinction between even and odd values of $\ell$ due to the two branches identified in (a) and (b). (d) Same as (c) normalized by $\ell$.  }
+	\caption[Spectra of the fluctuating pressure spectra]{Power spectra of the fluctuating pressure. (a) Spectra for all $\ell$ up to $m = 24$ for $\epsilon  = 0.0$. We identify two distinct branches corresponding to even and odd values of $\ell-m$. (b) Same as (a) for $\epsilon  = 0.2$ and $h_t$. The branches are less distinguished because the boundary is no longer spherical and the spectra are calculated on $r_{cmb}$. (c) Fluctuating pressure spectra for the tomography model across all amplitudes. Spectra are summed on $m$ and normalized by $Re^{2}.$ There is a clear distinction between even and odd values of $\ell$ due to the two branches identified in (a) and (b). (d) Same as (c) normalized by $\ell$.  }
 	\label{f:tomo_spectra}
 \end{figure}
 %\begin{figure}
@@ -597,24 +797,37 @@ For topography with a sufficiently large amplitude, the base flow tends to lock 
 %	The two branches are distinguished by even and odd $\ell-m$.} 
 %	\label{f:tomo_spectra}
 %\end{figure}
-Figures \ref{f:p_disp}(a) and \ref{f:p_disp}(b) show the values of power in the spherical harmonic component of $p$ relevant to the fluctuating torques. The red (blue) data corresponds to the power in the cosine (sine) components. 
-As the topographic amplitude increases, there is a tendency for more power to be stored in the cosine mode than the sine. 
-We attribute this behavior to the flow preferentially locking to the topography. 
-For $\hlm{32}{16}$, the power in the sine mode decreases with $\epsilon$ for $\epsilon >0.02,$ which explains why the torques decrease (after normalization by $\epsilon$). We expect this behavior may be somewhat unique since the topographic wavelength is relatively close to the critical wavelength (which may also cause the ``belly'' in the kinetic energy spectra).
-We hypothesize that the convection favors the cosine modes for $\hlm{32}{16}$ as the topographic amplitude increases. Although the flow prefers the cosine modes for both $\hlm{8}{4}$ and $\hlm{32}{16},$ the $\hlm{32}{16}$ topography is the only one of the two where the power in the sine mode decreases. We expect this is due to the resonant interaction between the topography and the convection.
 
-From a geophysical standpoint it is important to address whether the convection preferring a particular phase is important when predicting the torques.
-For the tomography model, the data in Figure \ref{f:ekt}(b) indicates that $Re^{2}$ and the linear dependence on $\epsilon$ is sufficient to account for the variation at different topographic amplitude. 
-We expect that the spectrally broad topography interacts with a wide variety of length scales which are forced by not only the convective instability, but also the non-linearities which transport energy in the system across different scales of the flow \citep{sP00}.
-Therefore the particular structure of the flow at the convective scale is less important for $h_{t}$ than for $\hlm{32}{16}$.
-Nevertheless, we desire a rule for determining the magnitude of the torques given a particular topographic shape. Since the convolution in equation (\ref{e:ax_torque}) selects only a single spherical harmonic in the pressure field when $h = \hLM,$ we will focus solely on the spectrally broad tomography model. We propose a power law for the fluctuating pressure spectrum and demonstrate how this power law can be used to estimate the axial torque magnitudes.
+Figures \ref{f:p_disp}(a) and \ref{f:p_disp}(b) show the power in the spherical harmonic component of the pressure that is relevant to the fluctuating torques for both the $\hlm{8}{4}$ and $\hlm{32}{16}$, respectively. Within each panel, the red (blue) data corresponds to the power in the cosine (sine) components. 
+As the topographic amplitude increases, there is a tendency for more power to be stored in the cosine component for both topographic shapes. This behavior is expected since the geostrophic component of the flow becomes stronger as the amplitude is increased.
+However, for the $\hlm{32}{16}$ topography we find that the power in the sine component decreases for sufficiently large $\ep$, which explains why the torque becomes nearly independent of $\ep$.
+This trend can be attributed to the tendency for the flow to become preferentially locked to the topography, indicating that there is a resonant interaction between the convection and the topography.
+We expect this locking behavior is unique to the $\hlm{32}{16}$ topography because the topographic wavelength is relatively close to the critical wavelength.
+% (which may also be the cause for the ``belly'' in the kinetic energy spectra).
 
-The top row of Figure \ref{f:tomo_spectra} shows the fluctuating pressure spectrum $\phatLM$ normalized by $Re^{2}$ for all $\ell$ up to $m = 24.$ Note that these spectra are calculated on the CMB, which is not a spherical surface when topography is present. Figure \ref{f:tomo_spectra}(a) is for $\epsilon  =0 $ and Figure \ref{f:tomo_spectra}(b) is for the tomography model at  $\epsilon  = 0.2$. The most striking result is that the spectra are separated into two branches, which correspond to even (upper branch) and odd (lower branch) values of $\ell-m.$ 
-The branches are less distinguished for $\epsilon  = 0.2$ because the surface $r = r_{cmb}$ over which the spherical harmonic coefficients are calculated is no longer a sphere. We note that the flows are still largely axially invariant.
+
+
+
+%From a geophysical standpoint it is important to address whether phase preference in the convection influences the behavior
+%For the tomography model, the data in Figure \ref{f:ekt}(b) indicates that the scaling $\Gstd \sim \epsilon\;Re^{2}$ accounts for much of the observed functional dependence at a fixed Ekman number.  
+%We expect that the spectrally broad topography interacts with a wide variety of length scales which are forced directly by  the convective instability, but also the non-linearities which transport energy in the system across different spatial scales of the flow.
+%Therefore the particular structure of the flow at the convective scale is less important for $h_{t}$ than for $\hlm{32}{16}$.
+%Nevertheless, it is important to determine a rule characterising the magnitude of the torques for a particular topographic shape. Since the convolution in equation (\ref{e:ax_torque}) selects only a single spherical harmonic in the pressure field when $h = \hLM,$ we will focus solely on the spectrally broad tomography model. 
+%We propose a power law for the fluctuating pressure spectrum and demonstrate how this power law can be used to estimate the axial torque magnitudes.
+
+Realistic CMB topography is likely characterized by a range of different wavelengths \citep{mP23,rM25,vD25}, and the torques cannot be understood in terms of a single mode in the pressure field. It is therefore important to understand how the fluctuating pressure spectrum within the flow field interacts with such topography. As shown in Figure \ref{f:ht_spec}, the tomography model, $h_t$, is characterized by a broad power spectrum, so we limit the present discussion to only this topography.
+We present the fluctuating pressure spectrum $\phatLM,$ which is calculated from the spherical harmonic decomposition of the fluctuating pressure field on the surface $r = r_{cmb}$ (see equations \eqref{e:phat} and \eqref{e:pfs}).
+We note that the surface $r = r_{cmb}$ is not a spherical surface when topography is present. 
+The top row of Figure \ref{f:tomo_spectra} shows the fluctuating pressure spectrum $\phatLM$ normalized by $Re^{2}$ for all $\ell$ up to $m = 24.$ 
+Figure \ref{f:tomo_spectra}(a) is for $\epsilon  =0 $ and Figure \ref{f:tomo_spectra}(b) is for the tomography model at  $\epsilon  = 0.2$. The spectra are separated into two distinct branches, corresponding to even (upper branch) and odd (lower branch) values of $\ell-m.$ \TOr{There tends to be more power in the even valued $\ell -m$ spectra because the flows are largely symmetric about the equator (axially invariant).
+The branches are less distinguished for $\epsilon  = 0.2$ because the surface $r = r_{cmb}$ over which the spherical harmonic coefficients are calculated is no longer a sphere, although the flow structures themselves retain a similar equatorial symmetry.}
+%\textcolor{green}{again, not exactly clear what is meant by this} 
+%We note that the flows are largely axially invariant. 
+%\textcolor{green}{still? do you mean because there's topography one might think it wouldn't be axially invariant?}
 %In neither plot is there clear a spectral peak. 
 The spectra exhibit a peak, but the location of the peak is dependent on the order $m.$
-Furthermore, how $\phatLM$ scales with $\ell$ depends on the value of $m$ (at least at low wavenumber).
-We want to determine a power law for $\phatLM$ and this is difficult over both the degree $\ell$ and order $m.$
+Furthermore, the scaling of $\phatLM$ with $\ell$ depends on the value of $m$ (at least at low wavenumber).
+Our goal is to determine a power law for $\phatLM$ and this is difficult over both the degree $\ell$ and order $m.$
 In the bottom row of Figure \ref{f:tomo_spectra} we plot $\phatLM$ summed over $m\geq1$, for which we define
  \be
  \Pi_{\ell}^{\prime} = \sum_{m = 1}^{\ell}\phatLM.
@@ -622,13 +835,14 @@ In the bottom row of Figure \ref{f:tomo_spectra} we plot $\phatLM$ summed over $
  \ee
  Note that we omit the $m=0$ modes because they do not contribute to the torques.
 
- Figure \ref{f:tomo_spectra}(c) displays $\PhatLM$ across all topographic amplitudes for the tomography model. $\PhatLM$ tends to be larger at odd $\ell$ than the nearby even $\ell$. This is because of the difference between even and odd values of $\ell-m,$ and the fact that there tends to be more power in low $m$. We note that if we calculate  $\PhatLM$ by summing over $m\geq2,$ then the values corresponding to even $\ell$ are larger than the nearby odd $\ell$. 
- Regardless, we find that $\PhatLM$ increases up to around $m_{c}=32,$ where it peaks and then begins to decrease. It appears that  $\ell^{2}$ is too strong of a scaling for $\PhatLM$ while $\ell$ is slightly too weak. Figure \ref{f:tomo_spectra}(d) shows the same data from Figure \ref{f:tomo_spectra}(c) rescaled by $\ell.$ The data is nearly flattened, although the rescaled quantity still slowly increases up to about $m_{c}$. We performed a power-fit of the data up to $\ell = m_{c}$ to determine $\mu_{\ell}$ for
+ Figure \ref{f:tomo_spectra}(c) displays $\PhatLM$ across all topographic amplitudes for the tomography model. $\PhatLM$ tends to be larger at odd $\ell$ than the nearby even $\ell$. This behavior is because $\phatLM$ tends to have more power when $\ell - m$ is even (compared to odd) and the fact that there tends to be more power in smaller $m$. 
+We note that if we calculate  $\PhatLM$ by summing over $m\geq2,$ then the values corresponding to even $\ell$ are larger than the nearby odd $\ell$, which illustrates the large contributions the low-$m$ modes make. 
+ Regardless, we find that $\PhatLM$ increases up to a peak that is close to $m_{c}=32$. It appears that  $\ell^{2}$ is too strong of a scaling for $\PhatLM$ while $\ell$ is slightly too weak. Figure \ref{f:tomo_spectra}(d) shows the same data from Figure \ref{f:tomo_spectra}(c) rescaled by $\ell.$ The data is nearly flattened, although the rescaled quantity still slowly increases up to about $m_{c}$. We performed a power-fit of the data up to $\ell = m_{c}$ to determine $\mu_{\ell}$ for
  \[\PhatLM\sim \ell^{\mu_{\ell}}.\]  
  We found $\mu_\ell={1.4}$ for the control case and $\mu_\ell={1.2}$ for $\epsilon  = 0.2.$
  This variation in $\mu_{\ell}$ may be due to changes in the flow morphology, the increased turbulence, or a combination of the two. Increased turbulence may equipartition the pressure fluctuations at the non-dissipative scales more efficiently. We note that perfect equipartition would set $\mu_{\ell}=1$ \citep{rK67}.
- Previous work has shown that as turbulence is increased the width of the spectral peak in the kinetic energy spectra tends to broaden as the inverse cascade transfers energy into larger length scales \citep{cG19,cG25,sM21,tO23}.   
- The extent to which $\mu_{\ell}$ changes with $Re$ is beyond the scope of this paper, although we do stress that $Re>1200$ for all turbulent simulations, and that non-linearities should already be mixing the scales efficiently. The fact that the peak is near $m_{c}$ suggests that the convective wavelength still plays an important role in the underlying convection.  
+ Previous work has shown that as turbulence is increased, the width of the spectral peak in the kinetic energy spectra tends to broaden as the inverse cascade transfers kinetic energy into larger length scales \citep{cG19,cG25,sM21,tO23}.   
+ The extent to which $\mu_{\ell}$ changes with $Re$ is beyond the scope of this paper, although we do stress that $Re>1200$ for all turbulent simulations, and that non-linearities should already be mixing the scales efficiently. The fact that the peak is near $m_{c}$ suggests that the critical wavelength still plays an important role in the underlying convection.  
 
 
 %Figures (a) and (b) show $\phatLM$ plotted against $\ell-m+1$ for $m<24.$ We found it useful to plot against this quantity, because a clear spectral peak appears at a cut-off value of  $\lambda_{c}\approx 18$.  
@@ -650,9 +864,9 @@ In the bottom row of Figure \ref{f:tomo_spectra} we plot $\phatLM$ summed over $
 
 
 
-We now demonstrate how we can use $\PhatLM$ to approximate the torques. For the present discussion we will use an undetermined value of $\mu_{\ell}$. 
+We now demonstrate how we can use $\PhatLM$ to approximate the torques. For the present discussion we will use an undetermined (i.e.~general) value of $\mu_{\ell}$. 
 We also need a spectrum for geophysical topography. We will assume Kaula's rule \citep{wK66} holds, that is \[\eta_{\ell,m}\sim \ell^{-2},\]
- where $\eta_{\ell,m}$ are the spherical harmonic coefficients of some topography $h\lb \theta,\phi\rb.$ This approach has been used in previous work on topographic torques \citep{vD25,mP23} and, as we noted previously, is adequate for our tomography model.
+ where $\eta_{\ell,m}$ are the spherical harmonic coefficients of some topography $h\lb \theta,\phi\rb.$ This approach has been used in previous work on topographic torques \citep{mP23,vD25} and, as we noted previously, is adequate for our tomography model.
  We can estimate $\Gstd$ as
  \[
 		 \Gstd \approx Re^{2}\epsilon \oint h\partial_{\phi}\sum_{\ell}\sum_{m=0}^{\ell} \phatLM P_{\ell}^{m} \lb\cos\theta\rb\lb \cos m\phi + \sin m\phi \rb    \;da\\
@@ -662,9 +876,9 @@ We also need a spectrum for geophysical topography. We will assume Kaula's rule 
 	\label{e:gst_ap}
  \end{equation}
  This approximation almost certainly over-estimates the torques, because it ignores any cancellation in the integral in equation \eqref{e:ax_torque}, however we expect that it may be sufficient to determine a scaling. 
- The data in Figure \ref{f:tomo_spectra} indicates that we can truncate the sums at $ \ell = m_{c},$ although it has been suggested that as turbulence is increased the convective length scales of the flow will increase \citep{cG25,jA20}. Therefore we adopt an undetermined cutoff value $\ell_{c}$. $\PhatLM\sim \ell^{\mu_{\ell}}$ indicates that $\phatLM\sim \ell^{\mu_{\ell}-1}$ since there are $\ell$ $\phatLM$'s which sum together to make $\PhatLM$.  Equation (\ref{e:gst_ap}) scales as
+ The data in Figure \ref{f:tomo_spectra} indicates that we can truncate the sums at $ \ell = m_{c},$ although it has been suggested that as turbulence is increased the convective length scales of the flow will increase \citep{jA20, cG25}. Therefore we adopt an undetermined cutoff value $\ell_{c}$. The scaling $\PhatLM\sim \ell^{\mu_{\ell}}$ indicates that $\phatLM\sim \ell^{\mu_{\ell}-1}$ since there are $\ell$ $\phatLM$'s which sum together to make $\PhatLM$.  Equation (\ref{e:gst_ap}) scales as
  \[
-	 \Gstd \sim  Re^{2}\epsilon \sum_{\ell=0}^{\ell_{c}}\sum_{m=1}\ell^{\mu_{l}-1} \ell^{-2}m
+	 \Gstd \sim  Re^{2}\epsilon \sum_{\ell=0}^{\ell_{c}}\sum_{m=1}^\ell \ell^{\mu_{l}-1} \ell^{-2}m
  \]
  and after summing over the $O\lb \ell_{c}^{2}\rb $ modes yields
  \be
@@ -694,18 +908,23 @@ We also need a spectrum for geophysical topography. We will assume Kaula's rule 
   \end{figure}
 
  An appropriate scaling is needed for $\ell_{c}.$ 
- In Figure \ref{f:tq_bybump} we present the torques rescaled as in equation \eqref{e:gst_ap} using two different values for $\ell_c.$ First we use $\ell_{c}=m_{c}$ which agrees with the data but may be inappropriate for more turbulent flows. We also present $\ell_{c}\sim Ro^{-1/2}$ which is based on the proposed CIA scaling inertial length scale \citep[e.g.][]{jA20}. Both scalings assume $\mu_{\ell }=1,$ which is slightly less than the data in Figure \ref{f:tomo_spectra} suggests.
- Therefore, we also rescale by $m_{c}^{1.3},$ which is an average value from the power fits for $\PhatLM$. All three scalings yield quantities at or just below $O\lb 1\rb,$ although we do not think it is appropriate to throw out any scaling because our approach is heavily simplified. 
+ In Figure \ref{f:tq_bybump} we present the torques rescaled as in equation \eqref{e:gst_ap} using two different values for $\ell_c.$ First we use $\ell_{c}=m_{c}$ which agrees with the data but may be inappropriate for more turbulent flows.
+ \TOr{
+ We also present a scaling based on the Rossby number $Ro=ReEk.$ The CIA theory \citep[e.g.][]{jA20} predicts that the inertial scale is $O(Ro^{-1/2})$, so we test $\ell_{c}\sim Ro^{-1/2}$.}
+ Both scalings 
+ \TOr{
+ ($\ell_c \sim m_c$ and $\ell_c \sim Ro^{-1/2}$)
+ } 
+ assume $\mu_{\ell }=1,$ which is slightly less than the data in Figure \ref{f:tomo_spectra} suggests.
+ Therefore we also rescale by $m_{c}^{1.3},$ where $\mu_\ell = 1.3$ is and average value determined from the power fits for $\PhatLM$. All three scalings yield quantities at or just below $O\lb 1\rb$ and we do not think it is appropriate to throw out any scaling because our approach is heavily simplified. 
   We merely present Figure \ref{f:tq_bybump} to provide justification for the procedure above.
   The $m_{c}$ and $Ro^{-1/2}$ scalings are nearly indistinguishable because $25.7<Ro^{-1/2}<27.9$ in our simulations. However as turbulence increases the separation between $Ro^{-1/2}$ and $m_c$ will grow.
   We expect that further investigations on the scales of rotating flows, particularly the scales and spectra associated with the pressure fluctuation, will improve the provided scaling procedure. 
   
 
-%%%  In Figure \ref{f:tq_bybump} we show the standard deviations of the dynamically rescaled axial torque for the tomography model. We have adopted the value $\mu_{ell} = 1$. We show normalizations by $Ro^{-1/2}$ and $Ek^{-1/3}$ as well as $\lambda_{c}=18,$ which we chose by eye from the spectral peak in Figure \ref{f:tomo_spectra}(a).
-%%%  We note that the double sum in equation \ref{e:ax_torque} will generate pre-factors, but should scale as $\lambda_{c}^{1},$ as long as $\phatLM \rightarrow O\lb 1\rb $ for large $\lambda_{c}.$ 
-%%%  All three normalizations collapse the data to near $O\lb 1\rb $ quantities, although the $Ek^{-1/3}$ scaling appears slightly too strong. However, since we do not test multiple values of $Ek,$ we do not think it is appropriate to throw out any scaling. 
-  
-
+%  In Figure \ref{f:tq_bybump} we show the standard deviations of the dynamically rescaled axial torque for the tomography model. We have adopted the value $\mu_{ell} = 1$. We show normalizations by $Ro^{-1/2}$ and $Ek^{-1/3}$ as well as $\lambda_{c}=18,$ which we chose by eye from the spectral peak in Figure \ref{f:tomo_spectra}(a).
+%  We note that the double sum in equation \ref{e:ax_torque} will generate pre-factors, but should scale as $\lambda_{c}^{1},$ as long as $\phatLM \rightarrow O\lb 1\rb $ for large $\lambda_{c}.$ 
+%  All three normalizations collapse the data to near $O\lb 1\rb $ quantities, although the $Ek^{-1/3}$ scaling appears slightly too strong. However, since we do not test multiple values of $Ek,$ we do not think it is appropriate to throw out any scaling. 
 \input{Oliver_2026/tomo_Discussion/disc.tex}
 
 
@@ -737,7 +956,6 @@ $\#2138307$, $\#2137603$, and $\#2138296$ \citep{tB23}. Access to the Frontera s
  & & &  &&  \\
 $\epsilon$ &$0.01$ &$0.02$ & $0.05$ &$0.10$ & $0.2$ \\
  & & &  &&  \\
-\hline
 \hline
  & & &  &&  \\
 $\hlm{2}{1}$& 29.74 &29.74 &29.74 &29.74 &29.75 \\

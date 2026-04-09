@@ -2,13 +2,34 @@
 \section{Introduction}
 
 
-Topography on the Earth's core mantle boundary (CMB) likely plays an important role in the dynamics of the core, with possible observable effects in both the geomagnetic field \citep{aA77} and changes in the length of day ($\Delta$LOD) \citep{dJ89,HdV05,pR12,fM25,sR23}. 
-Stationary geomagnetic flux patches and initiation sites of magnetic polarity reversals are hypothesized effects of CMB topography \citep{jT15}.
-Flow in the core will lead to pressure variations along the topographic surface, resulting in torques on the mantle and exchanges of angular momentum that contribute to $\Delta$LOD \citep{rH69,wK97,pR12}. 
-These topographic torques are not the only source of $\Delta$LOD. Gravitational coupling between the inner core and the mantle \citep{bB96,jM03} and electromagnetic coupling between core-generated magnetic field and electrically conducting regions at the base of the mantle \citep{bB07,sB70, dJ15,wK19} both likely play a role in generating $\Delta$LOD. Nevertheless, recent work has demonstrated that topographic torques exhibit scalings that indicate they are of sufficient magnitude to play a significant role in $\Delta$LOD \citep{tO25}. However, this work was limited to a spatially localized topography with a fixed width, whereas global scale CMB topography is likely present. Prior studies investigating the ramifications of CMB topography have been limited to the linear regime \citep{pB96}, or simplified two dimensional models that may not fully capture all dynamical effects \citep{jH98,mW03,mC12}. 
+Topography on the Earth's core mantle boundary (CMB) likely plays an important role in the dynamics of the core, with possible observable effects in both the geomagnetic field \citep{aA77} and changes in the length of day ($\Delta$LOD) \citep{dJ89,HdV05,pR12,sR23,fM25}. 
+%Stationary geomagnetic flux patches and initiation sites of magnetic polarity reversals are hypothesized effects of CMB topography \citep{jT15}.
+%<<<<<<< HEAD
+%These topographic torques are not the only source of $\Delta$LOD. Gravitational coupling between the inner core and the mantle \citep{bB96,jM03} and electromagnetic coupling between core-generated magnetic field and electrically conducting regions at the base of the mantle \citep{bB07,sB70, dJ15,wK19} both likely play a role in generating $\Delta$LOD. Nevertheless, recent work has demonstrated that topographic torques exhibit scalings that indicate they are of sufficient magnitude to play a significant role in $\Delta$LOD \citep{tO25}. 
+%\TOr{CMB topography is likely globally distributed, however the recent study \citep{tO25} considered only a spatially localized topography with a fixed width.}
+%=======
+\TOr{Tarduno et al. (2015) \citep{jT15} hypothesized that CMB topography can generate reversed magnetic flux patches, and
+%\TOr{The formation of reversed flux patches is one hypothesized effect of CMB topography \citep{jT15}.}
+mechanical coupling between the core and CMB topography can generate $\Delta$LOD \citep{rH69}.}
+Flow in the core will lead to pressure variations along the topographic surface, resulting in torques on the mantle and exchanges of angular momentum that contribute to $\Delta$LOD \citep{wK97,pR12}. 
+These topographic torques are not the only source of $\Delta$LOD. Gravitational coupling between the inner core and the mantle \citep{bB96,jM03} and electromagnetic coupling between core-generated magnetic field and electrically conducting regions at the base of the mantle \citep{bB07,sB70, dJ15,wK19} both likely play a role in generating $\Delta$LOD. 
+\TOr{The core and mantle are coupled by viscous forces as well, however the torques generated are likely to small to account for the observed signal in $\Delta$LOD \citep{bB07,tO25}.} 
+Recent work has demonstrated that topographic torques exhibit scalings that indicate they are of sufficient magnitude to play a significant role in $\Delta$LOD \citep{tO25}, 
+\TOr{ although this study only considered a fixed-width, isolated topography whereas CMB topography is likely globally distributed.}
+%, however the recent study \citep{tO25} considered only a spatially localized topography with a fixed width.}
+%>>>>>>> diss_prep
+%However, this work was limited to a spatially localized topography with a fixed width, whereas global scale CMB topography is likely present. 
+Other studies investigating the ramifications of CMB topography have been limited to the linear regime \citep{pB96}, or simplified two dimensional models that may not fully capture all dynamical effects \citep{jH98,mW03,mC12}. 
 The primary goal of the present work is to determine how globally distributed topography influences both the topographic torques and core dynamics using a suite of fully three dimensional, turbulent numerical models. 
 
-While the shape of the CMB is poorly constrained, seismic investigations and geodynamic modeling of the deep mantle point to possible structure on the CMB. Seismological studies show considerable variation in inferred CMB structure, with typical topographic amplitudes up to a few kilometers for global scale wavelengths \citep{kK03,sT10}. An obvious possible cause for CMB topography is mantle dynamics. It has been proposed that regions of slow seismic velocity deep in the mantle, the so-called Large Low Shear Velocity Provinces (LLSVPs) \citep{sC16,pK21}, contribute to the CMB deformation. The largest LLSVPs are located at the southern tip of Africa and in the southern Pacific. These findings suggest that CMB topography may consist of a few large structures, however dynamic mantle modeling has shown that the presence of LLSVPs can generate short wavelength topographic features depending on the thermal and compositional characteristics \citep{tL07,tL10}. Furthermore, the edges of the LLSVPs may be quite sharp, which may imply lateral variations in topography over tens to hundreds of kilometers \citep{sC16}. 
+While the shape of the CMB is poorly constrained, seismic investigations and geodynamic modeling of the deep mantle point to possible structure on the CMB. 
+Seismological studies show considerable variation in inferred CMB structure, with typical topographic amplitudes up to a few kilometers \citep{kK03,sT10}. 
+A possible cause for CMB topography is convection in the mantle. 
+It has been proposed that regions of slow seismic velocity deep in the mantle, the so-called Large Low Shear Velocity Provinces (LLSVPs) \citep{sC16,pK21}, contribute to the CMB deformation. 
+The largest LLSVPs are located at the southern tip of Africa and in the southern Pacific. These findings suggest that CMB topography may consist of a few large structures. 
+\TOr{
+Geodynamic modeling of the deep mantle paints a more complicated picture; the LLSVPs may generate short wavelength topographic features depending on the thermal and compositional characteristics \citep{tL07,tL10}. }
+Furthermore, the edges of the LLSVPs may be quite sharp, which may imply lateral variations in topography over tens to hundreds of kilometers \citep{sC16}. 
 
 %Geodynamic modeling 
 %Both seismic imaging and mantle convection studies suggest that CMB topography has a large lateral extent \citep{kK03,sT10,pK21,tL10}
@@ -22,16 +43,20 @@ While the shape of the CMB is poorly constrained, seismic investigations and geo
 
 The canonical model of core dynamics consists of a rotating, self-gravitating fluid bounded by spherically symmetric surfaces that is heated from within. 
 For sufficiently strong heating, the basic instability in this system consists of convective Rossby waves that are characterized by an approximately axially invariant structure with short longitudinal wavelength \citep{pR68,fB70}. 
-These waves give rise to broadband turbulence as the system is forced more strongly \citep[e.g.][]{tG16,jN24}, and the resulting motions are known to readily generate magnetic fields that bear similarities with the geomagnetic field for certain parameter values \citep{cF23,juA23,nG22,nG24}. While this system continues to serve as the `zeroth' order model for the geodynamo, it is known that unique dynamical effects arise when the CMB deviates from axial symmetry \citep{cD08,jM23}. 
-A well known result for rapidly rotating flows is that the streamlines follow a particular set of geometric curves known as ``geostrophic contours'' \citep{hG68}. 
-In a perfect sphere these curves form circles about the origin, and a mechanism to break geostrophy is necessary for the convective instability. In the hydrodynamic case viscosity is the mechanism that breaks geostrophy and it yields lengths scales of size $O\lb Ek^{1/3}\rb,$ where $Ek$ is the Ekman number -- a ratio of viscous to Coriolis forces \citep{sC61}. 
-As convection is made more turbulent it is generally found that the convective scale increases from this viscously selected small scale, although uncertainty about the extent of this effect exists \citep{cG19, tO23, jN24, cG25}. 
+These waves give rise to broadband turbulence as the system is forced more strongly \citep[e.g.][]{tG16,jN24}, and the resulting motions are known to readily generate magnetic fields that bear similarities with the geomagnetic field for certain parameter values \citep{nS17,cF23,juA23,nG22,nG24,yL25}. While this system continues to serve as the `zeroth' order model for the geodynamo, it is known that unique dynamical effects arise when the CMB deviates from axial symmetry \citep{dJ20,rM25}. %\textcolor{red}{Not sure about these references}
+A well known result for rapidly rotating flows is that the streamlines follow a particular set of geometric curves of constant axial height known as geostrophic contours \citep{hG68}. 
+In a perfect sphere these curves form circles about the origin, and a mechanism to break geostrophy is a necessary ingredient for the convective instability. 
+In the hydrodynamic case, \TOr{the convective instability arises when} inertia, buoyancy and viscosity perturb the geostrophic balance to yield unstable lengths scales of size $O\lb Ek^{1/3}\rb,$ where $Ek$ is the Ekman number -- a ratio of viscous to Coriolis forces \citep{sC61}. 
+\TOr{As the Coriolis force increases in strength (faster rotation), the convective scales decrease, however it is known that}
+the scales tend to increase as the system becomes more turbulent \citep{tG16, cG19, tO23, jN24, cG25}. 
 %t has been suggested that the Rossby number $Ro$- a ratio of inertial to Coriolis forces- determines the convective scales of the flow. 
 %The scale $Ro^{1/2}$ is proposed , although it may be an over-estimate \citep{tO23}. 
 
-Bell and Soward (1996) \citep{pB96} and Bassom and Soward (1996) \citep{aB96} showed that when boundary topography is considered, the most unstable modes are characterized by the length scales present in the topography. The convective modes are no longer constrained by viscosity and do not need to be small.
-The results of these two studies hinge on the fact that topography breaks the axisymmetry of the geostrophic contours and allows buoyancy to directly drive the flows.
-Deviations from rotational symmetry are likely present on the CMB, implying that the geostrophic contours may be characterized by complex shapes. Indeed, observations show that large scale flows in the core are strongly asymmetric \citep{rH11,pL17,cF12,cF23}, indicating that the CMB could be important for core dynamics. Resonance between the flow and topography, for example, can generate time-independent flows which likely have consequences for the structure and dynamics of the geomagnetic field \citep{mC12}.
+Bell and Soward (1996) \citep{pB96} and Bassom and Soward (1996) \citep{aB96} showed that boundary topography can lead to the generation of instabilities that are distinct from the convective Rossby waves. These instabilities are more unstable in comparison to the Rossby waves. They are characterized by length scales that are comparable to the underlying topography and are not directly controlled by viscosity.
+% is considered, the most unstable modes are characterized by the length scales present in the topography. The convective modes are no longer constrained by viscosity and do not need to be small.
+These studies showed that topography breaks the axisymmetry of the geostrophic contours and allows buoyancy to directly drive flow along the contours.
+Deviations from rotational symmetry are likely present on the CMB, implying that the geostrophic contours may be characterized by complex shapes. The asymmetric flows inferred from geomagnetic field observations indicates core mantle coupling is occurring \citep{rH11,pL17,cF12,cF23}, with CMB topography representing one of the primary coupling mechanisms. 
+A known mechanism is that resonant interactions between the flow and topography can generate time-independent flows which likely have consequences for the structure and dynamics of the geomagnetic field \citep{mC12}.
 
 
 %In a geophysical context we may expect the topographic length scales to differ greatly from the small scales typically considered in convection studies.  
@@ -57,7 +82,7 @@ The results from the turbulent simulations are then presented, which are all per
 Five different topographic shapes are considered, including four that are represented by single spherical harmonics, and a fifth topographic shape that is informed by studies of LLSVPs. 
 For each topographic shape we vary the topographic amplitude.
 We discuss the role of shape and amplitude on the global transport of momentum and heat, as well as the topographic torques exerted on the CMB. 
-We demonstrate that the deformation of the geostrophic contours generally serves to increase the heat and momentum transport, but has a more complicated effect on the torques for certain parameters. 
+We demonstrate that the deformation of the geostrophic contours generally serves to increase the heat and momentum transport, but has a more complicated effect on the torque for certain parameters. 
 We provide further evidence and justification for the dynamical scaling law which suggests a linear dependence on topographic amplitude and a quadratic dependence on flow speed \citep{tO25}.
 We propose a procedure by which we can determine the magnitude of the torques given a particular topographic shape.
 In Section \ref{s:disc} we discuss our results and provide geophysical context. 

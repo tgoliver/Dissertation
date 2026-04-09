@@ -3,6 +3,7 @@
 \label{a:oddveven}
 \subsection*{}
 \noindent
+
 We demonstrate that topography that is odd under the transformation \[\theta\rightarrow \pi - \theta\]
 generates $O\lb \epsilon^{2}\rb $ variations to the geostrophic contours, while the harmonics that are even generate $O\lb \epsilon\rb $ variations. 
 We restrict this analysis to geostrophic contours that form closed loops about the origin.
@@ -20,19 +21,19 @@ The subscripts and superscript on $H_{\ell,m}^{\epsilon}$ indicate the structure
 We ignore regions near the poles (where the geostrophic cylinders extend from inner core to outer core) and the equator (where $H_{\ell,m}^{\epsilon}\rightarrow0$). 
 
 $\hc$ intersects the surface $r = \rcmb$ at the polar angle $\theta_{1},$ which is slightly different than $\theta.$ There is not a closed expression for $\theta_{1},$ but
-\[r_{o}\sin\theta = \lb r_{o} - \epsilon\hLM\lb \theta_{1},\phi\rb \rb\sin\theta_{1} \]
+\[r_{o}\sin\theta = \ls r_{o} - \epsilon\hLM\lb \theta_{1},\phi\rb \rs\sin\theta_{1} \]
 Assume that $\theta_{1}=\theta + \delta_{1},$ where $\delta_{1} \ll1.$
 \[
-	r_{o}\sin\theta \approx\lb r_{o}-\epsilon \hLM\lb \theta + \delta_{1},\phi\rb \rb \lb \sin \theta+\delta_{1} \cos\theta\rb 
+	r_{o}\sin\theta \approx\ls r_{o}-\epsilon \hLM\lb \theta + \delta_{1},\phi\rb \rs \lb \sin \theta+\delta_{1} \cos\theta\rb 
 \] 
 Taylor expanding $\hLM$ and matching lowest order terms requires
 \[\delta_{1} = \frac{\epsilon}{r_{o}}\hLM\lb \theta,\phi\rb \tan \theta \]
 By the symmetry, $\hc\lb \theta,\phi\rb $ intersects the bottom hemisphere at the polar angle $\pi -\theta -\delta_{1}.$ Therefore
 %
-\[H_{\ell,m}^{\epsilon} = 2\cos \theta_{1}\lb r_{o} - \epsilon \hLM\lb \theta_{1},\phi\rb \rb \approx 2r_{o}\cos\theta -2\epsilon \hLM\lb \theta,\phi\rb \lb \cos\theta + \tan\theta \sin\theta\rb \]
+\[H_{\ell,m}^{\epsilon} = 2\cos \theta_{1}\ls r_{o} - \epsilon \hLM\lb \theta_{1},\phi\rb \rs \approx 2r_{o}\cos\theta -2\epsilon \hLM\lb \theta,\phi\rb \lb \cos\theta + \tan\theta \sin\theta\rb \]
 %
 \begin{equation}
-	\implies H_{\ell,m}^{\epsilon}\approx 2r_{o}\cos\theta - \epsilon\; \lb \cos\theta + \tan\theta\sin\theta\rb \frac{1}{\mathcal{P}_{\ell}^{m}}P_{\ell}^{m}\lb \theta\rb\;  \cos m\phi.
+	\implies H_{\ell,m}^{\epsilon}\approx 2r_{o}\cos\theta - \epsilon\; \lb \cos\theta + \tan\theta\sin\theta\rb \frac{1}{Q_{\ell}^{m}}P_{\ell}^{m}\lb \theta\rb\;  \cos m\phi.
 	\label{e:hg_even}
 \end{equation}
 More succinctly, the leading order $\phi$ dependence of $H_{\ell,m}^{\epsilon}$ is $\cos m\phi$ at $O\lb \epsilon\rb .$ 
@@ -46,16 +47,16 @@ The symmetry about the equator meant that we could use $\theta_{1}$ in both hemi
 We must now distinguish between the two, so we adopt a $+/-$ notation to refer to the upper ($+)$ and lower $(-)$ hemispheres. 
 \[\delta_{\pm}\approx \pm\frac{\epsilon}{r_{o}}\hLM\lb \theta,\phi\rb \tan\theta \]
 The geostrophic height is 
-  \[H_{\ell,m}^{\epsilon}\lb \theta, \phi\rb = \lb r_{o}-\epsilon \hLM\lb \theta_{+},\phi\rb \rb \cos\theta_{+} +\lb r_{o}-\epsilon \hLM\lb \pi-\theta_{-},\phi\rb \rb \cos\theta_{-} \]
+  \[H_{\ell,m}^{\epsilon}\lb \theta, \phi\rb = \ls r_{o}-\epsilon \hLM\lb \theta_{+},\phi\rb \rs \cos\theta_{+} +\ls r_{o}-\epsilon \hLM\lb \pi-\theta_{-},\phi\rb \rs \cos\theta_{-} \]
     \[
 	    \begin{aligned}
-		    \approx &\lb r_{o} - \epsilon \lb \hLM\lb \theta,\phi\rb  + \delta_{+} \frac{\partial \hLM}{\partial\theta}|_{\theta\phantom{\pi -}}\rb \rb \lb \cos \theta - \delta_{+}\sin\theta\rb \\
-			    &\lb r_{o} + \epsilon \lb \hLM\lb \theta,\phi\rb  - \delta_{+} \frac{\partial \hLM}{\partial\theta}|_{\pi-\theta}\rb \rb \lb \cos \theta + \delta_{+}\sin \theta\rb
+		    \approx &\ls r_{o} - \epsilon \lb \hLM\lb \theta,\phi\rb  + \delta_{+} \frac{\partial \hLM}{\partial\theta}|_{\theta\phantom{\pi -}}\rb \rs \lb \cos \theta - \delta_{+}\sin\theta\rb \\
+			    &\ls r_{o} + \epsilon \lb \hLM\lb \theta,\phi\rb  - \delta_{+} \frac{\partial \hLM}{\partial\theta}|_{\pi-\theta}\rb \rs \lb \cos \theta + \delta_{+}\sin \theta\rb
     \end{aligned}
     \]
      Expanding and collecting,
 \begin{equation}
-        H_{\ell,m}^{\epsilon} = 2 r_{o}\cos \theta + \epsilon \delta_{+}\lb 2\hLM \lb \theta,\phi\rb \sin\theta -  \cos\theta\lb\frac{\partial\hLM }{\partial\theta }|_{\theta\phantom{\pi-}} +\frac{\partial\hLM }{\partial\theta }|_{\pi-\theta}\rb\rb + O\lb \epsilon^{3}\rb
+        H_{\ell,m}^{\epsilon} = 2 r_{o}\cos \theta + \epsilon \delta_{+}\ls 2\hLM \lb \theta,\phi\rb \sin\theta -  \cos\theta\lb\frac{\partial\hLM }{\partial\theta }|_{\theta\phantom{\pi-}} +\frac{\partial\hLM }{\partial\theta }|_{\pi-\theta}\rb\rs + O\lb \epsilon^{3}\rb
     	    \label{e:hodd}
 \end{equation}
 
@@ -68,7 +69,6 @@ The azimuthal order is doubled and the deformations are $O\lb \epsilon^{2}\rb. $
 \begin{figure}
 	\begin{center}
 \subfloat[][]{
-	\resizebox{0.45\textwidth}{!}{
 \begin{tikzpicture}
 
                 \draw [color = black, dashed] (0,0) circle (4cm);
@@ -92,9 +92,8 @@ The azimuthal order is doubled and the deformations are $O\lb \epsilon^{2}\rb. $
 	plot (xy polar cs:angle=\x r, radius={4-0.6*exp(-(\x-7*pi/4)^2/.05)-0.6*exp(-(\x-pi/4)^2/.05)});
 \end{tikzpicture}
 }
-}
+\quad
 \subfloat[][]{
-	\resizebox{0.45\textwidth}{!}{
 \begin{tikzpicture}
 
                 \draw [color = black, dashed] (0,0) circle (4cm);
@@ -121,7 +120,6 @@ The azimuthal order is doubled and the deformations are $O\lb \epsilon^{2}\rb. $
 	plot (xy polar cs:angle=\x r, radius={4+0.6*exp(-(\x-7*pi/4)^2/.05)-0.6*exp(-(\x-pi/4)^2/.05)});
 \end{tikzpicture}
 }
-}
 %\subfloat[][]{
 %\begin{tikzpicture}
 %
@@ -137,11 +135,11 @@ The azimuthal order is doubled and the deformations are $O\lb \epsilon^{2}\rb. $
 \label{f:sketch}
 \end{figure}
 
-\section{BS96 stability curves}
+\section{Stability curves}
 \label{a:bs_stab}
-In this appendix we provide the values used to generate the stability curves presented in Figure \ref{f:bs_stab}. The curves are from the analysis of (BS96) \cite{pB96} , who use a different variable convention than presented in this study. For clarity, any variable with a star corresponds to the same variable, sans-star, in the BS96 paper.
+In this appendix we provide the values used to generate the stability curves presented in Figure \ref{f:bs_stab}. The curves are from the analysis of (BS96) \citep{pB96}, who use a different variable convention than presented in this study. For clarity, any variable with a star corresponds to the same variable, sans-star, in the BS96 paper.
 
-The analysis adopts the Busse annulus, first proposed by Busse (1970) \cite{fB70}, which approximates a mid-latitude annular shell within the sphere. Sinusoidal, single wavelength, topography is imposed on the caps, extending along the rotation direction. 
+The analysis adopts the Busse annulus, first proposed by Busse (1970) \citep{fB70}, which approximates a mid-latitude annular shell within the sphere. Sinusoidal, single wavelength, topography is imposed on the caps, extending along the rotation direction. 
 We consider the mid-latitudes and use $\theta = 45^{\circ}$ (that is the slope parameter describing the annulus endcaps is $\eta^{*}=1$). 
 The radial scale is chosen to be on the order of the bump wavelength, assumed to be much smaller than the vertical. That is
 \[D^{*}= \frac{1}{m}\ll 2 r_o \cos\lb\theta\rb = 1.62.\]
@@ -167,9 +165,6 @@ Previous work \citep[e.g.][]{bB07} has suggested that viscous torques do not pla
 In Figure \ref{f:viscrat} we show $\gamma,$ the ratio of the standard deviations of the viscous to topographic torques. 
 Except for the $\epsilon<0.1$, $\hlm{2}{1}$ topographies, where the topographic torques are very small, we find that $\gamma<1,$ indicating that topographic torques dominate over viscous torques. 
 Roberts and Aurnou (2012) \citep{pR12} indicate that viscous torques should scales as $Re Ek^{-1/2}$ which is $O\lb 10^{6}\rb$ in our simulations and about the same size as our topographic torques. However in the core $Re Ek^{-1/2}$ is likely much smaller than $\Gstd \sim Re^{2}m_{c}\;\epsilon$.
-%\section{}\label{appA}
-%\bibliographystyle{jfm}
-% Note the spaces between the initials
 
 
 

@@ -361,7 +361,7 @@ As mentioned in previous work \citep{mC12}, the Gaussian profile is particularly
 \textcolor{\revtxt}{
 	Table \ref{t:bump_geo} lists topographic parameters, including the aspect ratio for the topography, $\epsilon /w$, where $w$ is defined as the full width at $1\%$ maximum. Note that only the topographic amplitude is varied in the present study.}
 
-The simulations are performed with the computational fluid dynamics code \texttt{Nek5000} \citep{nek5000}, which uses the spectral element method \citep{tP84} and therefore easily allows for solving the governing equations in domains with irregular boundaries. 
+The simulations are performed with the computational fluid dynamics code \texttt{Nek5000} \citep{nek5000}, which uses the spectral element method \citep{aP84} and therefore easily allows for solving the governing equations in domains with irregular boundaries. 
 \texttt{Nek5000} has been extensively benchmarked and scales efficiently to large numbers of processors. 
 The simulations were run on up to 2048 processors for our most demanding simulations. \texttt{Nek5000} uses a CFL condition to dynamically update the timestep. Our tests indicate that for identical non-dimensional control parameters the \texttt{Nek5000} code is approximately a factor of ten slower in comparison to the commonly used spectral code, \texttt{Rayleigh} \citep{hM16}, although spectral codes are generally incapabale of handling irregular boundaries.
 All simulations used a degree $7$ polynomial interpolant within the spectral elements.

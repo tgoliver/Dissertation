@@ -224,8 +224,11 @@ This implies that convective motions are inherently influenced by viscosity and,
 	\begin{center}
 		%\begin{footnotesize}
 	\begin{tabular}{c c c c c c c c c}
+		\hline
+		\hline
 	%\hline 
 		$\Rat$& $N_x\times N_y\times N_Z$ & $\Delta t$ & $n$ & $\Ret$ &  $Nu$ &$\ell_{I}$ & $\ell_{T}$ &$\ell_{K}$ \\
+\hline	
 		\hline
 		$10$ & $384\times384\times96$ & $5.0\times 10^{-4}$ & $10$ & $0.592$ & $1.259$ & $1.081$ & $1.076$&$0.899$\\
 $12$ & $384\times384\times96$ & $5.0\times 10^{-4}$ & $10$ & $0.921$ & $1.602$ & $1.165$ & $1.146$&$0.687$\\
@@ -258,6 +261,8 @@ $40$ & $288\times288\times96$ & $2.5\times 10^{-4}$ & $7$ & $9.25$ & $11.12$ & $
 $40$ & $480\times480\times96$ & $2.5\times 10^{-4}$ & $12$ & $9.561$ & $11.46$ & $1.686$ & $1.172$&$0.267$\\
 $40$ & $576\times576\times96$ & $2.5\times 10^{-4}$ & $15$ & $9.447$ & $11.41$ & $1.666$ & $1.168$&$0.267$\\
 $40$ & $768\times768\times96$ & $2.5\times 10^{-4}$ & $20$ & $9.564$ & $11.47$ & $1.729$ & $1.178$&$0.266$\\
+\hline
+\hline
 	\end{tabular}
 \end{center}
 \caption[Details of the numerical simulations for Chapter \ref{Oliver_2023} (without LSV)]{Details of the numerical simulations in which depth-invariant flows are suppressed. The number of physical space grid points in each respective direction is specified by $N_x\times N_y\times N_Z$, the time step size is denoted by $\Delta t$, and the horizontal domain size, as specified by the integer number of critical horizontal wavelengths, is denoted by $n$. The asymptotically rescaled Reynolds number is $\Ret$, $Nu$ is the Nusselt number, and the integral length scale, Taylor microscale and Kolmogorov scale are denoted by $\ell_I$, $\ell_T$ and $\ell_K$, respectively. All length scales are normalized by the critical wavelength $\lambda_{c} \approx 4.815$. }
@@ -267,6 +272,8 @@ $40$ & $768\times768\times96$ & $2.5\times 10^{-4}$ & $20$ & $9.564$ & $11.47$ &
 		%\begin{footnotesize}
 	\begin{center}
 	\begin{tabular}{c c c c c c c c c}
+		\hline
+		\hline
 	%\hline 
  %& & & LSV& & & & & \\
 		$\Rat$& $N_x\times N_y\times N_Z$ & $\Delta t$ & $n$ & $\Ret$ &  $Nu$ &$\ell_{I}$ & $\ell_{T}$ &$\ell_{K}$ \\
@@ -279,6 +286,7 @@ $80$ & $576\times576\times192$ & $1\times 10^{-4}$ & $10$ & $24.68$ & $30.92$ & 
 $120$ & $648\times648\times324$ & $1\times 10^{-4}$ & $10$ & $41.4$ & $58.2$ & $2.805$ & $0.974$&$0.140$\\
 $160$ & $768\times768\times384$ & $5\times 10^{-5}$ & $10$ & $59.40$ & $98.06$ & $2.792$ & $0.919$&$0.118$\\
 $200$ & $960\times960\times450$ & $5\times 10^{-5}$ & $10$ & $84.21$ & $146.2$ & $3.032$ & $0.943$&$0.098$\\
+		\hline
 		\hline
 
 	\end{tabular}
